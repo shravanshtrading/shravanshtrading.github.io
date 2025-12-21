@@ -6,67 +6,92 @@
   <title>Shravansh Trading | Stock Market Education in Hindi</title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 0;
-    }
+    
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
-    header {
-      background: #0a1a2a;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
+/* Header */
+.top-header {
+  background: #0a1a2a;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    nav {
-      margin-top: 10px;
-    }
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
 
-    nav a {
-      color: white;
-      margin: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.menu-btn {
+  font-size: 24px;
+  cursor: pointer;
+}
 
-    section {
-      padding: 20px;
-    }
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 250px;
+  height: 100%;
+  background: #111;
+  padding: 15px;
+  transition: 0.3s;
+  overflow-y: auto;
+}
 
-    .card {
-      background: white;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      <p>
-    }
+.side-menu a {
+  display: block;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
+}
 
-    footer {
-      background: #0a1a2a;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      font-size: 14px;
-    }
+.side-menu a:hover {
+  background: #222;
+}
+
+.side-menu h4 {
+  color: #00c3ff;
+  margin-top: 15px;
+}
+    
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>Shravansh Trading</h1>
-    <p>Stock Market | Forex | Crypto Education in Hindi</p>
+<header class="top-header">
+  <div class="logo">Shravansh Trading</div>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="disclaimer.html">Disclaimer</a>
-      <a href="privacy.html">Privacy Policy</a>
-<a href="contact.html">Contact</a>
-    </nav>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</header>
+
+<nav id="sideMenu" class="side-menu">
+  <a href="index.html">🏠 Home</a>
+
+  <h4>📊 Stock Market</h4>
+  <a href="stock-market-kya-hai.html">Stock Market क्या है?</a>
+  <a href="trading-vs-investing-kya-hai.html">Trading vs Investing</a>
+  <a href="risk-management-kya-hai.html">Risk Management</a>
+
+  <h4>💱 Forex Market</h4>
+  <a href="forex-market-kya-hai.html">Forex Market क्या है?</a>
+
+  <h4>🪙 Crypto Market</h4>
+  <a href="crypto-market-kya-hai.html">Crypto Market क्या है?</a>
+
+  <hr>
+  <a href="about.html">About Us</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="contact.html">Contact</a>
+</nav>
   </header>
  
   <!-- MAIN CONTENT -->
@@ -119,8 +144,22 @@
     </p>
   </footer>
 
+  <!-- पूरा page content -->
+
+    <script>
+      function toggleMenu() {
+        let menu = document.getElementById("sideMenu");
+        if (menu.style.left === "0px") {
+          menu.style.left = "-260px";
+        } else {
+          menu.style.left = "0px";
+        }
+      }
+    </script>
+
 </body>
 </html>
+
 
 
 
