@@ -7,98 +7,53 @@
   <title>Shravansh Trading | Stock Market Education in Hindi</title>
 
   <style>
- 
 * {
   box-sizing: border-box;
-  max-width: 100%;
 }
 
-html, body {
+body {
   margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
   font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  overflow-x: hidden;
 }
 
-/* MAIN CONTENT */
-.main-content {
-  width: 100%;
-  padding: 12px;
-}
-
-/* UL LIST FIX (most important) */
-ul {
-  list-style-position: inside;
-  padding-left: 0;
-  margin-left: 0;
-}
-
-li {
-  margin-bottom: 8px;
-  word-break: break-word;
-}
-
-/* LINKS */
-a {
-  word-break: break-word;
-  text-decoration: none;
-}
-
-/* CARDS */
-.card {
-  width: 100%;
-  background: #fff;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-}
-
-/* HEADER FIX */
-header {
-  width: 100%;
-  padding: 12px;
-  text-align: center;
-}
-
-/* FOOTER */
-footer {
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
-}
-/* Header */
+/* HEADER */
 .top-header {
   background: #0a1a2a;
   color: white;
   padding: 15px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .logo {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
+  text-align: center;
 }
 
 .menu-btn {
-  font-size: 24px;
+  position: absolute;
+  left: 15px;
+  font-size: 26px;
   cursor: pointer;
 }
 
-/* Side Menu */
+/* SIDE MENU */
 .side-menu {
   position: fixed;
   top: 0;
-  left: -250px;
-  width: 250px;
+  left: -260px;
+  width: 260px;
   height: 100%;
   background: #111;
   padding: 15px;
   transition: 0.3s;
   overflow-y: auto;
+  z-index: 999;
 }
 
 .side-menu a {
@@ -109,24 +64,73 @@ footer {
   border-bottom: 1px solid #333;
 }
 
-.side-menu a:hover {
-  background: #222;
-}
-
 .side-menu h4 {
   color: #00c3ff;
   margin-top: 15px;
 }
-    
+
+/* SEARCH */
+.search-box {
+  padding: 15px;
+  text-align: center;
+  background: white;
+}
+
+.search-box input {
+  width: 95%;
+  max-width: 420px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* MAIN */
+.main-content {
+  padding: 15px;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0d6efd;
+  font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
   </style>
 </head>
 
 <body>
 
 <header class="top-header">
-  <div class="logo">Shravansh Trading</div>
-
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="logo">Shravansh Trading</div>
 </header>
 
 <nav id="sideMenu" class="side-menu">
@@ -134,107 +138,79 @@ footer {
 
   <h4>📊 Stock Market</h4>
   <a href="stock-market-kya-hai.html">Stock Market क्या है?</a>
-  <a href="trading-vs-investing-kya-hai.html">Trading vs Investing</a>
-  <a href="risk-management-kya-hai.html">Risk Management</a>
-  <a href="intraday-trading-kya-hai.html">📘 intraday Trading क्या है? (Beginners Guide)</a>
- <a href="stock-market-me-paisa-kaise-lagaye.html">💰💸Stock Market में पैसा कैसे लगाएं?</a>
+  <a href="intraday-trading-kya-hai.html">Intraday Trading</a>
+  <a href="stock-market-me-paisa-kaise-lagaye.html">Stock Market में पैसा कैसे लगाएं?</a>
 
+  <h4>💱 Forex</h4>
+  <a href="forex-trading-kya-hai.html">Forex Trading</a>
 
-  <h4>💱 Forex Market</h4>
-  <a href="forex-market-kya-hai.html">Forex Market क्या है?</a>
- <a href="forex-trading-kya-hai.html">📌 Forex Trading क्या है? Beginners के लिए पूरी जानकारी हिंदी में</a>
-   
-  <h4>🪙 Crypto Market</h4>
-  <a href="crypto-market-kya-hai.html">Crypto Market क्या है?</a>
-  <a href="crypto-currency-kya-hoti-hai.html">Crypto currency (Advance)</a>
+  <h4>🪙 Crypto</h4>
+  <a href="crypto-currency-kya-hoti-hai.html">Crypto Currency</a>
 
   <hr>
-  <a href="about.html">About Us</a>
-  <a href="privacy.html">Privacy Policy</a>
+  <a href="about.html">About</a>
+  <a href="privacy.html">Privacy</a>
   <a href="contact.html">Contact</a>
 </nav>
-  </header>
- 
-  <!-- MAIN CONTENT -->
-  <section>
-   <div class="main-content">
 
-  <h2>📌 हमारे Articles</h2>
-
-  <ul>
-    <li><a href="stock-market-kya-hai.html">Stock Market क्या है?</a></li>
-    <li><a href="forex-market-kya-hai.html">Forex Market क्या है?</a></li>
-    <li><a href="crypto-market-kya-hai.html">Crypto Market क्या है?</a></li>
-  </ul>
-
-  <h2>Welcome to Shravansh Trading</h2>
-  <p>यह वेबसाइट Stock Market, Forex और Crypto की शिक्षा हिंदी में देती है।</p>
-
-  <div class="card">
-    <h3>📈 Stock Market</h3>
-    <p>Basic से advanced जानकारी...</p>
-  </div>
-     <div class="card">
-     <h3> Intraday trading</h3>
-     <p>📘 intraday Trading क्या है? (Beginners Guide)...</p>
-   </div>
-
-  <div class="card">
-    <h3>🌍 Forex Market</h3>
-    <p>Forex trading क्या है...</p>
-  </div>
-
-  <div class="card">
-    <h3>🪙 Crypto Market</h3>
-    <p>Crypto education...</p>
-  </div>
-
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search articles...">
 </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>  
-    <p>© 2025 Shravansh Trading</p>
-    <p>
-      Educational Purpose Only |
-      <a href="disclaimer.html" style="color:white;">Disclaimer</a>
-    </p>
-  </footer>
+<section class="main-content">
 
-  <!-- पूरा page content -->
+  <h1>Stock Market, Forex & Crypto – हिंदी में सीखें</h1>
+  <p>Shravansh Trading एक educational website है जहाँ beginners को trading और investment सिखाया जाता है।</p>
 
-    <script>
-      function toggleMenu() {
-        let menu = document.getElementById("sideMenu");
-        if (menu.style.left === "0px") {
-          menu.style.left = "-260px";
-        } else {
-          menu.style.left = "0px";
-        }
-      }
-    </script>
+  <div class="cards">
+
+    <div class="card">
+      <h3>📘 Intraday Trading क्या है?</h3>
+      <p>Beginners के लिए complete intraday trading guide.</p>
+      <a href="intraday-trading-kya-hai.html">Read More</a>
+    </div>
+
+    <div class="card">
+      <h3>💰 Stock Market में पैसा कैसे लगाएं?</h3>
+      <p>Safe investment tips for beginners.</p>
+      <a href="stock-market-me-paisa-kaise-lagaye.html">Read More</a>
+    </div>
+
+    <div class="card">
+      <h3>🌍 Forex Trading क्या है?</h3>
+      <p>Forex market की पूरी जानकारी हिंदी में.</p>
+      <a href="forex-trading-kya-hai.html">Read More</a>
+    </div>
+
+    <div class="card">
+      <h3>🪙 Crypto Currency क्या है?</h3>
+      <p>Crypto investment & risk explained.</p>
+      <a href="crypto-currency-kya-hoti-hai.html">Read More</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Shravansh Trading</p>
+  <p>Educational Purpose Only | <a href="disclaimer.html" style="color:#00c3ff;">Disclaimer</a></p>
+</footer>
+
+<script>
+function toggleMenu() {
+  let menu = document.getElementById("sideMenu");
+  menu.style.left = (menu.style.left === "0px") ? "-260px" : "0px";
+}
+
+/* SEARCH FUNCTION */
+document.getElementById("searchInput").addEventListener("keyup", function () {
+  let filter = this.value.toLowerCase();
+  let cards = document.querySelectorAll(".card");
+  cards.forEach(card => {
+    card.style.display = card.innerText.toLowerCase().includes(filter) ? "block" : "none";
+  });
+});
+</script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
