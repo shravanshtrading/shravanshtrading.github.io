@@ -3,89 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forex Trading Guide Hindi</title>
+  <title>Forex Trading Guide with Charts</title>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; color: #333; }
-    .chart-text { background: #f4f4f4; padding: 10px; font-family: monospace; white-space: pre; border-left: 4px solid #333; margin: 10px 0; }
-    h1, h2 { color: #0056b3; }
-    .box { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.8; padding: 20px; color: #333; max-width: 800px; margin: auto; background: #f4f7f6; }
+    .content-bg { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    
+    /* Trading Chart Style */
+    .trading-chart {
+      background: #131722; /* TradingView Black Theme */
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      position: relative;
+      height: 200px;
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      border: 1px solid #363a45;
+    }
+    .candle { width: 12px; position: relative; border-radius: 1px; }
+    .wick { position: absolute; width: 2px; background: inherit; left: 5px; }
+    
+    /* Green Candle */
+    .bull { background: #089981; }
+    /* Red Candle */
+    .bear { background: #f23645; }
+
+    .chart-label { color: #d1d4dc; font-size: 12px; position: absolute; top: 10px; left: 10px; font-family: monospace; }
+    .buy-signal { position: absolute; color: #089981; font-weight: bold; bottom: 10px; right: 20px; border: 1px solid #089981; padding: 2px 8px; border-radius: 4px; font-size: 12px; }
+    
+    h1, h2 { color: #1e293b; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; }
+    .step { font-weight: bold; color: #2563eb; }
   </style>
 </head>
 <body>
 
-<h1>🔹 Forex Trading क्या है?</h1>
-<p>Forex Trading (Foreign Exchange Trading) एक ऐसा market है जहाँ एक देश की currency को दूसरे देश की currency से खरीदा-बेचा जाता है।</p>
+<div class="content-bg" id="article-content">
+  <h1>Forex Trading क्या है? Beginners के लिए पूरी जानकारी</h1>
+  
+  <p><span class="step">🔹 Forex Trading क्या है?</span></p>
+  <p>Forex Trading (Foreign Exchange Trading) एक ऐसा market है जहाँ एक देश की currency को दूसरे देश की currency से खरीदा-बेचा जाता है।</p>
 
-<div class="box">
-  <strong>👉 उदाहरण:</strong><br>
-  USD/INR (Dollar – Rupee) | EUR/USD (Euro – Dollar)
+  <div class="trading-chart">
+    <div class="chart-label">USD/INR - H1 Chart (Uptrend)</div>
+    <div class="candle bull" style="height: 40px;"><div class="wick" style="height: 60px; top:-10px;"></div></div>
+    <div class="candle bear" style="height: 30px; bottom: 20px;"><div class="wick" style="height: 50px; top:-10px;"></div></div>
+    <div class="candle bull" style="height: 60px; bottom: 30px;"><div class="wick" style="height: 80px; top:-10px;"></div></div>
+    <div class="candle bull" style="height: 50px; bottom: 70px;"><div class="wick" style="height: 70px; top:-10px;"></div></div>
+    <div class="candle bear" style="height: 25px; bottom: 90px;"><div class="wick" style="height: 40px; top:-10px;"></div></div>
+    <div class="candle bull" style="height: 70px; bottom: 100px;"><div class="wick" style="height: 90px; top:-10px;"></div></div>
+    <div class="buy-signal">STRONG BUY ▲</div>
+  </div>
+
+  <p>👉 Example: USD/INR (Dollar – Rupee) | EUR/USD (Euro – Dollar)<br>
+  अगर currency का price बढ़ता है → profit | अगर घटता है → loss</p>
+
+  <p><span class="step">🔹 Forex Market कैसे काम करता है?</span></p>
+  <p>Forex market में हमेशा currency pair में trade होती है। 1 US Dollar = ₹83.20। अगर Dollar strong होता है → price बढ़ता है, अगर Rupee strong होता है → price घटता है।</p>
+
+  <p><span class="step">🔹 Forex Trading में Leverage और चार्ट्स</span></p>
+  <p>ट्रेडिंग में हम "Candlestick Charts" का उपयोग करते हैं। जब मार्केट ऊपर जाता है तो हरी (Bullish) कैंडल बनती है, और जब नीचे आता है तो लाल (Bearish) कैंडल बनती है।</p>
+
+  <div class="trading-chart">
+    <div class="chart-label">Support & Resistance Level</div>
+    <div style="position:absolute; width:100%; height:2px; background:rgba(242,54,69,0.5); top:40px; border-top:1px dashed red;"></div>
+    <div class="candle bull" style="height:80px; left:20px;"></div>
+    <div class="candle bear" style="height:60px; left:50px; bottom:20px;"></div>
+    <div class="candle bull" style="height:70px; left:80px; bottom:10px;"></div>
+    <div style="position:absolute; width:100%; height:2px; background:rgba(8,153,129,0.5); bottom:30px; border-top:1px dashed green;"></div>
+  </div>
+
+  <p><span class="step">🔹 India में Forex Trading Legal है या नहीं?</span></p>
+  <p>👉 India में Forex trading allowed है, लेकिन सिर्फ <strong>INR pairs</strong> में: USD/INR, EUR/INR, GBP/INR, JPY/INR। इंटरनेशनल ब्रोकर्स से अवैध ट्रेडिंग से बचें।</p>
+
+  <p><span class="step">🔹 Tips for Beginners</span></p>
+  <ul>
+    <li>✔ Low leverage use करो</li>
+    <li>✔ Stop Loss हमेशा लगाओ</li>
+    <li>✔ पहले demo account से practice करो</li>
+  </ul>
+
+  <p><strong>🔗 Related Articles</strong><br>
+  👉 <a href="intraday-trading-kya-hai.html">Intraday Trading क्या है?</a><br>
+  👉 <a href="risk-management-kya-hai.html">Risk Management क्या है?</a></p>
+
+  <p style="font-size: 12px; color: #777; border-top: 1px solid #eee; padding-top: 10px;">
+    ⚠ Disclaimer: यह जानकारी केवल educational purpose के लिए है। Forex trading में जोखिम होता है।
+  </p>
 </div>
 
-<h2>📈 चार्ट पैटर्न को समझें (नए ट्रेडर्स के लिए)</h2>
-
-<h3>1. Horizontal Support & Resistance</h3>
-<p>जब मार्केट एक रेंज में फंस जाता है, तो ऊपर की लाइन Resistance और नीचे की Support कहलाती है।</p>
-<div class="chart-text">
----------- Resistance (यहाँ से नीचे गिरता है) ----------
-      / \     / \     / \
-     /   \   /   \   /   \
-    /     \ /     \ /     \
----------- Support (यहाँ से ऊपर उठता है) ----------
-</div>
-<p><strong>ट्रेड कैसे लें?</strong> जब प्राइस Resistance के ऊपर निकले और वापस उसे छूने आए (Retest), तब खरीदें।</p>
-
-<h3>2. Head and Shoulders (रिवर्सल पैटर्न)</h3>
-<p>यह पैटर्न बताता है कि मार्केट अब नीचे गिरने वाला है।</p>
-<div class="chart-text">
-         [ Head ]
-          /  \
- [Shoulder] /    \ [Shoulder]
-    /  \   /      \   /  \
-_/_\/___\/_\__ Neckline (ब्रेक होते ही बेचें)
-</div>
-
-<h3>3. Bullish Flag Pattern (कंटिन्यूएशन)</h3>
-<p>एक बड़ी तेज़ी के बाद मार्केट थोड़ा रुकता है और फिर ऊपर भागता है।</p>
-<div class="chart-text">
-      /|  ____ 
-     / | | flag   |
-Pole/  | |____| 
-   /   |  <-- ब्रेकआउट पर खरीदें
-  /
-</div>
-
-<h2>🔹 Forex Market कैसे काम करता है?</h2>
-<p>Forex market हमेशा currency pair में trade होती है।</p>
-<p><strong>USD / INR = 83.20</strong></p>
-<ul>
-  <li>1 US Dollar = ₹83.20</li>
-  <li>अगर Dollar strong होता है → price बढ़ता है</li>
-  <li>अगर Rupee strong होता है → price घटता है</li>
-</ul>
-
-<h2>🔹 Leverage और Risk Management</h2>
-<p>Leverage का मतलब है कम पैसे से बड़ा ट्रेड करना।</p>
-<p><strong>⚠️ ज़रूरी:</strong> हमेशा 1:2 या 1:3 का रिस्क-रिवॉर्ड रेश्यो रखें। यानी अगर ₹1 का रिस्क है, तो ₹2 या ₹3 का टारगेट होना चाहिए।</p>
-
-<h2>🔹 Beginners के लिए Checklist</h2>
-<ul>
-  <li>✅ हमेशा Stop Loss लगाएं ताकि बड़ा नुकसान न हो।</li>
-  <li>✅ पहले Demo account पर प्रैक्टिस करें।</li>
-  <li>✅ इंडिया में सिर्फ INR pairs (USD/INR आदि) में ट्रेड करें।</li>
-</ul>
-
-<div id="article-content" style="display:none;">
-(यहाँ आपका पूरा टेक्स्ट कंटेंट है जिसे बटन दबाकर कॉपी किया जा सकता है)
-</div>
-
-<button onclick="copyContent()">Copy Full Article</button>
+<button onclick="copyContent()" style="margin: 20px auto; display: block; padding: 10px 20px; cursor: pointer;">Copy Article Text</button>
 
 <script>
 function copyContent() {
-  // यह फंक्शन सिर्फ टेक्स्ट को कॉपी करेगा
-  const text = document.body.innerText;
-  navigator.clipboard.writeText(text).then(() => {
-    alert("✅ आर्टिकल टेक्स्ट कॉपी हो गया!");
+  const content = document.getElementById('article-content').innerText;
+  navigator.clipboard.writeText(content).then(() => {
+    alert("✅ कंटेंट कॉपी हो गया!");
   });
 }
 </script>
