@@ -3,115 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forex Trading & Price Action Guide</title>
+  <title>Forex Trading Guide Hindi</title>
   <style>
-    :root {
-      --primary: #1e3a8a;
-      --secondary: #3b82f6;
-      --accent: #10b981;
-      --danger: #ef4444;
-      --bg: #f8fafc;
-    }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); margin: 0; padding: 20px; color: #1e293b; }
-    .container { max-width: 900px; margin: auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-    
-    h1 { color: var(--primary); border-left: 6px solid var(--secondary); padding-left: 15px; font-size: 28px; }
-    h2 { color: var(--primary); font-size: 22px; margin-top: 30px; display: flex; align-items: center; }
-    
-    .strategy-card { 
-      border: 2px solid #e2e8f0; border-radius: 10px; margin: 20px 0; padding: 20px;
-      transition: transform 0.2s; background: #fff;
-    }
-    .strategy-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
-    
-    .chart-box { 
-      background: #111827; color: #10b981; padding: 20px; border-radius: 8px; 
-      font-family: 'Courier New', monospace; margin: 15px 0; position: relative;
-    }
-    .indicator-up { color: #10b981; font-weight: bold; }
-    .indicator-down { color: #ef4444; font-weight: bold; }
-
-    .step-box { display: flex; gap: 15px; margin: 15px 0; }
-    .step { background: var(--secondary); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    
-    .label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; padding: 4px 8px; border-radius: 4px; }
-    .label-buy { background: #dcfce7; color: #166534; }
-    .label-sell { background: #fee2e2; color: #991b1b; }
-
-    .btn-copy { background: var(--primary); color: white; border: none; padding: 12px 30px; border-radius: 6px; cursor: pointer; display: block; margin: 20px auto; font-size: 16px; }
-    ul { list-style: none; padding-left: 0; }
-    li { padding: 8px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; }
-    li::before { content: "✔"; color: var(--accent); margin-right: 10px; font-weight: bold; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; color: #333; }
+    .chart-text { background: #f4f4f4; padding: 10px; font-family: monospace; white-space: pre; border-left: 4px solid #333; margin: 10px 0; }
+    h1, h2 { color: #0056b3; }
+    .box { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
   </style>
 </head>
 <body>
 
-<div class="container" id="article-content">
-  <h1>📈 Forex & Price Action Strategy Guide</h1>
-  
-  <p>Forex Trading में सिर्फ करेंसी खरीदना-बेचना काफी नहीं है, इसमें <strong>Price Action</strong> को समझना सबसे महत्वपूर्ण है।</p>
+<h1>🔹 Forex Trading क्या है?</h1>
+<p>Forex Trading (Foreign Exchange Trading) एक ऐसा market है जहाँ एक देश की currency को दूसरे देश की currency से खरीदा-बेचा जाता है।</p>
 
-  <h2>🔹 Strategy 01: Horizontal Support & Resistance</h2>
-  <div class="strategy-card">
-    <p>जब मार्केट एक सीमित दायरे (Consolidation) में घूमता है, तो हम High और Low पर Horizontal लाइन खींचते हैं।</p>
-    <div class="chart-box">
-      [ RESISTANCE LINE ] <span class="indicator-down">▼ Price Rejection</span><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↗&nbsp;&nbsp;&nbsp;↘&nbsp;&nbsp;&nbsp;↗<br>
-      [ SUPPORT LINE ] <span class="indicator-up">▲ Price Bounce</span>
-    </div>
-    <div class="step-box">
-      <div class="step">1</div>
-      <div><strong>Breakout:</strong> कैंडल का रेजिस्टेंस के ऊपर बंद होने का इंतज़ार करें।</div>
-    </div>
-    <div class="step-box">
-      <div class="step">2</div>
-      <div><strong>Retest:</strong> जब प्राइस वापस उसी लाइन को छूता है, तब एंट्री लें।</div>
-    </div>
-  </div>
-
-  <h2>📊 Important Chart Patterns</h2>
-  
-  <div class="strategy-card">
-    <h3>1. Head and Shoulders (Trend Reversal)</h3>
-    <p>यह पैटर्न संकेत देता है कि अब ट्रेंड बदलने वाला है। इसमें एक 'Head' और दो 'Shoulders' होते हैं।</p>
-    <span class="label label-sell">Selling Opportunity</span>
-    <p>Neckline के टूटने पर 1:2 या 1:3 का रिस्क-रिवॉर्ड रेश्यो सेट करें।</p>
-  </div>
-
-  <div class="strategy-card">
-    <h3>2. Flag Pattern (Continuation)</h3>
-    <p>यह पैटर्न एक तेज़ मूव के बाद थोड़े आराम (Consolidation) को दर्शाता है।</p>
-    <span class="label label-buy">Buying Opportunity</span>
-    <p>फ्लैग के ऊपरी हिस्से के ब्रेकआउट पर एंट्री ली जाती है।</p>
-  </div>
-
-  <h2>🔹 Forex Trading में Leverage और Risk</h2>
-  <p>Leverage आपको कम पैसे में बड़ा ट्रेड करने की सुविधा देता है, लेकिन यह जोखिम भरा है।</p>
-  <div style="background: #fff7ed; padding: 20px; border-left: 4px solid #f97316; border-radius: 4px;">
-    <strong>⚠️ Risk Management:</strong> हमेशा <strong>Stop Loss</strong> का उपयोग करें ताकि बड़ा नुकसान न हो।
-  </div>
-
-  <h2>🔹 Beginners के लिए Checklist</h2>
-  <ul>
-    <li>हमेशा ट्रेंड की दिशा में ट्रेड करें।</li>
-    <li>बिना प्रैक्टिस के असली पैसे से ट्रेड न करें (Paper Trade पहले करें)।</li>
-    <li>RR Ratio हमेशा 1:2 या 1:3 रखें।</li>
-    <li>इमोशनल होकर ओवर-ट्रेडिंग न करें।</li>
-  </ul>
-
-  <footer style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; text-align: center; color: #64748b;">
-    <p>🔗 <strong>Related:</strong> <a href="risk-management-kya-hai.html">Risk Management</a> | <a href="intraday-trading-kya-hai.html">Intraday Guide</a></p>
-    <p><small>Disclaimer: ट्रेडिंग जोखिम भरा है। यह जानकारी केवल शैक्षिक उद्देश्यों के लिए है।</small></p>
-  </footer>
+<div class="box">
+  <strong>👉 उदाहरण:</strong><br>
+  USD/INR (Dollar – Rupee) | EUR/USD (Euro – Dollar)
 </div>
 
-<button class="btn-copy" onclick="copyArticle()">✅ Copy Professional Article</button>
+<h2>📈 चार्ट पैटर्न को समझें (नए ट्रेडर्स के लिए)</h2>
+
+<h3>1. Horizontal Support & Resistance</h3>
+<p>जब मार्केट एक रेंज में फंस जाता है, तो ऊपर की लाइन Resistance और नीचे की Support कहलाती है।</p>
+<div class="chart-text">
+---------- Resistance (यहाँ से नीचे गिरता है) ----------
+      / \     / \     / \
+     /   \   /   \   /   \
+    /     \ /     \ /     \
+---------- Support (यहाँ से ऊपर उठता है) ----------
+</div>
+<p><strong>ट्रेड कैसे लें?</strong> जब प्राइस Resistance के ऊपर निकले और वापस उसे छूने आए (Retest), तब खरीदें।</p>
+
+<h3>2. Head and Shoulders (रिवर्सल पैटर्न)</h3>
+<p>यह पैटर्न बताता है कि मार्केट अब नीचे गिरने वाला है।</p>
+<div class="chart-text">
+         [ Head ]
+          /  \
+ [Shoulder] /    \ [Shoulder]
+    /  \   /      \   /  \
+_/_\/___\/_\__ Neckline (ब्रेक होते ही बेचें)
+</div>
+
+<h3>3. Bullish Flag Pattern (कंटिन्यूएशन)</h3>
+<p>एक बड़ी तेज़ी के बाद मार्केट थोड़ा रुकता है और फिर ऊपर भागता है।</p>
+<div class="chart-text">
+      /|  ____ 
+     / | | flag   |
+Pole/  | |____| 
+   /   |  <-- ब्रेकआउट पर खरीदें
+  /
+</div>
+
+<h2>🔹 Forex Market कैसे काम करता है?</h2>
+<p>Forex market हमेशा currency pair में trade होती है।</p>
+<p><strong>USD / INR = 83.20</strong></p>
+<ul>
+  <li>1 US Dollar = ₹83.20</li>
+  <li>अगर Dollar strong होता है → price बढ़ता है</li>
+  <li>अगर Rupee strong होता है → price घटता है</li>
+</ul>
+
+<h2>🔹 Leverage और Risk Management</h2>
+<p>Leverage का मतलब है कम पैसे से बड़ा ट्रेड करना।</p>
+<p><strong>⚠️ ज़रूरी:</strong> हमेशा 1:2 या 1:3 का रिस्क-रिवॉर्ड रेश्यो रखें। यानी अगर ₹1 का रिस्क है, तो ₹2 या ₹3 का टारगेट होना चाहिए।</p>
+
+<h2>🔹 Beginners के लिए Checklist</h2>
+<ul>
+  <li>✅ हमेशा Stop Loss लगाएं ताकि बड़ा नुकसान न हो।</li>
+  <li>✅ पहले Demo account पर प्रैक्टिस करें।</li>
+  <li>✅ इंडिया में सिर्फ INR pairs (USD/INR आदि) में ट्रेड करें।</li>
+</ul>
+
+<div id="article-content" style="display:none;">
+(यहाँ आपका पूरा टेक्स्ट कंटेंट है जिसे बटन दबाकर कॉपी किया जा सकता है)
+</div>
+
+<button onclick="copyContent()">Copy Full Article</button>
 
 <script>
-function copyArticle() {
-  const text = document.getElementById("article-content").innerText;
+function copyContent() {
+  // यह फंक्शन सिर्फ टेक्स्ट को कॉपी करेगा
+  const text = document.body.innerText;
   navigator.clipboard.writeText(text).then(() => {
-    alert("✅ प्रोफेशनल कंटेंट कॉपी हो गया!");
+    alert("✅ आर्टिकल टेक्स्ट कॉपी हो गया!");
   });
 }
 </script>
