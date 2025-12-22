@@ -3,96 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forex Trading Guide with Charts</title>
+  <title>Forex Trading Guide Hindi</title>
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.8; padding: 20px; color: #333; max-width: 800px; margin: auto; background: #f4f7f6; }
-    .content-bg { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.8; padding: 20px; color: #333; max-width: 850px; margin: auto; background: #f0f2f5; }
+    .main-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
     
-    /* Trading Chart Style */
-    .trading-chart {
-      background: #131722; /* TradingView Black Theme */
+    /* प्रोफेशनल कैंडलस्टिक चार्ट स्टाइल */
+    .trading-view-chart {
+      background: #131722;
       border-radius: 8px;
       padding: 20px;
-      margin: 20px 0;
-      position: relative;
-      height: 200px;
+      margin: 25px 0;
+      height: 250px;
       display: flex;
       align-items: flex-end;
-      gap: 8px;
+      gap: 6px;
+      position: relative;
       border: 1px solid #363a45;
+      overflow: hidden;
     }
-    .candle { width: 12px; position: relative; border-radius: 1px; }
-    .wick { position: absolute; width: 2px; background: inherit; left: 5px; }
-    
-    /* Green Candle */
-    .bull { background: #089981; }
-    /* Red Candle */
-    .bear { background: #f23645; }
+    .chart-title { position: absolute; top: 10px; left: 15px; color: #d1d4dc; font-size: 12px; font-family: monospace; }
+    .candle { width: 10px; position: relative; }
+    .wick { position: absolute; width: 2px; background: inherit; left: 4px; }
+    .bull { background: #089981; } /* Green */
+    .bear { background: #f23645; } /* Red */
+    .line-grid { position: absolute; width: 100%; height: 1px; background: rgba(255,255,255,0.05); }
 
-    .chart-label { color: #d1d4dc; font-size: 12px; position: absolute; top: 10px; left: 10px; font-family: monospace; }
-    .buy-signal { position: absolute; color: #089981; font-weight: bold; bottom: 10px; right: 20px; border: 1px solid #089981; padding: 2px 8px; border-radius: 4px; font-size: 12px; }
+    h1 { color: #1e3a8a; border-bottom: 3px solid #3b82f6; padding-bottom: 10px; }
+    .highlight { color: #ef4444; font-weight: bold; }
+    .success { color: #10b981; font-weight: bold; }
+    .section-title { background: #e0e7ff; padding: 5px 15px; border-radius: 4px; color: #1e40af; font-weight: bold; display: inline-block; margin-top: 20px; }
     
-    h1, h2 { color: #1e293b; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; }
-    .step { font-weight: bold; color: #2563eb; }
+    button { background: #1e3a8a; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-size: 16px; display: block; margin: 20px auto; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 
-<div class="content-bg" id="article-content">
-  <h1>Forex Trading क्या है? Beginners के लिए पूरी जानकारी</h1>
-  
-  <p><span class="step">🔹 Forex Trading क्या है?</span></p>
+<div class="main-card" id="article-content">
+  <h1>Forex Trading क्या है? Beginners के लिए पूरी जानकारी हिंदी में</h1>
+
+  <p><span class="section-title">🔹 Forex Trading क्या है?</span></p>
   <p>Forex Trading (Foreign Exchange Trading) एक ऐसा market है जहाँ एक देश की currency को दूसरे देश की currency से खरीदा-बेचा जाता है।</p>
 
-  <div class="trading-chart">
-    <div class="chart-label">USD/INR - H1 Chart (Uptrend)</div>
-    <div class="candle bull" style="height: 40px;"><div class="wick" style="height: 60px; top:-10px;"></div></div>
-    <div class="candle bear" style="height: 30px; bottom: 20px;"><div class="wick" style="height: 50px; top:-10px;"></div></div>
-    <div class="candle bull" style="height: 60px; bottom: 30px;"><div class="wick" style="height: 80px; top:-10px;"></div></div>
-    <div class="candle bull" style="height: 50px; bottom: 70px;"><div class="wick" style="height: 70px; top:-10px;"></div></div>
-    <div class="candle bear" style="height: 25px; bottom: 90px;"><div class="wick" style="height: 40px; top:-10px;"></div></div>
-    <div class="candle bull" style="height: 70px; bottom: 100px;"><div class="wick" style="height: 90px; top:-10px;"></div></div>
-    <div class="buy-signal">STRONG BUY ▲</div>
+  <p>👉 <strong>Example:</strong><br>
+  USD/INR (Dollar – Rupee)<br>
+  EUR/USD (Euro – Dollar)</p>
+  <p>अगर currency का price बढ़ता है → <span class="success">profit</span><br>
+  अगर घटता है → <span class="highlight">loss</span></p>
+
+  <div class="trading-view-chart">
+    <div class="chart-title">BULLISH MOMENTUM (UPTREND)</div>
+    <div class="candle bear" style="height: 40px;"><div class="wick" style="height: 60px; top:-10px;"></div></div>
+    <div class="candle bull" style="height: 60px; bottom:20px;"><div class="wick" style="height: 90px; top:-15px;"></div></div>
+    <div class="candle bull" style="height: 80px; bottom:50px;"><div class="wick" style="height: 110px; top:-15px;"></div></div>
+    <div class="candle bear" style="height: 30px; bottom:110px;"><div class="wick" style="height: 50px; top:-10px;"></div></div>
+    <div class="candle bull" style="height: 90px; bottom:120px;"><div class="wick" style="height: 130px; top:-20px;"></div></div>
+    <div style="position:absolute; bottom:20px; right:20px; color:#089981; border:1px solid #089981; padding:5px; font-size:12px;">BUY SIGNAL</div>
   </div>
 
-  <p>👉 Example: USD/INR (Dollar – Rupee) | EUR/USD (Euro – Dollar)<br>
-  अगर currency का price बढ़ता है → profit | अगर घटता है → loss</p>
+  <p><span class="section-title">🔹 Forex Market कैसे काम करता है?</span></p>
+  <p>Forex market में हमेशा currency pair में trade होती है।</p>
+  <p>📌 <strong>Example: USD / INR = 83.20</strong></p>
+  <p>इसका मतलब: 1 US Dollar = ₹83.20<br>
+  अगर Dollar strong होता है → price बढ़ता है<br>
+  अगर Rupee strong होता है → price घटता है</p>
 
-  <p><span class="step">🔹 Forex Market कैसे काम करता है?</span></p>
-  <p>Forex market में हमेशा currency pair में trade होती है। 1 US Dollar = ₹83.20। अगर Dollar strong होता है → price बढ़ता है, अगर Rupee strong होता है → price घटता है।</p>
+  <p><span class="section-title">🔹 Forex Market कब खुलता है?</span></p>
+  <p>Forex market 24 hours open रहता है।<br>
+  <strong>Major Sessions:</strong><br>
+  Asian Session | London Session | New York Session<br>
+  👉 सबसे ज़्यादा movement London + NewYork session में होती है</p>
 
-  <p><span class="step">🔹 Forex Trading में Leverage और चार्ट्स</span></p>
-  <p>ट्रेडिंग में हम "Candlestick Charts" का उपयोग करते हैं। जब मार्केट ऊपर जाता है तो हरी (Bullish) कैंडल बनती है, और जब नीचे आता है तो लाल (Bearish) कैंडल बनती है।</p>
+  <p><span class="section-title">🔹 Forex Trading के लिए क्या चाहिए?</span></p>
+  <p>Forex trading शुरू करने के लिए:<br>
+  ✅ Trading Account | ✅ Forex Broker | ✅ Internet + Mobile / PC | ✅ Basic chart knowledge | ✅ Risk management</p>
 
-  <div class="trading-chart">
-    <div class="chart-label">Support & Resistance Level</div>
-    <div style="position:absolute; width:100%; height:2px; background:rgba(242,54,69,0.5); top:40px; border-top:1px dashed red;"></div>
-    <div class="candle bull" style="height:80px; left:20px;"></div>
-    <div class="candle bear" style="height:60px; left:50px; bottom:20px;"></div>
-    <div class="candle bull" style="height:70px; left:80px; bottom:10px;"></div>
-    <div style="position:absolute; width:100%; height:2px; background:rgba(8,153,129,0.5); bottom:30px; border-top:1px dashed green;"></div>
+  <p><span class="section-title">🔹 Forex Trading के प्रकार</span></p>
+  <p><strong>1️⃣ Spot Forex Trading:</strong> Direct currency buy/sell (Beginners के लिए simple)<br>
+  <strong>2️⃣ CFD Trading:</strong> Price difference पर profit/loss (High risk)<br>
+  <strong>3️⃣ Futures Forex Trading:</strong> Fixed contract (Advanced traders के लिए)</p>
+
+  <div class="trading-view-chart">
+    <div class="chart-title">SUPPORT & RESISTANCE (SIDEWAYS)</div>
+    <div style="position:absolute; width:100%; border-top:1px dashed #f23645; top:50px; color:#f23645; font-size:10px;">RESISTANCE</div>
+    <div class="candle bull" style="height:100px; bottom:30px; left:20px;"></div>
+    <div class="candle bear" style="height:100px; bottom:30px; left:60px;"></div>
+    <div class="candle bull" style="height:100px; bottom:30px; left:100px;"></div>
+    <div style="position:absolute; width:100%; border-top:1px dashed #089981; bottom:30px; color:#089981; font-size:10px;">SUPPORT</div>
   </div>
 
-  <p><span class="step">🔹 India में Forex Trading Legal है या नहीं?</span></p>
-  <p>👉 India में Forex trading allowed है, लेकिन सिर्फ <strong>INR pairs</strong> में: USD/INR, EUR/INR, GBP/INR, JPY/INR। इंटरनेशनल ब्रोकर्स से अवैध ट्रेडिंग से बचें।</p>
+  <p><span class="section-title">🔹 Forex Trading में Leverage क्या है?</span></p>
+  <p>Leverage का मतलब होता है कम पैसे से बड़ा trade करना।<br>
+  👉 <strong>Example:</strong> अगर leverage 1:50 है तो ₹1,000 से ₹50,000 का trade possible.<br>
+  <span class="highlight">⚠️ High leverage = High risk</span></p>
 
-  <p><span class="step">🔹 Tips for Beginners</span></p>
-  <ul>
-    <li>✔ Low leverage use करो</li>
-    <li>✔ Stop Loss हमेशा लगाओ</li>
-    <li>✔ पहले demo account से practice करो</li>
-  </ul>
+  <p><span class="section-title">🔹 Forex Trading के फायदे</span></p>
+  <p>✔ 24×5 market open | ✔ High liquidity | ✔ Small capital से शुरुआत | ✔ Global market exposure</p>
 
-  <p><strong>🔗 Related Articles</strong><br>
-  👉 <a href="intraday-trading-kya-hai.html">Intraday Trading क्या है?</a><br>
+  <p><span class="section-title">🔹 Forex Trading के नुकसान</span></p>
+  <p>❌ High risk  </p>
+   <p> ❌ Beginners के लिए dangerous </p>
+   <p> ❌ Loss जल्दी हो सकता है </p>
+   <p> ❌ Emotional trading से नुकसान</p>
+
+  <p><span class="section-title">🔹 Forex Trading Beginners के लिए Tips</span></p>
+  <p>✔ Low leverage use करो | ✔ Stop Loss हमेशा लगाओ | ✔ News time में trade avoid करो | ✔ Over-trading मत करो | ✔ पहले demo account से practice करो</p>
+
+  <p><span class="section-title">🔹 India में Forex Trading Legal है या नहीं?</span></p>
+  <p>👉 India में Forex trading allowed है, लेकिन सिर्फ <strong>INR pairs</strong> में:<br>
+  ✔ USD/INR | ✔ EUR/INR | ✔ GBP/INR | ✔ JPY/INR<br>
+  ❌ International brokers से illegal trading avoid करो</p>
+
+  <p><span class="section-title">❓ FAQ – Forex Trading</span></p>
+  <p><strong>Q1. Forex Trading में कितना पैसा चाहिए?</strong><br>
+  👉 ₹5,000–₹10,000 से शुरुआत हो सकती है</p>
+  <p><strong>Q2. Forex Trading safe है?</strong><br>
+  👉 Knowledge + risk management हो तो safe है</p>
+  <p><strong>Q3. Beginners Forex कर सकते हैं?</strong><br>
+  👉 हाँ, लेकिन पहले सीखना जरूरी है</p>
+
+  <p><span class="section-title">🔹 Conclusion</span></p>
+  <p>Forex trading high profit + high risk वाला market है। अगर आप Proper learning करें, Risk control करें और Discipline रखें तो Forex में success possible है।</p>
+
+  <p><strong>🔗 Related Articles</strong></p>
+  <p>👉 <a href="intraday-trading-kya-hai.html">Intraday Trading क्या है?</a><br>
+  👉 <a href="stock-market-me-paisa-kaise-lagaye.html">Stock Market में पैसा कैसे लगाएं?</a><br>
   👉 <a href="risk-management-kya-hai.html">Risk Management क्या है?</a></p>
 
-  <p style="font-size: 12px; color: #777; border-top: 1px solid #eee; padding-top: 10px;">
-    ⚠ Disclaimer: यह जानकारी केवल educational purpose के लिए है। Forex trading में जोखिम होता है।
-  </p>
+  <p><strong>⚠ Disclaimer</strong><br>
+  <small>यह जानकारी केवल educational purpose के लिए है। Forex trading में जोखिम होता है, पहले सीखें।</small></p>
 </div>
 
-<button onclick="copyContent()" style="margin: 20px auto; display: block; padding: 10px 20px; cursor: pointer;">Copy Article Text</button>
+<button onclick="copyContent()">✅ Copy Entire Professional Article</button>
 
 <script>
 function copyContent() {
