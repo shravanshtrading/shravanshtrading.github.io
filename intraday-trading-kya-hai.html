@@ -1,206 +1,157 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Intraday Trading क्या है? पूरी जानकारी हिंदी में (Beginners Guide)</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intraday Trading क्या है? पूरी जानकारी हिंदी में</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    * {
-      box-sizing: border-box;
+    :root{
+      --primary:#2563eb;
+      --dark:#020617;
+      --light:#f8fafc;
+      --card:#ffffff;
     }
 
-    body {
-      margin: 0;
-      padding: 12px;
-      font-family: Arial, sans-serif;
-      line-height: 1.7;
-      background: #ffffff;
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+    body{
+      background:linear-gradient(180deg,#f1f5f9,#ffffff);
+      line-height:1.9;
+      color:#0f172a;
     }
 
-    .article {
-      max-width: 100%;
-      width: 100%;
+    /* Progress */
+    #progress{position:fixed;top:0;left:0;height:4px;width:0%;background:linear-gradient(90deg,#22c55e,#2563eb);z-index:2000}
+
+    header{
+      position:sticky;top:0;z-index:1000;
+      background:rgba(255,255,255,.9);
+      backdrop-filter:blur(10px);
+      padding:16px 10%;
+      display:flex;justify-content:space-between;align-items:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.06)
     }
 
-    h1, h2, h3 {
-      line-height: 1.4;
+    header h1{color:var(--primary);font-size:22px}
+
+    nav a{margin-left:20px;text-decoration:none;color:#475569;font-weight:500}
+
+    .hero{
+      padding:90px 10% 120px;
+      background:radial-gradient(circle at top,#2563eb,#020617);
+      color:white;text-align:center
     }
 
-    p {
-      font-size: 16px;
-      word-break: break-word;
+    .hero h2{font-size:40px;margin-bottom:14px}
+    .hero p{max-width:750px;margin:auto;font-size:18px}
+
+    .container{
+      max-width:950px;
+      margin:-70px auto 0;
+      background:var(--card);
+      padding:50px 40px;
+      border-radius:18px;
+      box-shadow:0 30px 70px rgba(0,0,0,.12)
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
+    h1,h2,h3{margin-top:30px;color:#1e293b}
+    p{margin-top:12px;font-size:16.5px}
+    ul{margin-top:14px;padding-left:24px}
+    li{margin-bottom:10px}
+
+    .box{
+      background:#eef2ff;
+      border-left:6px solid var(--primary);
+      padding:18px;
+      margin:28px 0;
+      border-radius:10px
     }
 
-    footer {
-      margin-top: 30px;
-      text-align: center;
-      font-size: 14px;
-      color: #555;
+    footer{
+      margin-top:80px;
+      background:#020617;
+      color:#cbd5f5;
+      text-align:center;
+      padding:25px
     }
 
-    /* MOBILE FIX */
-    @media (max-width: 768px) {
-      body {
-        padding: 10px;
-      }
-
-      h1 {
-        font-size: 22px;
-      }
-
-      h2 {
-        font-size: 18px;
-      }
-
-      p {
-        font-size: 16px;
-      }
+    @media(max-width:768px){
+      .hero h2{font-size:30px}
+      .container{padding:35px 20px}
     }
   </style>
 </head>
 <body>
 
-<div class="article" id="article-content">
-  <h1>🔹 Intraday Trading क्या है?</h1>
-  
-  <p>
-  Intraday Trading का मतलब होता है एक ही दिन में शेयर को खरीदना और उसी दिन बेचना।
-  इसमें कोई भी पोज़िशन अगले दिन के लिए होल्ड नहीं की
-  जाती।
-  </p>
+<div id="progress"></div>
 
-  <h1>👉 आसान शब्दों में:</h1>
-  <p>सुबह खरीदा → शाम को बेचा = Intraday Trading</p>
+<header>
+  <h1>StockMarketHindi</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Guide</a>
+    <a href="#">Blog</a>
+  </nav>
+</header>
 
-  <h1>🔹 Intraday Trading कैसे काम करती है?</h1>
+<section class="hero">
+  <h2>Intraday Trading क्या है?</h2>
+  <p>Beginners के लिए पूरी जानकारी – फायदे, नुकसान, tips और risk management</p>
+</section>
 
-  <p>Intraday trading में ट्रेडर:</p>
-  <p>Price movement</p>
-  <p>Chart patterns</p>
-  <p>Support & Resistance</p>
-  <p>Market trend</p>
-  <p>के आधार पर छोटे प्रॉफिट कमाने की कोशिश करता है।</p>
-  
-  <h1>
-  📊 उदाहरण:
-  अगर आपने Reliance का शेयर ₹2500 पर खरीदा
-  और ₹2515 पर बेच दिया
-  तो ₹15 का प्रॉफिट (quantity के हिसाब से)
-  </h1>
+<div class="container" id="article-content">
 
-  <h1>🔹 Intraday Trading के लिए क्या चाहिए?</h1>
+<h1>🔹 Intraday Trading क्या है?</h1>
+<p>Intraday Trading का मतलब होता है एक ही दिन में शेयर को खरीदना और उसी दिन बेचना। इसमें कोई भी पोज़िशन अगले दिन के लिए होल्ड नहीं की जाती।</p>
 
-  <p>Intraday trading शुरू करने के लिए आपको चाहिए:</p>
-  
-  <ul>
-    <li>✅ Demat Account</li>
-    <li>✅ Trading Account</li>
-    <li>✅ Trading App (Zerodha, Groww, Upstox)</li>
-    <li>✅ Basic chart knowledge</li>
-    <li>✅ Discipline & Patience</li>
-  </ul>  
+<h1>👉 आसान शब्दों में:</h1>
+<p>सुबह खरीदा → शाम को बेचा = Intraday Trading</p>
 
-  <h1>🔹 Intraday Trading के प्रकार</h1>
-  <h1>1️⃣ Equity Intraday</h1>
-  <p>Shares में same-day trading</p>
-  <p>Beginners के लिए best</p>
+<h1>🔹 Intraday Trading कैसे काम करती है?</h1>
+<p>Intraday trading में ट्रेडर:</p>
+<p>Price movement</p>
+<p>Chart patterns</p>
+<p>Support & Resistance</p>
+<p>Market trend</p>
+<p>के आधार पर छोटे प्रॉफिट कमाने की कोशिश करता है।</p>
 
-  <h1>2️⃣ Index Intraday</h1>
-  <p>NIFTY / BANKNIFTY High risk – high reward</p>
+<div class="box">📊 उदाहरण: अगर आपने Reliance का शेयर ₹2500 पर खरीदा और ₹2515 पर बेच दिया तो ₹15 का प्रॉफिट</div>
 
-  <h1>3️⃣ Commodity Intraday</h1>
-  <p>Gold, Silver, Crude Oil</p>
-  <p>Experience जरूरी</p>
-  
-  <h1>🔹 Intraday Trading में Profit कैसे होता है?</h1>
-  <p>Profit होता है:</p>
-  <p>सही entry</p>
-  <p>सही exit</p>
-  <p>Stop Loss 📌 बिना Stop Loss intraday करना सबसे बड़ी गलती है।</p>
+<h1>🔹 Intraday Trading के लिए क्या चाहिए?</h1>
+<ul>
+<li>✅ Demat Account</li>
+<li>✅ Trading Account</li>
+<li>✅ Trading App</li>
+<li>✅ Basic chart knowledge</li>
+<li>✅ Discipline & Patience</li>
+</ul>
 
-  <h2>🔹 Stop Loss क्या है?</h2>
-  <p>Stop Loss वो level होता है जहाँ नुकसान होने से पहले trade बंद कर दी जाती है।</p>
-  <p>👉 Example: </p>
-  <p>Buy price: ₹100 </p>
-  <p>Stop loss: ₹97 </p>
-  <p>Maximum loss: ₹3 </p>
+<h2>🔹 Intraday Trading के फायदे</h2>
+<p>✔ Quick profit</p>
+<p>✔ Small capital se start</p>
 
-  <h2>🔹 Intraday Trading के फायदे</h2>
-  <p>✔ Quick profit </p>
-  <p>✔ Long-term holding नहीं </p>
-  <p>✔ Small capital से शुरुआत </p>
-  <p>✔ Daily opportunity </p>
+<h2>🔹 Intraday Trading के नुकसान</h2>
+<ul>
+<li>❌ High risk</li>
+<li>❌ Beginners ke liye difficult</li>
+</ul>
 
-  <h2>🔹 Intraday Trading के नुकसान</h2>
-  <ul>
-    <li>❌ High risk</li>
-    <li>❌ Emotional trading</li>
-    <li>❌ Loss जल्दी हो सकता है</li>
-    <li>❌ Beginners के लिए मुश्किल</li>
-  </ul>
+<h3>🔹 Conclusion</h3>
+<p>Intraday trading profit ke sath high risk bhi lata hai. Seekh kar aur discipline ke sath hi trade karein.</p>
 
-  <h3>🔹 Beginners के लिए Intraday Trading Tips</h3>
-  <ul>
-    <li>✔ हमेशा Stop Loss लगाओ</li>
-    <li>✔ Over-trading मत करो </li>
-    <li>✔ News के समय trade avoid करो </li>
-    <li>✔ पहले paper trading करो </li>
-    <li>✔ One stock, one trade </li>
-  </ul>
-
-  <h3>🔹 Intraday Trading vs Delivery Trading</h3>
-  <p>Intraday | Delivery</p>
-  <p>Same day buy-sell | Long term hold</p>
-  <p>High risk | Low risk</p>
-  <p>Quick profit | Slow growth</p>
-   
-  <h3>🔹 Intraday Trading किसके लिए सही है?</h3>
-  <p>✔ Full time traders</p>
-  <p>✔ Chart सीखने वाले</p>
-  <p>✔ Risk लेने वाले</p>
-  <p>❌ Beginners बिना knowledge</p>
-  <p>❌ Emotional लोग</p>
-
-  <h3>❓ FAQ – Intraday Trading</h3>
-  <p>Q1. Intraday Trading में कितना पैसा चाहिए?</p>
-  <p>👉 ₹5,000–₹10,000 से शुरुआत हो सकती है।</p>
-  <p>Q2. क्या intraday trading safe है?</p>
-  <p>👉 Knowledge और discipline हो तो safe है।</p>
-  <p>Q3. Beginners intraday कर सकते हैं?</p>
-  <p>👉 हाँ, लेकिन पहले सीखना जरूरी है।</p>
-
-  <h3>🔹 Conclusion</h3>
-  <p>  
-  Intraday trading profit देने वाला लेकिन risky तरीका है।
-  अगर आप सीखकर, discipline के साथ trade करेंगे
-  तो long term में success possible है।
-  </p>
-
-  <p>🔗 Related Articles</p>
-  <ul>
-    <li><a href="stock-market-kya-hai.html">👉 Stock Market क्या है?</a></li>
-    <li><a href="trading-vs-investing-kya-hai.html">👉 Trading vs Investing क्या है?</a></li>
-    <li><a href="Risk-management-kya-hai.html">👉 Risk Management क्या है?</a></li>
-  </ul>
-
-  <p>⚠ Disclaimer</p>
-  <p>यह जानकारी केवल educational purpose के लिए है। Stock Market में निवेश जोखिम के अधीन है।</p>
 </div>
 
-<button onclick="copyArticle()">Copy Content</button>
+<footer>© 2025 StockMarketHindi | All Rights Reserved</footer>
 
 <script>
-function copyArticle() {
-  const text = document.getElementById("article-content").innerText;
-  navigator.clipboard.writeText(text).then(() => {
-    alert("✅ Article Copied Successfully!");
-  });
-}
+window.addEventListener('scroll',()=>{
+ const sc=document.documentElement.scrollTop;
+ const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+ document.getElementById('progress').style.width=(sc/h)*100+'%';
+});
 </script>
 
 </body>
