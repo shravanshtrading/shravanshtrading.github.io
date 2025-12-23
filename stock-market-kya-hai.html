@@ -1,107 +1,181 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <title>Stock Market क्या है? पूरी जानकारी हिंदी में</title>
-  <meta name="description" content="Stock Market क्या है, कैसे काम करता है, जोखिम क्या हैं और beginners को क्या जानना चाहिए – पूरी जानकारी हिंदी में।">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Stock Market क्या है? पूरी जानकारी हिंदी में</title>
+<meta name="description" content="Stock Market क्या है, कैसे काम करता है, जोखिम क्या हैं और beginners को क्या जानना चाहिए – पूरी जानकारी हिंदी में।">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --primary:#2563eb;
-      --dark:#020617;
-      --light:#f8fafc;
-      --card:#ffffff;
-    }
+<style>
+:root{
+  --primary:#2563eb;
+  --accent:#22c55e;
+  --dark:#020617;
+  --light:#f8fafc;
+  --card:#ffffff;
+}
 
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 
-    body{
-      background:linear-gradient(180deg,#f1f5f9,#ffffff);
-      line-height:1.9;
-      color:#0f172a;
-    }
+body{
+  background:linear-gradient(180deg,#f1f5f9,#ffffff);
+  line-height:1.9;
+  color:#0f172a;
+}
 
-    /* Progress Bar */
-    #progress{position:fixed;top:0;left:0;height:4px;width:0%;background:linear-gradient(90deg,#22c55e,#2563eb);z-index:2000}
+/* Progress Bar */
+#progress{
+  position:fixed;
+  top:0;left:0;
+  height:4px;
+  width:0%;
+  background:linear-gradient(90deg,var(--accent),var(--primary));
+  z-index:3000;
+}
 
-    header{
-      position:sticky;top:0;z-index:1000;
-      background:rgba(255,255,255,.9);
-      backdrop-filter:blur(10px);
-      padding:16px 10%;
-      display:flex;justify-content:space-between;align-items:center;
-      box-shadow:0 10px 30px rgba(0,0,0,.06)
-    }
+/* Header */
+header{
+  position:sticky;
+  top:0;
+  z-index:2000;
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(12px);
+  padding:16px 10%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
 
-    header h1{color:var(--primary);font-size:22px}
+header h1{
+  font-size:22px;
+  font-weight:700;
+  color:var(--primary);
+}
 
-    nav a{margin-left:20px;text-decoration:none;color:#475569;font-weight:500}
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:#475569;
+  font-weight:500;
+}
 
-    .hero{
-      padding:90px 10% 120px;
-      background:radial-gradient(circle at top,#2563eb,#020617);
-      color:white;text-align:center
-    }
+/* Hero */
+.hero{
+  position:relative;
+  padding:100px 10% 140px;
+  background:radial-gradient(circle at top,#2563eb,#020617);
+  text-align:center;
+  color:#fff;
+}
 
-    .hero h2{font-size:40px;margin-bottom:14px}
-    .hero p{max-width:760px;margin:auto;font-size:18px}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.4);
+}
 
-    .container{
-      max-width:900px;
-      margin:-70px auto 0;
-      background:var(--card);
-      padding:50px 40px;
-      border-radius:18px;
-      box-shadow:0 30px 70px rgba(0,0,0,.12)
-    }
+.hero *{
+  position:relative;
+  z-index:2;
+}
 
-    h1,h2,h3{margin-top:30px;color:#1e293b}
-    h2{border-left:6px solid var(--primary);padding-left:12px}
-    p{margin-top:12px;font-size:16.5px;color:#334155}
-    ul{margin-top:14px;padding-left:24px}
-    li{margin-bottom:10px}
+.hero h2{
+  font-size:44px;
+  font-weight:700;
+  margin-bottom:16px;
+}
 
-    .highlight{
-      background:#eef2ff;
-      border-left:6px solid var(--primary);
-      padding:18px;
-      margin:28px 0;
-      border-radius:10px
-    }
+.hero p{
+  max-width:780px;
+  margin:auto;
+  font-size:18px;
+  color:#e5e7eb;
+}
 
-    footer{
-      margin-top:80px;
-      background:#020617;
-      color:#cbd5f5;
-      text-align:center;
-      padding:25px
-    }
+/* Main Card */
+.container{
+  max-width:900px;
+  margin:-90px auto 0;
+  background:var(--card);
+  padding:55px 45px;
+  border-radius:20px;
+  box-shadow:0 35px 80px rgba(0,0,0,.15);
+}
 
-    @media(max-width:768px){
-      .hero h2{font-size:30px}
-      .container{padding:35px 20px}
-    }
-  </style>
+h1,h2,h3{
+  margin-top:34px;
+  color:#1e293b;
+}
+
+h2{
+  border-left:6px solid var(--primary);
+  padding-left:14px;
+}
+
+p{
+  margin-top:14px;
+  font-size:16.8px;
+  color:#334155;
+}
+
+ul{
+  margin-top:14px;
+  padding-left:26px;
+}
+
+li{
+  margin-bottom:10px;
+}
+
+/* Highlight */
+.highlight{
+  margin:30px 0;
+  padding:20px;
+  background:linear-gradient(135deg,#eef2ff,#ffffff);
+  border-left:6px solid var(--primary);
+  border-radius:12px;
+}
+
+/* Footer */
+footer{
+  margin-top:90px;
+  background:var(--dark);
+  color:#cbd5f5;
+  text-align:center;
+  padding:30px;
+  font-size:14px;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  header{padding:14px 6%}
+  .hero h2{font-size:30px}
+  .hero p{font-size:16px}
+  .container{padding:35px 22px}
+}
+</style>
 </head>
+
 <body>
 
 <div id="progress"></div>
 
 <header>
-  <h1>Shravansh Trading</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Guide</a>
-    <a href="#">Blog</a>
-  </nav>
+<h1>Shravansh Trading</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#">Guide</a>
+<a href="#">Blog</a>
+</nav>
 </header>
 
 <section class="hero">
-  <h2>Stock Market क्या है?</h2>
-  <p>Beginners के लिए आसान, भरोसेमंद और पूरी जानकारी – हिंदी में</p>
+<h2>Stock Market क्या है?</h2>
+<p>Beginners के लिए आसान, भरोसेमंद और पूरी जानकारी – हिंदी में</p>
 </section>
 
 <div class="container">
@@ -111,38 +185,17 @@
 <p>Stock Market एक ऐसा market है जहाँ कंपनियों के shares खरीदे और बेचे जाते हैं। यह लेख केवल <strong>शैक्षिक उद्देश्य</strong> के लिए लिखा गया है।</p>
 
 <h2>Stock Market का मतलब</h2>
-<p>Stock Market का मतलब है ऐसा बाजार जहाँ listed companies के शेयर investors आपस में खरीदते और बेचते हैं। जब कोई व्यक्ति किसी कंपनी का शेयर खरीदता है, तो वह उस कंपनी का एक छोटा सा हिस्सा खरीदता है।</p>
+<p>Stock Market का मतलब है ऐसा बाजार जहाँ listed companies के शेयर investors आपस में खरीदते और बेचते हैं।</p>
 
 <h2>Stock Market कैसे काम करता है</h2>
-<p>Stock Market demand और supply पर काम करता है। जब किसी कंपनी के shares की demand बढ़ती है तो उसका price बढ़ता है और जब demand घटती है तो price गिरता है।</p>
+<p>Stock Market demand और supply पर काम करता है। demand बढ़ने पर price बढ़ता है और demand घटने पर price गिरता है।</p>
 
-<p>भारत में मुख्य stock exchanges हैं:</p>
 <ul>
 <li>BSE (Bombay Stock Exchange)</li>
 <li>NSE (National Stock Exchange)</li>
 </ul>
 
-<h2>Stock Market में कौन-कौन भाग लेता है</h2>
-<p>Stock Market में अलग-अलग प्रकार के participants होते हैं:</p>
-<ul>
-<li>Retail Investors</li>
-<li>Institutional Investors</li>
-<li>Traders</li>
-<li>Brokers</li>
-</ul>
-
-<h2>Stock Market में Risk</h2>
-<p>Stock Market में निवेश जोखिम से भरा होता है। Prices कई कारणों से ऊपर-नीचे होते रहते हैं जैसे:</p>
-<ul>
-<li>Company performance</li>
-<li>Economic conditions</li>
-<li>Global news</li>
-<li>Market sentiment</li>
-</ul>
-<p>इसलिए बिना जानकारी के निवेश करना नुकसानदायक हो सकता है।</p>
-
 <h2>Beginners के लिए जरूरी बातें</h2>
-<p>जो लोग Stock Market सीखना चाहते हैं, उन्हें पहले basics समझने चाहिए।</p>
 <ul>
 <li>Risk management सीखें</li>
 <li>Emotions control में रखें</li>
@@ -150,14 +203,15 @@
 <li>जल्दी पैसे कमाने के लालच से बचें</li>
 </ul>
 
-<h2>निष्कर्ष</h2>
-<p>Stock Market long-term wealth creation का एक जरिया हो सकता है, लेकिन इसके लिए सही ज्ञान और धैर्य जरूरी है। यह वेबसाइट केवल शिक्षा प्रदान करती है, किसी भी प्रकार की financial advice नहीं देती।</p>
-
-<div class="highlight"><strong>Disclaimer:</strong> Stock Market investments are subject to market risks.</div>
+<div class="highlight">
+<strong>Disclaimer:</strong> Stock Market investments are subject to market risks.
+</div>
 
 </div>
 
-<footer>© 2025 Shravansh Trading | All Rights Reserved</footer>
+<footer>
+© 2025 Shravansh Trading | All Rights Reserved
+</footer>
 
 <script>
 window.addEventListener('scroll',()=>{
