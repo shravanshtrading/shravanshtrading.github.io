@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>Stock Market में Greeks क्या होते हैं? | पूरी जानकारी हिंदी में</title>
+<meta name="description" content="Options Trading में Greeks क्या होते हैं? Delta, Gamma, Theta, Vega, Rho को आसान हिंदी में समझें।">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#ffffff;
+  color:#0f172a;
+  line-height:1.85;
+}
+
+/* ===== HERO BANNER ===== */
+.hero{
+  background:linear-gradient(135deg,#0b1e3f,#2563eb,#020617);
+  padding:90px 16px 110px;
+  text-align:center;
+  color:#ffffff;
+}
+
+.hero-inner{
+  max-width:920px;
+  margin:auto;
+}
+
+.hero h1{
+  font-size:40px;
+  font-weight:700;
+  line-height:1.3;
+  margin-bottom:12px;
+}
+
+.hero p{
+  font-size:18px;
+  color:#e5e7eb;
+}
+
+/* ===== ARTICLE ===== */
+.article{
+  max-width:920px;
+  margin:-60px auto 0;
+  padding:22px 16px;
+  background:#ffffff;
+}
+
+.article h2{
+  margin-top:36px;
+  font-size:22px;
+  border-left:5px solid #2563eb;
+  padding-left:12px;
+}
+
+.article p{
+  margin-top:14px;
+  font-size:16.5px;
+}
+
+.article ul{
+  margin-top:14px;
+  padding-left:22px;
+}
+
+.article li{
+  margin-bottom:10px;
+  font-size:16.3px;
+}
+
+.article table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+}
+
+.article th,
+.article td{
+  border:1px solid #e5e7eb;
+  padding:10px;
+  text-align:center;
+}
+
+.article th{
+  background:#f1f5f9;
+  font-weight:600;
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media(max-width:768px){
+  .hero{
+    padding:60px 14px 70px;
+  }
+  .hero h1{
+    font-size:26px;
+  }
+  .hero p{
+    font-size:15.5px;
+  }
+  .article{
+    margin:0 auto;
+    padding:18px 14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Stock Market में Greeks क्या होते हैं?</h1>
+    <p>Options Trading की पूरी सच्चाई – Delta, Gamma, Theta, Vega, Rho</p>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<div class="article">
+
+<h2>Greeks का परिचय</h2>
+<p>Stock Market में Greeks ऐसे माप (Measurements) होते हैं, जो यह बताते हैं कि Option की कीमत किन-किन कारणों से और कितनी बदलती है।</p>
+
+<p>Greeks का उपयोग मुख्य रूप से Options Trading में किया जाता है। इनकी मदद से Trader यह समझ पाता है कि:</p>
+
+<ul>
+<li>शेयर की कीमत बदलने पर Option का क्या असर होगा</li>
+<li>समय बीतने पर Option कितना घटेगा</li>
+<li>Volatility बढ़ने या घटने से क्या फर्क पड़ेगा</li>
+</ul>
+
+<p><strong>👉 सरल शब्दों में:</strong><br>
+Greeks = Option Risk को मापने का तरीका</p>
+
+<h2>Greeks क्यों ज़रूरी होते हैं?</h2>
+<p>Options Trading में Risk बहुत ज्यादा होता है। Greeks की मदद से Trader:</p>
+
+<ul>
+<li>Loss को कंट्रोल कर सकता है</li>
+<li>सही Entry और Exit ले सकता है</li>
+<li>बिना अंदाज़े के, Data के आधार पर ट्रेड करता है</li>
+</ul>
+
+<p><strong>👉 जो Trader Greeks नहीं समझता, वह Options में लंबे समय तक टिक नहीं पाता।</strong></p>
+
+<h2>Options Trading में मुख्य Greeks कौन-कौन से हैं?</h2>
+<p>Options Market में 5 प्रमुख Greeks होते हैं:</p>
+
+<ul>
+<li>Delta</li>
+<li>Gamma</li>
+<li>Theta</li>
+<li>Vega</li>
+<li>Rho</li>
+</ul>
+
+<p>अब इन्हें एक-एक करके आसान भाषा में समझते हैं।</p>
+
+<h2>1. Delta (Δ) क्या होता है?</h2>
+<p>Delta यह बताता है कि:</p>
+
+<ul>
+<li>Share की कीमत 1 रुपये बदलने पर Option की कीमत कितनी बदलेगी</li>
+</ul>
+
+<p><strong>Delta की Value:</strong></p>
+<ul>
+<li>Call Option → 0 से +1</li>
+<li>Put Option → 0 से −1</li>
+</ul>
+
+<p><strong>उदाहरण:</strong><br>
+Delta = 0.50<br>
+Share Price = +₹1<br>
+Option Price = +₹0.50</p>
+
+<p>👉 मतलब Call Option शेयर के साथ ऊपर जाएगा।</p>
+
+<p><strong>Delta का उपयोग:</strong></p>
+<ul>
+<li>Option कितना Risky है</li>
+<li>Option ITM, ATM या OTM है</li>
+<li>Hedge करने में मदद</li>
+</ul>
+
+<h2>2. Gamma (Γ) क्या होता है?</h2>
+<p>Gamma यह बताता है कि:</p>
+<ul>
+<li>Delta कितनी तेजी से बदलेगा</li>
+</ul>
+
+<p><strong>आसान भाषा में:</strong><br>
+Delta का Delta = Gamma</p>
+
+<p><strong>उदाहरण:</strong><br>
+Delta = 0.50<br>
+Gamma = 0.10<br>
+नया Delta = 0.60</p>
+
+<p>👉 Gamma ज्यादा हो तो Option बहुत तेजी से move करता है।</p>
+
+<p><strong>Gamma कब ज्यादा होता है?</strong></p>
+<ul>
+<li>ATM (At The Money) Options में</li>
+<li>Expiry के पास</li>
+</ul>
+
+<h2>3. Theta (Θ) क्या होता है?</h2>
+<p>Theta यह बताता है कि:</p>
+<ul>
+<li>हर दिन समय बीतने से Option की कीमत कितनी घटेगी</li>
+</ul>
+
+<p>👉 इसे Time Decay भी कहते हैं।</p>
+
+<p><strong>उदाहरण:</strong><br>
+Theta = −5<br>
+हर दिन Option की कीमत ₹5 घटेगी</p>
+
+<p><strong>Theta सबसे ज्यादा कब असर करता है?</strong></p>
+<ul>
+<li>Expiry के पास</li>
+<li>Option Buyers के लिए नुकसान</li>
+<li>Option Sellers के लिए फायदा</li>
+</ul>
+
+<p><strong>👉 “Time is enemy of Option Buyer”</strong></p>
+
+<h2>4. Vega (ν) क्या होता है?</h2>
+<p>Vega यह बताता है कि:</p>
+<ul>
+<li>Volatility 1% बदलने पर Option की कीमत कितनी बदलेगी</li>
+</ul>
+
+<p><strong>उदाहरण:</strong><br>
+Vega = 10<br>
+Volatility = +1%<br>
+Option Price = +₹10</p>
+
+<p><strong>Vega कब ज्यादा होता है?</strong></p>
+<ul>
+<li>High Volatility Market</li>
+<li>Event से पहले (Result, Budget)</li>
+</ul>
+
+<p>👉 Volatility बढ़े → Option महँगा<br>
+👉 Volatility घटे → Option सस्ता</p>
+
+<h2>5. Rho (ρ) क्या होता है?</h2>
+<p>Rho यह बताता है कि:</p>
+<ul>
+<li>Interest Rate बदलने से Option की कीमत पर क्या असर पड़ेगा</li>
+</ul>
+
+<p><strong>Rho का असर:</strong></p>
+<ul>
+<li>Interest Rate ↑ → Call Option ↑</li>
+<li>Interest Rate ↑ → Put Option ↓</li>
+</ul>
+
+<p>👉 भारत में Rho का असर बहुत कम होता है।</p>
+
+<h2>Greeks का सारांश (Table)</h2>
+<table>
+<tr>
+<th>Greek</th>
+<th>क्या बताता है</th>
+</tr>
+<tr>
+<td>Delta</td>
+<td>Price Change</td>
+</tr>
+<tr>
+<td>Gamma</td>
+<td>Delta Change</td>
+</tr>
+<tr>
+<td>Theta</td>
+<td>Time Decay</td>
+</tr>
+<tr>
+<td>Vega</td>
+<td>Volatility Effect</td>
+</tr>
+<tr>
+<td>Rho</td>
+<td>Interest Rate Effect</td>
+</tr>
+</table>
+
+<h2>Beginners के लिए Greeks कैसे इस्तेमाल करें?</h2>
+<ul>
+<li>Delta से Direction समझें</li>
+<li>Theta से Expiry का असर देखें</li>
+<li>Vega से Volatility का ध्यान रखें</li>
+<li>High Gamma में सावधानी रखें</li>
+</ul>
+
+<p><strong>👉 बिना Greeks समझे Options Trading करना जुआ खेलने जैसा है।</strong></p>
+
+<h2>Greeks और Risk Management</h2>
+<p>Greeks Trader को यह सिखाते हैं:</p>
+<ul>
+<li>कितना Risk लेना है</li>
+<li>कब Exit करना है</li>
+<li>Option Buy करें या Sell</li>
+</ul>
+
+<p><strong>👉 Professional Trader हमेशा Greeks देखकर ही ट्रेड करता है।</strong></p>
+
+<h2>निष्कर्ष (Conclusion)</h2>
+<p>Greeks Options Trading की रीढ़ (Backbone) हैं। जो Trader Greeks समझ लेता है, वह:</p>
+
+<ul>
+<li>Loss कम करता है</li>
+<li>Decision बेहतर लेता है</li>
+<li>Long Term में Profit में रहता है</li>
+</ul>
+
+<p><strong>“Options Trading में Profit Strategy से नहीं, Greeks की समझ से आता है।”</strong></p>
+
+</div>
+
+</body>
+</html>
