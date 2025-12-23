@@ -1,211 +1,226 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <title>Stock Market क्या है? पूरी जानकारी हिंदी में | Shravansh Trading</title>
-  <meta name="description" content="Stock Market क्या है, कैसे काम करता है, जोखिम क्या हैं और beginners को क्या जानना चाहिए – पूरी जानकारी हिंदी में।">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Stock Market क्या है? पूरी जानकारी हिंदी में</title>
+<meta name="description" content="Stock Market क्या है, कैसे काम करता है, जोखिम क्या हैं और beginners को क्या जानना चाहिए – पूरी जानकारी हिंदी में।">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-      font-family:'Poppins',sans-serif;
-    }
+<style>
+:root{
+  --primary:#1d4ed8;
+  --bg:#f8fafc;
+  --text:#0f172a;
+  --muted:#475569;
+  --card:#ffffff;
+}
 
-    body{
-      background:linear-gradient(180deg,#f1f5f9,#ffffff);
-      color:#0f172a;
-      line-height:1.9;
-      padding:0;
-    }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 
-    /* HERO */
-    .hero{
-      padding:80px 8% 110px;
-      background:radial-gradient(circle at top,#2563eb,#020617);
-      text-align:center;
-      color:#ffffff;
-      position:relative;
-    }
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.85;
+}
 
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,.35);
-    }
+/* Sticky Header */
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #e5e7eb;
+}
 
-    .hero *{
-      position:relative;
-      z-index:2;
-    }
+.header-inner{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    .hero h1{
-      font-size:38px;
-      font-weight:700;
-      margin-bottom:14px;
-    }
+header h1{
+  font-size:20px;
+  font-weight:700;
+  color:var(--primary);
+}
 
-    /* ARTICLE CARD */
-    .article{
-      max-width:900px;
-      margin:-80px auto 0;
-      background:#ffffff;
-      padding:50px 40px;
-      border-radius:20px;
-      box-shadow:0 30px 70px rgba(0,0,0,.12);
-    }
+nav a{
+  margin-left:18px;
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:500;
+}
 
-    h1,h2,h3{
-      color:#1e293b;
-      margin-top:32px;
-      line-height:1.4;
-    }
+/* Hero */
+.hero{
+  padding:70px 20px 110px;
+  background:linear-gradient(135deg,#1d4ed8,#020617);
+  color:#fff;
+  text-align:center;
+}
 
-    h2{
-      border-left:6px solid #2563eb;
-      padding-left:14px;
-    }
+.hero h2{
+  font-size:42px;
+  font-weight:700;
+  max-width:800px;
+  margin:0 auto;
+}
 
-    p{
-      font-size:16.8px;
-      margin-top:14px;
-      color:#334155;
-      word-break:break-word;
-    }
+/* Main Article */
+.article-wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:0 20px;
+}
 
-    ul{
-      margin-top:14px;
-      padding-left:26px;
-    }
+.article{
+  max-width:820px;
+  margin:-80px auto 0;
+  background:var(--card);
+  padding:50px 42px;
+  border-radius:18px;
+  box-shadow:0 25px 60px rgba(0,0,0,.12);
+}
 
-    li{
-      margin-bottom:10px;
-      font-size:16.5px;
-      color:#334155;
-    }
+/* Typography */
+.article p{
+  font-size:16.8px;
+  margin-top:16px;
+  color:#334155;
+}
 
-    .disclaimer{
-      margin-top:30px;
-      padding:18px;
-      background:#eef2ff;
-      border-left:6px solid #2563eb;
-      border-radius:10px;
-      font-size:15.5px;
-    }
+.article h1{
+  font-size:28px;
+  margin-bottom:20px;
+}
 
-    footer{
-      margin-top:80px;
-      padding:25px;
-      text-align:center;
-      background:#020617;
-      color:#cbd5f5;
-      font-size:14px;
-    }
+.article h2{
+  margin-top:40px;
+  font-size:22px;
+  border-left:5px solid var(--primary);
+  padding-left:14px;
+}
 
-    /* MOBILE */
-    @media(max-width:768px){
-      .hero h1{
-        font-size:26px;
-      }
-      .article{
-        padding:30px 20px;
-        margin:-60px 10px 0;
-      }
-      p,li{
-        font-size:16px;
-      }
-    }
-  </style>
+.article ul{
+  margin-top:14px;
+  padding-left:26px;
+}
+
+.article li{
+  margin-bottom:10px;
+  font-size:16.5px;
+  color:#334155;
+}
+
+/* Highlight / Disclaimer */
+.highlight{
+  margin-top:40px;
+  padding:20px;
+  background:#eef2ff;
+  border-left:6px solid var(--primary);
+  border-radius:12px;
+  font-size:15.5px;
+}
+
+/* Footer */
+footer{
+  margin-top:90px;
+  padding:30px;
+  background:#020617;
+  color:#cbd5f5;
+  text-align:center;
+  font-size:14px;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .hero h2{font-size:28px}
+  .article{
+    padding:32px 22px;
+    margin-top:-60px;
+  }
+}
+</style>
 </head>
 
 <body>
 
+<header>
+  <div class="header-inner">
+    <h1>Shravansh Trading</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Guide</a>
+      <a href="#">Blog</a>
+    </nav>
+  </div>
+</header>
+
 <section class="hero">
-  <h1>Stock Market क्या है? पूरी जानकारी हिंदी में</h1>
+  <h2>Stock Market क्या है? पूरी जानकारी हिंदी में</h2>
 </section>
 
+<div class="article-wrap">
 <div class="article">
 
-<p>
-Stock Market एक ऐसा market है जहाँ कंपनियों के shares खरीदे और बेचे जाते हैं।
-यह लेख केवल <strong>शैक्षिक उद्देश्य</strong> के लिए लिखा गया है।
-</p>
+<h1>Stock Market क्या है? पूरी जानकारी हिंदी में</h1>
+
+<p>Stock Market एक ऐसा market है जहाँ कंपनियों के shares खरीदे और बेचे जाते हैं। यह लेख केवल <strong>शैक्षिक उद्देश्य</strong> के लिए लिखा गया है।</p>
 
 <h2>Stock Market का मतलब</h2>
-<p>
-Stock Market का मतलब है ऐसा बाजार जहाँ listed companies के शेयर investors
-आपस में खरीदते और बेचते हैं। जब कोई व्यक्ति किसी कंपनी का शेयर खरीदता है,
-तो वह उस कंपनी का एक छोटा सा हिस्सा खरीदता है।
-</p>
+<p>Stock Market का मतलब है ऐसा बाजार जहाँ listed companies के शेयर investors आपस में खरीदते और बेचते हैं। जब कोई व्यक्ति किसी कंपनी का शेयर खरीदता है, तो वह उस कंपनी का एक छोटा सा हिस्सा खरीदता है।</p>
 
 <h2>Stock Market कैसे काम करता है</h2>
-<p>
-Stock Market demand और supply पर काम करता है। जब किसी कंपनी के shares की
-demand बढ़ती है तो उसका price बढ़ता है और जब demand घटती है तो price गिरता है।
-</p>
+<p>Stock Market demand और supply पर काम करता है। जब किसी कंपनी के shares की demand बढ़ती है तो उसका price बढ़ता है और जब demand घटती है तो price गिरता है।</p>
 
-<p>
-भारत में मुख्य stock exchanges हैं:
-</p>
+<p>भारत में मुख्य stock exchanges हैं:</p>
 <ul>
-  <li>BSE (Bombay Stock Exchange)</li>
-  <li>NSE (National Stock Exchange)</li>
+<li>BSE (Bombay Stock Exchange)</li>
+<li>NSE (National Stock Exchange)</li>
 </ul>
 
 <h2>Stock Market में कौन-कौन भाग लेता है</h2>
-<p>
-Stock Market में अलग-अलग प्रकार के participants होते हैं:
-</p>
+<p>Stock Market में अलग-अलग प्रकार के participants होते हैं:</p>
 <ul>
-  <li>Retail Investors</li>
-  <li>Institutional Investors</li>
-  <li>Traders</li>
-  <li>Brokers</li>
+<li>Retail Investors</li>
+<li>Institutional Investors</li>
+<li>Traders</li>
+<li>Brokers</li>
 </ul>
 
 <h2>Stock Market में Risk</h2>
-<p>
-Stock Market में निवेश जोखिम से भरा होता है।
-Prices कई कारणों से ऊपर-नीचे होते रहते हैं जैसे:
-</p>
+<p>Stock Market में निवेश जोखिम से भरा होता है। Prices कई कारणों से ऊपर-नीचे होते रहते हैं जैसे:</p>
 <ul>
-  <li>Company performance</li>
-  <li>Economic conditions</li>
-  <li>Global news</li>
-  <li>Market sentiment</li>
+<li>Company performance</li>
+<li>Economic conditions</li>
+<li>Global news</li>
+<li>Market sentiment</li>
 </ul>
-
-<p>
-इसलिए बिना जानकारी के निवेश करना नुकसानदायक हो सकता है।
-</p>
+<p>इसलिए बिना जानकारी के निवेश करना नुकसानदायक हो सकता है।</p>
 
 <h2>Beginners के लिए जरूरी बातें</h2>
-<p>
-जो लोग Stock Market सीखना चाहते हैं, उन्हें पहले basics समझने चाहिए।
-</p>
+<p>जो लोग Stock Market सीखना चाहते हैं, उन्हें पहले basics समझने चाहिए।</p>
 <ul>
-  <li>Risk management सीखें</li>
-  <li>Emotions control में रखें</li>
-  <li>Educational knowledge पर focus करें</li>
-  <li>जल्दी पैसे कमाने के लालच से बचें</li>
+<li>Risk management सीखें</li>
+<li>Emotions control में रखें</li>
+<li>Educational knowledge पर focus करें</li>
+<li>जल्दी पैसे कमाने के लालच से बचें</li>
 </ul>
 
 <h2>निष्कर्ष</h2>
-<p>
-Stock Market long-term wealth creation का एक जरिया हो सकता है,
-लेकिन इसके लिए सही ज्ञान और धैर्य जरूरी है।
-यह वेबसाइट केवल शिक्षा प्रदान करती है, किसी भी प्रकार की financial advice नहीं देती।
-</p>
+<p>Stock Market long-term wealth creation का एक जरिया हो सकता है, लेकिन इसके लिए सही ज्ञान और धैर्य जरूरी है। यह वेबसाइट केवल शिक्षा प्रदान करती है, किसी भी प्रकार की financial advice नहीं देती।</p>
 
-<div class="disclaimer">
+<div class="highlight">
 <strong>Disclaimer:</strong> Stock Market investments are subject to market risks.
 </div>
 
+</div>
 </div>
 
 <footer>
