@@ -158,6 +158,34 @@ footer {
 .youtube-btn:hover {
   background: #cc0000;
 }
+    .site-search{
+  max-width:600px;
+  margin:15px auto;
+  padding:10px;
+}
+
+.site-search input{
+  width:100%;
+  padding:12px;
+  font-size:16px;
+  border:2px solid #ccc;
+  border-radius:8px;
+}
+
+#searchResults{
+  max-width:600px;
+  margin:10px auto;
+}
+
+#searchResults a{
+  display:block;
+  padding:10px;
+  margin-bottom:8px;
+  background:#f5f5f5;
+  text-decoration:none;
+  color:#000;
+  border-radius:6px;
+}
   </style>
 </head>
 
@@ -279,10 +307,54 @@ document.getElementById("searchInput").addEventListener("keyup", function () {
     card.style.display = card.innerText.toLowerCase().includes(filter) ? "block" : "none";
   });
 });
+
+
+const articles = [
+  {
+    title: "Stock Market क्या है?",
+    url: "stock-market-kya-hai.html"
+  },
+  {
+    title: "Forex Market क्या है?",
+    url: "forex-market-kya-hai.html"
+  },
+  {
+    title: "Crypto Market क्या है?",
+    url: "crypto-market-kya-hai.html"
+  },
+  {
+    title: "Trading vs Investing क्या है?",
+    url: "trading-vs-investing-kya-hai.html"
+  },
+  {
+    title: "Stock Market में Greeks क्या होते हैं?",
+    url: "stock-market-greeks-kya-hote-hain.html"
+  }
+];
+
+function searchArticles(){
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let resultBox = document.getElementById("searchResults");
+  resultBox.innerHTML = "";
+
+  if(input.length < 2) return;
+
+  articles.forEach(article => {
+    if(article.title.toLowerCase().includes(input)){
+      let link = document.createElement("a");
+      link.href = article.url;
+      link.innerText = article.title;
+      resultBox.appendChild(link);
+    }
+  });
+}
+
+  
 </script>
 
 </body>
 </html>
+
 
 
 
