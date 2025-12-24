@@ -6,44 +6,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    body {
-      font-family: Arial;
-      padding: 15px;
-      background: #f2f2f2;
-    }
-    h1 {
-      text-align: center;
-    }
-    .article {
-      background: white;
-      padding: 15px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-    }
-    .article a {
-      text-decoration: none;
-      color: #0a58ca;
-      font-weight: bold;
-      font-size: 18px;
-    }
-  </style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 15px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Article container */
+.articles-wrapper {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Single article card */
+.article-card {
+  background: #ffffff;
+  padding: 18px 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.article-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Article link */
+.article-card a {
+  text-decoration: none;
+  color: #0a58ca;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Small description (optional) */
+.article-desc {
+  margin-top: 6px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Mobile fix */
+@media (max-width: 600px) {
+  .article-card a {
+    font-size: 16px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <h1>📚 हमारे Articles</h1>
 
-<div class="article">
-  <a href="liquidity-hunting-kya-hai.html">Liquidity Hunting क्या है?</a>
-</div>
+<div class="articles-wrapper">
 
-<div class="article">
-  <a href="price-action.html">Price Action Trading क्या है?</a>
-</div>
+  <div class="article-card">
+    <a href="greeks-kya-hai.html">
+      Stock Market Greeks क्या होते हैं?
+    </a>
+    <div class="article-desc">
+      Options Trading में Greeks को आसान भाषा में समझें
+    </div>
+  </div>
 
-<div class="article">
-  <a href="risk-management.html">Risk Management क्यों जरूरी है?</a>
-</div>
+  <div class="article-card">
+    <a href="price-action.html">
+      Price Action Trading क्या है?
+    </a>
+    <div class="article-desc">
+      बिना indicator के trading करने का तरीका
+    </div>
+  </div>
 
+  <div class="article-card">
+    <a href="risk-management.html">
+      Risk Management क्यों जरूरी है?
+    </a>
+    <div class="article-desc">
+      Loss control करने की सबसे powerful strategy
+    </div>
+  </div>
+
+</div>
 </body>
 </html>
