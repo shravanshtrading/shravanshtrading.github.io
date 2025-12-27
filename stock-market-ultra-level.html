@@ -201,10 +201,25 @@ h1::after{
   box-shadow:0 0 25px rgba(0,255,156,0.8);
   z-index:99999;
 }
+
+/* PCR ULTRA CLICK POWER */
+.article-card{
+  cursor:pointer;
+}
+
+.article-card:hover{
+  box-shadow:0 0 35px rgba(255,0,60,0.35);
+}
+
+.article-card:active{
+  transform:scale(0.98);
+}
+  
 </style>
 </head>
 
 <body>
+
 
 <div class="cursor" id="cursor"></div>
 
@@ -227,6 +242,23 @@ h1::after{
     <div class="desc">
       Institutions ka illegal-looking (but legal) liquidity extraction framework
     </div>
+
+
+    <h1>📚 हमारे Articles</h1>
+
+  <div class="articles-wrapper">
+
+    <!-- यहीं तुम्हारा PCR वाला card रहेगा -->
+    <div class="article-card">
+      <a href="put-call-ratio-kya-hai.html">
+        🔥 PCR (Put–Call Ratio) क्या है?
+      </a>
+      <div class="article-desc">
+        PCR को गलत तरीके से क्यों समझा जाता है?
+      </div>
+    </div>
+
+  </div>
 
     <div class="lock-overlay">
       <div class="lock-box">
@@ -251,6 +283,17 @@ document.addEventListener("mousemove",e=>{
   cursor.style.left=e.clientX+"px";
   cursor.style.top=e.clientY+"px";
 });
+
+document.querySelectorAll('.article-card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    const link = card.querySelector('a');
+    if(link){
+      window.location.href = link.href;
+    }
+  });
+});
+
+  
 </script>
 
 </body>
