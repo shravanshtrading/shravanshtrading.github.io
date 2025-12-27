@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>BLACK OPS – Institutional Intelligence</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+/* ================= CORE ================= */
+:root{
+  --bg:#000000;
+  --panel:#020617;
+  --green:#00ff9c;
+  --red:#ff003c;
+  --blue:#00b3ff;
+  --text:#e5e7eb;
+  --muted:#6b7280;
+}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui,monospace;
+  background:radial-gradient(circle at top,#020617,#000000 70%);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* ================= SCANLINES ================= */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.03) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  mix-blend-mode:overlay;
+  z-index:9999;
+}
+
+/* ================= GLITCH TITLE ================= */
+h1{
+  text-align:center;
+  font-size:40px;
+  font-weight:900;
+  letter-spacing:2px;
+  color:var(--green);
+  position:relative;
+  margin:50px 0 20px;
+  text-shadow:0 0 20px rgba(0,255,156,0.6);
+}
+h1::before,h1::after{
+  content:attr(data-text);
+  position:absolute;
+  left:0;
+  right:0;
+}
+h1::before{
+  color:var(--red);
+  animation:glitch 2s infinite;
+}
+h1::after{
+  color:var(--blue);
+  animation:glitch 1.5s infinite reverse;
+}
+@keyframes glitch{
+  0%{clip-path:inset(0 0 90% 0)}
+  20%{clip-path:inset(30% 0 50% 0)}
+  40%{clip-path:inset(60% 0 20% 0)}
+  60%{clip-path:inset(10% 0 80% 0)}
+  80%{clip-path:inset(40% 0 40% 0)}
+  100%{clip-path:inset(0 0 90% 0)}
+}
+
+/* ================= CONSOLE ================= */
+.console{
+  max-width:1000px;
+  margin:20px auto;
+  padding:18px;
+  background:#000;
+  border:1px solid rgba(0,255,156,0.25);
+  border-radius:14px;
+  font-size:13px;
+  box-shadow:0 0 40px rgba(0,255,156,0.2);
+}
+.console span{
+  display:block;
+  color:var(--green);
+  animation:blink 1.5s infinite;
+}
+@keyframes blink{
+  50%{opacity:0.4}
+}
+
+/* ================= ARTICLES ================= */
+.wrapper{
+  max-width:1000px;
+  margin:40px auto;
+  padding:0 20px;
+}
+
+.card{
+  background:linear-gradient(180deg,#020617,#000);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:18px;
+  padding:24px;
+  margin-bottom:28px;
+  position:relative;
+  overflow:hidden;
+}
+
+.card.locked{
+  filter:blur(4px);
+}
+
+.card h2{
+  margin:0;
+  font-size:22px;
+  color:#fff;
+}
+
+.tags{
+  margin-top:8px;
+  display:flex;
+  gap:8px;
+}
+.tag{
+  font-size:11px;
+  padding:4px 10px;
+  border-radius:999px;
+  font-weight:800;
+}
+.smart{background:#00ff9c20;color:#00ff9c;}
+.black{background:#ff003c20;color:#ff003c;}
+
+.desc{
+  margin-top:10px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* ================= LOCK OVERLAY ================= */
+.lock-overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  backdrop-filter:blur(6px);
+}
+.lock-box{
+  background:#000;
+  border:1px solid rgba(255,0,60,0.4);
+  padding:20px 26px;
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 0 40px rgba(255,0,60,0.4);
+}
+.lock-box button{
+  margin-top:10px;
+  padding:10px 18px;
+  background:linear-gradient(90deg,#ff003c,#ff4d6d);
+  border:none;
+  border-radius:10px;
+  color:#fff;
+  font-weight:900;
+}
+
+/* ================= THREAT METER ================= */
+.meter{
+  max-width:1000px;
+  margin:40px auto;
+  padding:20px;
+  border-radius:18px;
+  background:#000;
+  border:1px solid rgba(255,0,60,0.3);
+}
+.bar{
+  height:14px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#00ff9c,#ff003c);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  50%{filter:brightness(1.5)}
+}
+
+/* ================= CURSOR GLOW ================= */
+.cursor{
+  position:fixed;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:rgba(0,255,156,0.3);
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  box-shadow:0 0 25px rgba(0,255,156,0.8);
+  z-index:99999;
+}
+</style>
+</head>
+
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<h1 data-text="BLACK OPS INTELLIGENCE">BLACK OPS INTELLIGENCE</h1>
+
+<div class="console">
+  <span>● Smart Money Nodes: ACTIVE</span>
+  <span>● Liquidity Sweep Detected</span>
+  <span>● Retail Stop-Loss Cluster Found</span>
+</div>
+
+<div class="wrapper">
+
+  <div class="card locked">
+    <h2>☠️ Liquidity Hunting – Black Ops Method</h2>
+    <div class="tags">
+      <div class="tag smart">SMART MONEY</div>
+      <div class="tag black">CLASSIFIED</div>
+    </div>
+    <div class="desc">
+      Institutions ka illegal-looking (but legal) liquidity extraction framework
+    </div>
+
+    <div class="lock-overlay">
+      <div class="lock-box">
+        🔒 CLASSIFIED CONTENT  
+        <br>
+        <button>UNLOCK ACCESS</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="meter">
+  <strong>☠️ RETAIL TRAP THREAT LEVEL</strong>
+  <div class="bar"></div>
+</div>
+
+<script>
+/* CURSOR */
+const cursor=document.getElementById("cursor");
+document.addEventListener("mousemove",e=>{
+  cursor.style.left=e.clientX+"px";
+  cursor.style.top=e.clientY+"px";
+});
+</script>
+
+</body>
+</html>
