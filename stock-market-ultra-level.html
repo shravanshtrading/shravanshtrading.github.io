@@ -70,51 +70,20 @@ h1{
   position:relative;
   transition:0.35s ease;
 }
-
-.article-card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:18px;
-  background:linear-gradient(
-    120deg,
-    transparent,
-    var(--red),
-    var(--green),
-    transparent
-  );
-  opacity:0;
-}
-
-.article-card:hover::before{
-  opacity:0.25;
-  animation:scan 2s linear infinite;
-}
-
-@keyframes scan{
-  0%{background-position:0%}
-  100%{background-position:200%}
-}
-
 .article-card:hover{
   transform:translateY(-6px);
   box-shadow:0 0 45px rgba(255,0,60,0.4);
 }
-
-/* ===== TITLE ===== */
 .article-card a{
   font-size:22px;
   font-weight:900;
   color:#fff;
   text-decoration:none;
 }
-
-/* ===== DESC ===== */
 .article-desc{
   margin-top:8px;
   font-size:14px;
   color:var(--muted);
-  line-height:1.6;
 }
 
 /* ===== BADGES ===== */
@@ -129,26 +98,109 @@ h1{
   padding:4px 12px;
   border-radius:999px;
   font-weight:900;
-  letter-spacing:0.4px;
 }
 .smart{background:#00ff9c20;color:#00ff9c;}
-.inst{background:#3b82f620;color:#3b82f6;}
 .trap{background:#ff003c20;color:#ff003c;}
 .adv{background:#9333ea20;color:#9333ea;}
 
-/* ===== THREAT LINE ===== */
-.threat{
-  margin-top:12px;
-  font-size:12px;
+/* ===== RELATED ARTICLES ===== */
+.related-box{
+  margin-top:50px;
+  padding:24px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#020617,#000);
+  border:1px solid rgba(255,0,60,0.35);
+  box-shadow:0 0 40px rgba(255,0,60,0.25);
+}
+.related-box h3{
+  margin-top:0;
   color:#ff4d6d;
+  letter-spacing:1px;
+}
+.related-box a{
+  display:block;
+  margin:10px 0;
+  color:#00ff9c;
+  text-decoration:none;
+  font-weight:700;
+}
+.related-box a:hover{
+  text-decoration:underline;
+}
+
+/* ===== AUTHOR BOX ===== */
+.author-box{
+  margin:60px auto;
+  max-width:1100px;
+  padding:28px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#020617,#000);
+  display:flex;
+  gap:22px;
+  border:1px solid rgba(255,255,255,0.1);
+}
+.author-left img{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  border:3px solid var(--green);
+}
+.author-right h4{
+  margin:0;
+  font-size:22px;
+  font-weight:900;
+}
+.author-title{
+  color:var(--green);
+  font-size:14px;
   font-weight:800;
-  letter-spacing:0.5px;
+}
+.author-bio{
+  font-size:14px;
+  color:#cbd5f5;
+  line-height:1.6;
+}
+.author-btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:12px 20px;
+  border-radius:10px;
+  background:linear-gradient(90deg,#ff0000,#ff4d4d);
+  color:#fff;
+  font-weight:900;
+  text-decoration:none;
+}
+.author-note{
+  font-size:12px;
+  color:#9ca3af;
+  margin-top:8px;
+}
+
+/* ===== DISCLAIMER ===== */
+.disclaimer{
+  max-width:1100px;
+  margin:40px auto;
+  padding:20px;
+  background:#000;
+  border:1px dashed rgba(255,255,255,0.25);
+  border-radius:14px;
+  font-size:13px;
+  color:#cbd5f5;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:13px;
+  color:#9ca3af;
 }
 
 /* ===== MOBILE ===== */
 @media(max-width:600px){
   h1{font-size:26px;}
-  .article-card a{font-size:18px;}
+  .author-box{flex-direction:column;text-align:center;}
+  .author-left img{margin:auto;}
 }
 </style>
 </head>
@@ -165,7 +217,6 @@ h1{
 
 <div class="wrapper">
 
-  <!-- ARTICLE 1 -->
   <div class="article-card">
     <a href="put-call-ratio-kya-hai.html">
       ☠️ PCR (Put–Call Ratio) – Trap Psychology
@@ -176,60 +227,52 @@ h1{
       <div class="badge adv">ULTRA ADVANCE</div>
     </div>
     <div class="article-desc">
-      PCR ko sentiment nahi, crowd-positioning weapon ki tarah use kiya jata hai.
+      PCR ko sentiment nahi, crowd positioning weapon ki tarah use kiya jata hai.
     </div>
-    <div class="threat">⚠️ EXTREME MANIPULATION ZONE</div>
-  </div>
-
-  <!-- ARTICLE 2 -->
-  <div class="article-card">
-    <a href="liquidity-hunting-kya-hai.html">
-      ☠️ Liquidity Hunting – Institutional Kill Zone
-    </a>
-    <div class="badges">
-      <div class="badge smart">INSTITUTIONAL</div>
-      <div class="badge trap">STOP-LOSS WIPE</div>
-    </div>
-    <div class="article-desc">
-      Price movement nahi — liquidity ka shikar hota hai.
-    </div>
-    <div class="threat">⚠️ STOP-LOSS SLAUGHTER AREA</div>
-  </div>
-
-  <!-- ARTICLE 3 -->
-  <div class="article-card">
-    <a href="wyckoff-theory-kya-hai.html">
-      ☠️ Wyckoff Theory – Smart Money Blueprint
-    </a>
-    <div class="badges">
-      <div class="badge smart">SMART MONEY MAP</div>
-      <div class="badge inst">ACCUMULATION</div>
-    </div>
-    <div class="article-desc">
-      Market ka har phase institutions pehle likh chuki hoti hain.
-    </div>
-    <div class="threat">⚠️ DISTRIBUTION TRAP AHEAD</div>
-  </div>
-
-  <!-- ARTICLE 4 -->
-  <div class="article-card">
-    <a href="option-chain-analysis.html">
-      ☠️ Option Chain – Hidden Positioning Data
-    </a>
-    <div class="badges">
-      <div class="badge smart">DATA WEAPON</div>
-      <div class="badge adv">HEDGE FUND LOGIC</div>
-    </div>
-    <div class="article-desc">
-      OI numbers nahi — positioning aur pain points matter karte hain.
-    </div>
-    <div class="threat">⚠️ GAMMA TRAP REGION</div>
   </div>
 
 </div>
 
+<!-- RELATED ARTICLES -->
+<div class="related-box">
+  <h3>🔗 Related Articles</h3>
+  👉 <a href="risk-management-kya-hai.html">Risk Management क्या है?</a>
+  👉 <a href="forex-trading-kya-hai.html">Forex Trading क्या है?</a>
+  👉 <a href="stock-market-me-greeks-kya-hote-hai.html">Stock Market में Greeks क्या होते हैं?</a>
+</div>
+
+<!-- AUTHOR BOX -->
+<div class="author-box">
+  <div class="author-left">
+    <img src="author.jpg" alt="Shravansh Trading Author">
+  </div>
+  <div class="author-right">
+    <h4>✍️ Shravansh</h4>
+    <p class="author-title">Stock Market, Options & Trading Educator</p>
+    <p class="author-bio">
+      Independent trading educator sharing practical Stock Market,
+      Options, Forex & Crypto knowledge in Hindi.
+    </p>
+    <a href="https://youtube.com/@shravansh03" target="_blank" class="author-btn">
+      📺 Learn on YouTube – Trade with Shravansh
+    </a>
+    <p class="author-note">⚠️ Educational purpose only. No investment advice.</p>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  ⚠️ <strong>Disclaimer:</strong>  
+  This website is for educational and informational purposes only.  
+  Stock Market, Options & Forex trading involve risk.  
+  We are not SEBI registered. Always consult a certified financial advisor before investing.
+</div>
+
+<footer>
+  © 2025 Shravansh Trading | All Rights Reserved
+</footer>
+
 <script>
-/* FULL CARD CLICK */
 document.querySelectorAll('.article-card').forEach(card=>{
   card.addEventListener('click',()=>{
     const link = card.querySelector('a');
