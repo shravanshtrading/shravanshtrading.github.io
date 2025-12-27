@@ -2,15 +2,17 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<title>TERMINAL MODE – Market Command Console</title>
+<title>OMEGA WAR CORE – Market Domination</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 :root{
   --bg:#000;
-  --green:#00ff9c;
+  --panel:#020617;
+  --neon:#00ff9c;
   --red:#ff003c;
   --blue:#00b3ff;
+  --violet:#9333ea;
   --text:#e5e7eb;
   --muted:#94a3b8;
 }
@@ -19,148 +21,368 @@
 
 body{
   margin:0;
-  font-family:Consolas,monospace;
+  font-family:Inter,system-ui,monospace;
+  color:var(--text);
+  background:
+    radial-gradient(circle at center,#020617,#000 70%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,0,60,0.05),
+      rgba(255,0,60,0.05) 1px,
+      transparent 1px,
+      transparent 7px
+    );
+  overflow-x:hidden;
+}
+
+/* ====== OMEGA HEADER ====== */
+.header{
+  padding:70px 20px 40px;
+  text-align:center;
+}
+.header h1{
+  font-size:52px;
+  font-weight:900;
+  letter-spacing:5px;
+  color:var(--neon);
+  text-shadow:
+    0 0 40px rgba(0,255,156,0.9),
+    4px 0 var(--red),
+    -4px 0 var(--blue);
+  animation:omega-glitch 2.2s infinite;
+}
+.header p{
+  margin-top:14px;
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:2px;
+  color:#ff4d6d;
+}
+
+@keyframes omega-glitch{
+  0%,100%{transform:none}
+  10%{transform:translateX(3px)}
+  20%{transform:translateX(-3px)}
+  35%{transform:skewX(3deg)}
+  50%{transform:skewX(-3deg)}
+}
+
+/* ====== LIVE CORE STRIP ====== */
+.core-strip{
+  max-width:1300px;
+  margin:0 auto 50px;
+  padding:18px 26px;
+  border-radius:18px;
   background:#000;
-  color:var(--green);
-}
-
-/* ===== TERMINAL FRAME ===== */
-.terminal{
-  max-width:1200px;
-  margin:40px auto;
-  border-radius:16px;
-  border:1px solid rgba(0,255,156,0.4);
-  box-shadow:0 0 80px rgba(0,255,156,0.25);
-  overflow:hidden;
-}
-
-/* ===== TERMINAL HEADER ===== */
-.term-header{
-  background:#020617;
-  padding:12px 16px;
+  border:1px solid rgba(255,0,60,0.6);
+  box-shadow:0 0 80px rgba(255,0,60,0.45);
   display:flex;
+  flex-wrap:wrap;
+  gap:16px;
   justify-content:space-between;
-  align-items:center;
 }
-.dots span{
-  display:inline-block;
-  width:12px;height:12px;
+.core-strip span{
+  font-size:12px;
+  font-weight:900;
+  color:#ff4d6d;
+  letter-spacing:0.8px;
+}
+
+/* ====== WRAPPER ====== */
+.wrapper{
+  max-width:1300px;
+  margin:auto;
+  padding:0 22px;
+}
+
+/* ====== OMEGA CARD ====== */
+.article-card{
+  position:relative;
+  padding:32px 34px;
+  margin-bottom:34px;
+  border-radius:26px;
+  cursor:pointer;
+  background:
+    linear-gradient(180deg,#020617,#000),
+    repeating-linear-gradient(
+      135deg,
+      rgba(255,255,255,0.04),
+      rgba(255,255,255,0.04) 2px,
+      transparent 2px,
+      transparent 10px
+    );
+  border:1px solid rgba(255,255,255,0.18);
+  overflow:hidden;
+  transition:0.35s ease;
+}
+
+/* PLASMA SCAN */
+.article-card::before{
+  content:"";
+  position:absolute;
+  top:-150%;
+  left:0;
+  width:100%;
+  height:300%;
+  background:linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255,0,60,0.55),
+    transparent
+  );
+  animation:plasma 3s linear infinite;
+}
+@keyframes plasma{
+  0%{top:-150%}
+  100%{top:150%}
+}
+
+.article-card:hover{
+  transform:translateY(-12px) scale(1.02);
+  box-shadow:
+    0 0 110px rgba(255,0,60,0.65),
+    inset 0 0 45px rgba(0,255,156,0.35);
+}
+
+/* ====== CARD CONTENT ====== */
+.article-card a{
+  font-size:28px;
+  font-weight:900;
+  color:#fff;
+  text-decoration:none;
+}
+.article-desc{
+  margin-top:14px;
+  font-size:16px;
+  line-height:1.8;
+  color:var(--muted);
+}
+
+/* ====== SIGILS ====== */
+.badges{
+  margin-top:16px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.badge{
+  font-size:11px;
+  padding:7px 18px;
+  border-radius:999px;
+  font-weight:900;
+  letter-spacing:0.7px;
+  text-transform:uppercase;
+}
+.smart{background:#00ff9c30;color:#00ff9c;}
+.trap{background:#ff003c30;color:#ff003c;}
+.inst{background:#3b82f630;color:#3b82f6;}
+.omega{background:#9333ea40;color:#d8b4fe;}
+
+/* ====== DANGER LINE ====== */
+.threat{
+  margin-top:18px;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:1.2px;
+  color:#ff4d6d;
+}
+
+/* ====== RELATED CORE ====== */
+.related-box{
+  margin:100px auto 60px;
+  max-width:1300px;
+  padding:36px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#020617,#000);
+  border:1px solid rgba(0,255,156,0.55);
+  box-shadow:0 0 100px rgba(0,255,156,0.45);
+}
+.related-box h3{
+  font-size:24px;
+  color:var(--neon);
+  letter-spacing:1.5px;
+}
+.related-box a{
+  display:block;
+  margin:16px 0;
+  font-size:16px;
+  font-weight:900;
+  color:#ff4d6d;
+  text-decoration:none;
+}
+.related-box a:hover{
+  text-shadow:0 0 18px rgba(255,0,60,1);
+}
+
+/* ====== AUTHOR CORE ====== */
+.author-box{
+  max-width:1300px;
+  margin:110px auto;
+  padding:38px;
+  border-radius:34px;
+  display:flex;
+  gap:34px;
+  background:
+    linear-gradient(135deg,#020617,#000),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.05),
+      rgba(255,255,255,0.05) 2px,
+      transparent 2px,
+      transparent 12px
+    );
+  border:1px solid rgba(255,255,255,0.2);
+}
+.author-left img{
+  width:120px;
+  height:120px;
   border-radius:50%;
-  margin-right:6px;
+  border:5px solid var(--neon);
 }
-.red{background:#ff003c}
-.yellow{background:#facc15}
-.green{background:#00ff9c}
-.term-title{
+.author-right h4{
+  font-size:28px;
+  margin:0;
+  font-weight:900;
+}
+.author-title{
+  color:var(--neon);
+  font-size:15px;
+  font-weight:900;
+}
+.author-bio{
+  font-size:16px;
+  line-height:1.9;
+  color:#cbd5f5;
+}
+.author-btn{
+  display:inline-block;
+  margin-top:16px;
+  padding:18px 32px;
+  border-radius:18px;
+  background:linear-gradient(90deg,#ff003c,#ff8a8a);
+  color:#fff;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:0 0 55px rgba(255,0,60,0.8);
+}
+.author-note{
+  margin-top:14px;
+  font-size:12px;
+  color:#9ca3af;
+}
+
+/* ====== DISCLAIMER ====== */
+.disclaimer{
+  max-width:1300px;
+  margin:60px auto;
+  padding:28px;
+  border-radius:20px;
+  background:#000;
+  border:1px dashed rgba(255,255,255,0.4);
+  font-size:13px;
+  line-height:1.8;
+  color:#e5e7eb;
+}
+
+/* ====== FOOTER ====== */
+footer{
+  text-align:center;
+  padding:30px;
   font-size:13px;
   color:#9ca3af;
 }
 
-/* ===== TERMINAL BODY ===== */
-.term-body{
-  padding:22px;
-  min-height:420px;
-  background:
-    repeating-linear-gradient(
-      180deg,
-      rgba(255,255,255,0.02),
-      rgba(255,255,255,0.02) 1px,
-      transparent 1px,
-      transparent 4px
-    );
-}
-
-/* ===== TYPE EFFECT ===== */
-.line{
-  margin-bottom:10px;
-  white-space:pre-wrap;
-}
-.prompt{color:#00b3ff}
-.warn{color:#ff4d6d}
-.cmd{color:#00ff9c}
-.output{color:#cbd5f5}
-
-/* ===== BLINK CURSOR ===== */
-.cursor{
-  display:inline-block;
-  width:10px;
-  background:#00ff9c;
-  margin-left:4px;
-  animation:blink 1s infinite;
-}
-@keyframes blink{50%{opacity:0}}
-
-/* ===== ACTION PANEL ===== */
-.actions{
-  display:flex;
-  gap:12px;
-  margin-top:26px;
-  flex-wrap:wrap;
-}
-.actions a{
-  padding:10px 18px;
-  border-radius:10px;
-  border:1px solid rgba(255,0,60,0.5);
-  color:#ff4d6d;
-  text-decoration:none;
-  font-weight:900;
-}
-.actions a:hover{
-  background:#ff003c;
-  color:#000;
-}
-
-/* ===== FOOTER ===== */
-.footer{
-  text-align:center;
-  margin-top:30px;
-  font-size:12px;
-  color:#9ca3af;
+/* ====== MOBILE ====== */
+@media(max-width:720px){
+  .header h1{font-size:32px;}
+  .article-card a{font-size:21px;}
+  .author-box{flex-direction:column;text-align:center;}
+  .author-left img{margin:auto;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="terminal">
-  <div class="term-header">
-    <div class="dots">
-      <span class="red"></span>
-      <span class="yellow"></span>
-      <span class="green"></span>
+<div class="header">
+  <h1>OMEGA WAR CORE</h1>
+  <p>⚠️ MARKET DOMINATION INTERFACE ⚠️</p>
+</div>
+
+<div class="core-strip">
+  <span>● LIQUIDITY ENGINE : MAX OUTPUT</span>
+  <span>● SMART MONEY SIGNAL : OVERRIDE</span>
+  <span>● RETAIL EMOTION : COMPROMISED</span>
+  <span>● MARKET CONTROL : OMEGA LEVEL</span>
+</div>
+
+<div class="wrapper">
+
+  <div class="article-card">
+    <a href="put-call-ratio-kya-hai.html">
+      ☠️ PCR – Market Neural Hack
+    </a>
+    <div class="badges">
+      <div class="badge smart">Smart Money</div>
+      <div class="badge trap">Retail Trap</div>
+      <div class="badge inst">Institutional</div>
+      <div class="badge omega">Omega Level</div>
     </div>
-    <div class="term-title">OMEGA / MARKET / TERMINAL</div>
+    <div class="article-desc">
+      PCR indicator nahi — ye crowd ke dimaag ka backdoor hai.
+    </div>
+    <div class="threat">
+      ⚠️ TOTAL PSYCHOLOGICAL DOMINATION ZONE
+    </div>
   </div>
 
-  <div class="term-body" id="terminal">
-    <div class="line"><span class="prompt">root@market:~$</span> init omega-core</div>
-    <div class="line output">✔ Liquidity Engine Loaded</div>
-    <div class="line output">✔ Smart Money Scanner Online</div>
-    <div class="line output">✔ Retail Trap Matrix Armed</div>
+</div>
 
-    <div class="line warn">⚠ WARNING: Emotional traders detected</div>
+<div class="related-box">
+  <h3>🔗 Omega Knowledge Vault</h3>
+  👉 <a href="risk-management-kya-hai.html">Risk Management – Capital Survival Code</a>
+  👉 <a href="forex-trading-kya-hai.html">Forex – Global Liquidity Matrix</a>
+  👉 <a href="stock-market-me-greeks-kya-hote-hai.html">Greeks – Option Market Control Panel</a>
+</div>
 
-    <div class="line"><span class="prompt">root@market:~$</span> access pcr.module</div>
-    <div class="line output">> PCR = Crowd Positioning Weapon</div>
-    <div class="line output">> Sentiment data overridden</div>
-    <div class="line output">> Manipulation probability: EXTREME</div>
-
-    <div class="line"><span class="prompt">root@market:~$</span>
-      <span class="cmd">_</span><span class="cursor"></span>
-    </div>
-
-    <div class="actions">
-      <a href="put-call-ratio-kya-hai.html">☠️ OPEN PCR FILE</a>
-      <a href="option-chain-analysis.html">📊 OPTION CHAIN</a>
-      <a href="liquidity-hunting-kya-hai.html">💣 LIQUIDITY HUNT</a>
-      <a href="wyckoff-theory-kya-hai.html">🧠 WYCKOFF MAP</a>
-    </div>
-
-    <div class="footer">
-      © 2025 Shravansh Trading | TERMINAL MODE ACTIVE
-    </div>
+<div class="author-box">
+  <div class="author-left">
+    <img src="author.jpg" alt="Shravansh Trading Author">
+  </div>
+  <div class="author-right">
+    <h4>✍️ Shravansh</h4>
+    <p class="author-title">Market Warfare Educator</p>
+    <p class="author-bio">
+      Exposing Stock Market, Options & Forex mechanics in Hindi —
+      raw, real, institutional-level logic.
+    </p>
+    <a href="https://youtube.com/@shravansh03" target="_blank" class="author-btn">
+      📺 Enter the War Room – YouTube
+    </a>
+    <p class="author-note">⚠️ Education only. No financial advice.</p>
   </div>
 </div>
+
+<div class="disclaimer">
+  ⚠️ <strong>DISCLAIMER:</strong><br>
+  Trading and investing involve high risk of capital loss.  
+  This platform is for educational purposes only.  
+  We are not SEBI registered.  
+  Use this information entirely at your own risk.
+</div>
+
+<footer>
+  © 2025 Shravansh Trading | All Rights Reserved
+</footer>
+
+<script>
+document.querySelectorAll('.article-card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    const link = card.querySelector('a');
+    if(link) window.location.href = link.href;
+  });
+});
+</script>
 
 </body>
 </html>
