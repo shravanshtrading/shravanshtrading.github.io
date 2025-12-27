@@ -1,349 +1,280 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <title>हमारे Articles</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>OMEGA WAR CORE – Articles</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
-  margin: 0;
-  padding: 15px;
+<style>
+:root{
+  --bg:#000;
+  --panel:#020617;
+  --neon:#00ff9c;
+  --red:#ff003c;
+  --blue:#00b3ff;
+  --violet:#9333ea;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui,monospace;
+  background:
+    radial-gradient(circle at top,#020617,#000 70%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,0,60,0.04),
+      rgba(255,0,60,0.04) 1px,
+      transparent 1px,
+      transparent 6px
+    );
+  color:var(--text);
 }
 
-/* Article container */
-.articles-wrapper {
-  max-width: 800px;
-  margin: auto;
+/* ===== HEADER ===== */
+h1{
+  text-align:center;
+  font-size:42px;
+  font-weight:900;
+  letter-spacing:3px;
+  margin:40px 0 30px;
+  color:var(--neon);
+  text-shadow:
+    0 0 30px rgba(0,255,156,0.8),
+    2px 0 var(--red),
+    -2px 0 var(--blue);
 }
 
-/* Single article card */
-.article-card {
-  background: #ffffff;
-  padding: 18px 20px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* ===== WRAPPER ===== */
+.articles-wrapper{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
 }
 
-/* Hover effect */
-.article-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+/* ===== ARTICLE CARD ===== */
+.article-card{
+  position:relative;
+  background:
+    linear-gradient(180deg,#020617,#000),
+    repeating-linear-gradient(
+      135deg,
+      rgba(255,255,255,0.03),
+      rgba(255,255,255,0.03) 2px,
+      transparent 2px,
+      transparent 8px
+    );
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:22px;
+  padding:26px 28px;
+  margin-bottom:24px;
+  cursor:pointer;
+  overflow:hidden;
+  transition:0.35s ease;
 }
 
-/* Article link */
-.article-card a {
-  text-decoration: none;
-  color: #0a58ca;
-  font-size: 18px;
-  font-weight: 600;
+/* SCAN EFFECT */
+.article-card::before{
+  content:"";
+  position:absolute;
+  top:-120%;
+  left:0;
+  width:100%;
+  height:240%;
+  background:linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255,0,60,0.45),
+    transparent
+  );
+  animation:scan 4s linear infinite;
+}
+@keyframes scan{
+  0%{top:-120%}
+  100%{top:120%}
 }
 
-/* Small description (optional) */
-.article-desc {
-  margin-top: 6px;
-  color: #555;
-  font-size: 14px;
+.article-card:hover{
+  transform:translateY(-8px) scale(1.015);
+  box-shadow:
+    0 0 70px rgba(255,0,60,0.55),
+    inset 0 0 30px rgba(0,255,156,0.25);
 }
 
-/* Mobile fix */
-@media (max-width: 600px) {
-  .article-card a {
-    font-size: 16px;
-  }
+/* ===== LINK ===== */
+.article-card a{
+  text-decoration:none;
+  font-size:22px;
+  font-weight:900;
+  color:#fff;
 }
 
-.author-box {
-  display: flex;
-  gap: 15px;
-  padding: 20px;
-  margin: 40px 0;
-  border-radius: 12px;
-  background: #f5f8ff;
-  border-left: 5px solid #2563eb;
+/* ===== DESC ===== */
+.article-desc{
+  margin-top:8px;
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.6;
 }
 
-.author-left img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+/* ===== DISCLAIMER ===== */
+.disclaimer{
+  max-width:1200px;
+  margin:60px auto 40px;
+  padding:22px;
+  border-radius:16px;
+  background:#000;
+  border:1px dashed rgba(255,255,255,0.35);
+  font-size:13px;
+  line-height:1.7;
+  color:#e5e7eb;
 }
 
-.author-right h4 {
-  margin: 0;
-  font-size: 18px;
+/* ===== AUTHOR ===== */
+.author-box{
+  max-width:1200px;
+  margin:80px auto;
+  padding:30px;
+  border-radius:26px;
+  display:flex;
+  gap:26px;
+  background:
+    linear-gradient(135deg,#020617,#000),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.04),
+      rgba(255,255,255,0.04) 2px,
+      transparent 2px,
+      transparent 10px
+    );
+  border:1px solid rgba(255,255,255,0.18);
+}
+.author-left img{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  border:4px solid var(--neon);
+}
+.author-right h4{
+  margin:0;
+  font-size:24px;
+  font-weight:900;
+}
+.author-title{
+  color:var(--neon);
+  font-weight:800;
+}
+.author-bio{
+  font-size:14px;
+  line-height:1.7;
+  color:#cbd5f5;
+}
+.author-btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:12px 22px;
+  border-radius:14px;
+  background:linear-gradient(90deg,#ff003c,#ff7a7a);
+  color:#fff;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:0 0 35px rgba(255,0,60,0.7);
+}
+.author-note{
+  margin-top:10px;
+  font-size:12px;
+  color:#9ca3af;
 }
 
-.author-title {
-  font-weight: bold;
-  color: #2563eb;
-  margin: 5px 0;
+/* ===== MOBILE ===== */
+@media(max-width:650px){
+  h1{font-size:28px;}
+  .article-card a{font-size:18px;}
+  .author-box{flex-direction:column;text-align:center;}
+  .author-left img{margin:auto;}
 }
-
-.author-bio {
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.author-btn {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 8px 14px;
-  background: #ff0000;
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.author-note {
-  font-size: 12px;
-  margin-top: 8px;
-  color: #555;
-}
-
-/* MOBILE FIX */
-@media (max-width: 600px) {
-  .author-box {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .author-left img {
-    margin: auto;
-  }
-}
-    
 </style>
 </head>
 
 <body>
 
-<h1>📚 हमारे Articles</h1>
+<h1>☠️ OMEGA WAR CORE – ARTICLES</h1>
 
 <div class="articles-wrapper">
 
-  <div class="article-card">
-    <a href="liquidity-hunting-kya-hai.html">👉Liquidity Hunting क्या है?</a>
-     
-    </a>
-    <div class="article-desc">
-      Options Trading में Greeks को आसान भाषा में समझें
-    </div>
-  </div>
+  <!-- ALL YOUR ORIGINAL ARTICLES (UNCHANGED LINKS) -->
 
-  <div class="article-card">
-    <a href="markets-structure-shift-kya-hai.html">👉Market Structure शिफ्ट क्या होता है?
-    </a>
-    <div class="article-desc">
-      बिना indicator के trading करने का तरीका
-    </div>
-  </div>
+  <div class="article-card"><a href="liquidity-hunting-kya-hai.html">☠️ Liquidity Hunting क्या है?</a><div class="article-desc">Options Trading में Greeks को आसान भाषा में समझें</div></div>
 
-  <div class="article-card">
-    <a href="equal-high-&-equal-low-kya-hota-hai.html">
-    👉Equal High & Equal Low क्या होता है?
-    </a>
-    <div class="article-desc">
-      Loss control करने की सबसे powerful strategy
-    </div>
- </div>
-  
-  <div class="article-card">
- <a href="mitigation-kya-hai.html">
-    👉Mitigation क्या है?
-     </a>
-      <div class="article-desc">
-       VALID Mitigation कैसे पहचानें?
-   </div>
- </div>   
+  <div class="article-card"><a href="markets-structure-shift-kya-hai.html">☠️ Market Structure Shift क्या होता है?</a><div class="article-desc">बिना indicator के trading करने का तरीका</div></div>
 
-    <div class="article-card">
-   <a href="inducement-kya-hota-hai.html">
-    👉Inducement क्या होता है?
-      </a>
-       <div class="article-desc">
-         Institutions Inducement क्यों करते हैं
-           </div>
-         </div> 
+  <div class="article-card"><a href="equal-high-&-equal-low-kya-hota-hai.html">☠️ Equal High & Equal Low क्या होता है?</a><div class="article-desc">Loss control करने की powerful strategy</div></div>
 
-  <div class="article-card">
- <a href="point-of-interest-kya-hota-hai.html">
-👉Point of Interest (POI) क्या होता है?
-  </a>
-<div class="article-desc">
-Market POI पर ही क्यों React करता है?
-   </div>
- </div>
+  <div class="article-card"><a href="mitigation-kya-hai.html">☠️ Mitigation क्या है?</a><div class="article-desc">VALID Mitigation कैसे पहचानें?</div></div>
 
- <div class="article-card">
- <a href="volume-imbalance-kya-hota-hai.html">
-  📈Volume Imbalance क्या होता है?
- </a>
-   <div class="article-desc">
-🔥 Volume Imbalance को Trade कैसे करें?
- </div>
- </div>
+  <div class="article-card"><a href="inducement-kya-hota-hai.html">☠️ Inducement क्या होता है?</a><div class="article-desc">Institutions Inducement क्यों करते हैं</div></div>
 
- <div class="article-card">
-<a href="internal-order-block.html">
-🔥 Internal Order Block कैसे बनता है?
- </a>
- <div class="article-desc">
-👉Fake Internal Order Block कैसे पहचानें?
-   </div>
- </div>
+  <div class="article-card"><a href="point-of-interest-kya-hota-hai.html">☠️ Point of Interest (POI) क्या होता है?</a><div class="article-desc">Market POI पर ही क्यों react करता है?</div></div>
 
- <div class="article-card">
-<a href="pullback-theory-kya-hota-hai.html">
-📈Pullback क्यों ज़रूरी है?
- </a>
-<div class="article-desc">
-🔥 Pullback कैसे बनता है?
-   </div>
- </div>
+  <div class="article-card"><a href="volume-imbalance-kya-hota-hai.html">☠️ Volume Imbalance क्या होता है?</a><div class="article-desc">Volume Imbalance को trade कैसे करें?</div></div>
 
+  <div class="article-card"><a href="internal-order-block.html">☠️ Internal Order Block कैसे बनता है?</a><div class="article-desc">Fake Internal Order Block कैसे पहचानें?</div></div>
 
- <div class="article-card">
-<a href="order-block-kya-hota-hai.html">
-🔥 Order Block क्या होता है?
- </a>
-<div class="article-desc">
-🔴Order Block को USE कैसे करें?
-  </div>
- </div>
+  <div class="article-card"><a href="pullback-theory-kya-hota-hai.html">☠️ Pullback क्यों ज़रूरी है?</a><div class="article-desc">Pullback कैसे बनता है?</div></div>
 
-   <div class="article-card">
-<a href="breaker-block-kya-hota-hai.html">
-🔥 Breaker Block कैसे बनता है?
- </a>
-<div class="article-desc">
-  👉Breaker Block क्यों बनता है?
- </div>
- </div>
+  <div class="article-card"><a href="order-block-kya-hota-hai.html">☠️ Order Block क्या होता है?</a><div class="article-desc">Order Block को use कैसे करें?</div></div>
 
+  <div class="article-card"><a href="breaker-block-kya-hota-hai.html">☠️ Breaker Block कैसे बनता है?</a><div class="article-desc">Breaker Block क्यों बनता है?</div></div>
 
- <div class="article-card">
-<a href="redefined-order-block-kya-hota-hai.html">
-🔥 Redefined Order Block (ROB)
- </a>
-  <div class="article-desc">
-Redefined Order Block क्यों बनाया जाता है?
- </div>
- </div>
+  <div class="article-card"><a href="redefined-order-block-kya-hota-hai.html">☠️ Redefined Order Block (ROB)</a><div class="article-desc">ROB क्यों बनाया जाता है?</div></div>
 
- <div class="article-card">
-<a href="wyckoff-theory.html">
-🔥 Wyckoff Theory क्या होती है?
- </a>
- <div class="article-desc">
-🔥 Wyckoff के 3 Core Laws (Advance Level)
- </div>
- </div>
+  <div class="article-card"><a href="wyckoff-theory.html">☠️ Wyckoff Theory क्या होती है?</a><div class="article-desc">Wyckoff के 3 Core Laws</div></div>
 
- <div class="article-card">
-<a href="sd-flip-kya-hota-hai.html">
-🔥 SD Flip क्या होता है?
- </a>
- <div class="article-desc">
-🔥 Support → Resistance Flip (Bearish SD Flip)
- </div>
- </div>
+  <div class="article-card"><a href="sd-flip-kya-hota-hai.html">☠️ SD Flip क्या होता है?</a><div class="article-desc">Support → Resistance Flip</div></div>
 
+  <div class="article-card"><a href="sd-flip-ko-use-kaise-kare.html">☠️ SD Flip को USE कैसे करें?</a><div class="article-desc">SD Flip क्यों बनता है?</div></div>
 
- <div class="article-card">
-<a href="sd-flip-ko-use-kaise-kare.html">
-SD Flip को USE कैसे करें?
- </a>
- <div class="article-desc">
-SD Flip क्यों बनता है?
- </div>
- </div>
+  <div class="article-card"><a href="put-call-ratio-kya-hai.html">☠️ PCR (Put–Call Ratio) क्या है?</a><div class="article-desc">PCR को गलत तरीके से क्यों समझा जाता है?</div></div>
 
- <div class="article-card">
-<a href="put-call-ratio-kya-hai.html">
-🔥 PCR (Put–Call Ratio) क्या है?
-</a>
-<div class="article-desc">
-PCR को गलत तरीके से क्यों समझा जाता है?
- </div>
- </div>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-
-  
-  
-
-
-  <!-- ===== DISCLAIMER ===== -->
-<div style="margin-top:40px;padding:18px;background:#ecfeff;border-left:5px solid #0f766e;font-size:14px;">
-<strong>⚠ Disclaimer:</strong><br>
+<div class="disclaimer">
+⚠️ <strong>DISCLAIMER:</strong><br>
 यह जानकारी केवल Educational Purpose के लिए है।  
 Trading और Investing में High Risk शामिल होता है।  
 Capital Loss संभव है।  
-किसी भी Trade से पहले अपने Financial Advisor से सलाह लें।  
-लेखक किसी भी Profit या Loss की जिम्मेदारी नहीं लेता।
+किसी भी Trade से पहले Financial Advisor से सलाह लें।
 </div>
 
-
-<!-- AUTHOR BOX START -->
 <div class="author-box">
   <div class="author-left">
     <img src="author.jpg" alt="Shravansh Trading Author">
   </div>
-
   <div class="author-right">
     <h4>✍️ Shravansh</h4>
-    <p class="author-title">
-      Stock Market, Options & Trading Educator
-    </p>
-
+    <p class="author-title">Stock Market • Options • Trading Educator</p>
     <p class="author-bio">
-      Shravansh is an independent trading educator sharing
-      practical Stock Market, Options, Forex & Crypto knowledge
-      in Hindi for beginners.
+      Practical Stock Market, Options, Forex & Crypto education in Hindi —
+      raw, real, institutional logic.
     </p>
-
-    <a href="https://youtube.com/@shravansh03"
-       target="_blank"
-       class="author-btn">
-       📺 Learn on YouTube – Trade with Shravansh
+    <a href="https://youtube.com/@shravansh03" target="_blank" class="author-btn">
+      📺 Enter the War Room – YouTube
     </a>
-
-    <p class="author-note">
-      ⚠️ Educational purpose only. No investment advice.
-    </p>
+    <p class="author-note">⚠️ Educational purpose only. No investment advice.</p>
   </div>
 </div>
-<!-- AUTHOR BOX END -->
 
-  
-</div>
+<script>
+document.querySelectorAll('.article-card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    const link = card.querySelector('a');
+    if(link) window.location.href = link.href;
+  });
+});
+</script>
+
 </body>
 </html>
