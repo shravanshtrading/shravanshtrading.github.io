@@ -2,19 +2,17 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<title>BLACK OPS WAR CORE – Articles</title>
+<title>BLACK OPS ARTICLES</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 :root{
   --bg:#000;
-  --panel:#020617;
+  --card:#050505;
   --neon:#00ff9c;
   --red:#ff003c;
-  --blue:#00b3ff;
-  --violet:#9333ea;
   --text:#e5e7eb;
-  --muted:#94a3b8;
+  --muted:#9ca3af;
 }
 
 *{box-sizing:border-box}
@@ -23,108 +21,73 @@ body{
   margin:0;
   font-family:Inter,system-ui,monospace;
   background:
-    radial-gradient(circle at top,#020617,#000 70%),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255,0,60,0.04),
-      rgba(255,0,60,0.04) 1px,
-      transparent 1px,
-      transparent 6px
-    );
+    radial-gradient(circle at top,#020617,#000 70%);
   color:var(--text);
 }
 
 /* ===== HEADER ===== */
 .header{
   text-align:center;
-  padding:50px 20px 30px;
+  padding:60px 20px 40px;
 }
 .header h1{
   margin:0;
-  font-size:46px;
+  font-size:44px;
   font-weight:900;
   letter-spacing:4px;
   color:var(--neon);
   text-shadow:
-    0 0 40px rgba(0,255,156,.8),
-    3px 0 var(--red),
-    -3px 0 var(--blue);
+    0 0 35px rgba(0,255,156,.7),
+    2px 0 var(--red);
 }
 .header p{
-  margin-top:10px;
-  color:#f87171;
-  font-weight:800;
+  margin-top:12px;
+  font-size:13px;
   letter-spacing:2px;
-}
-
-/* ===== CORE STRIP ===== */
-.core-strip{
-  display:flex;
-  gap:18px;
-  justify-content:center;
-  flex-wrap:wrap;
-  padding:16px;
-  background:#000;
-  border-top:1px solid rgba(255,255,255,.1);
-  border-bottom:1px solid rgba(255,255,255,.1);
-}
-.core-strip span{
-  font-size:12px;
-  color:#9ca3af;
-  letter-spacing:1px;
+  color:#f87171;
 }
 
 /* ===== WRAPPER ===== */
 .articles-wrapper{
-  max-width:1200px;
+  max-width:1100px;
   margin:auto;
-  padding:30px 20px;
+  padding:20px;
 }
 
 /* ===== ARTICLE CARD ===== */
 .article-card{
   position:relative;
   background:
-    linear-gradient(180deg,#020617,#000),
-    repeating-linear-gradient(
-      135deg,
-      rgba(255,255,255,0.03),
-      rgba(255,255,255,0.03) 2px,
-      transparent 2px,
-      transparent 8px
-    );
-  border:1px solid rgba(255,255,255,0.14);
-  border-radius:22px;
-  padding:26px 28px;
-  margin-bottom:26px;
+    linear-gradient(180deg,#060606,#000);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;
+  padding:24px 26px;
+  margin-bottom:22px;
   cursor:pointer;
-  overflow:hidden;
   transition:.35s ease;
 }
 
-/* SCAN */
+/* subtle scan */
 .article-card::before{
   content:"";
   position:absolute;
-  inset:-120% 0 auto 0;
-  height:240%;
+  inset:0;
   background:linear-gradient(
-    to bottom,
+    120deg,
     transparent,
-    rgba(255,0,60,.45),
+    rgba(255,0,60,.25),
     transparent
   );
-  animation:scan 4s linear infinite;
+  opacity:0;
+  transition:.35s;
 }
-@keyframes scan{
-  to{transform:translateY(120%)}
-}
+.article-card:hover::before{opacity:1}
 
 .article-card:hover{
-  transform:translateY(-8px) scale(1.015);
+  transform:translateY(-6px);
   box-shadow:
-    0 0 70px rgba(255,0,60,.55),
-    inset 0 0 30px rgba(0,255,156,.25);
+    0 0 50px rgba(255,0,60,.45),
+    inset 0 0 20px rgba(0,255,156,.15);
 }
 
 /* LINK */
@@ -135,24 +98,22 @@ body{
   color:#fff;
 }
 
-/* BADGES */
-.badges{
+/* TAGS */
+.tags{
   display:flex;
   gap:8px;
   flex-wrap:wrap;
   margin:10px 0 6px;
 }
-.badge{
+.tag{
+  font-size:11px;
   padding:4px 10px;
   border-radius:999px;
-  font-size:11px;
   font-weight:800;
-  letter-spacing:.5px;
 }
-.smart{background:#052e2b;color:#5eead4}
+.smart{background:#022c22;color:#5eead4}
 .trap{background:#3f0a0a;color:#fca5a5}
 .inst{background:#0a2540;color:#93c5fd}
-.omega{background:#2e1065;color:#c4b5fd}
 
 /* DESC */
 .article-desc{
@@ -162,8 +123,8 @@ body{
   line-height:1.6;
 }
 
-/* THREAT */
-.threat{
+/* RISK LINE */
+.risk{
   margin-top:12px;
   font-size:12px;
   color:#f87171;
@@ -173,50 +134,57 @@ body{
 
 /* DISCLAIMER */
 .disclaimer{
-  max-width:1200px;
+  max-width:1100px;
   margin:60px auto 40px;
-  padding:22px;
-  border-radius:16px;
-  background:#000;
-  border:1px dashed rgba(255,255,255,.35);
+  padding:20px;
+  border-radius:14px;
+  border:1px dashed rgba(255,255,255,.3);
   font-size:13px;
   line-height:1.7;
 }
 
 /* AUTHOR */
 .author-box{
-  max-width:1200px;
-  margin:80px auto;
-  padding:30px;
-  border-radius:26px;
+  max-width:1100px;
+  margin:70px auto;
+  padding:26px;
+  border-radius:22px;
   display:flex;
-  gap:26px;
-  background:
-    linear-gradient(135deg,#020617,#000),
-    repeating-linear-gradient(
-      45deg,
-      rgba(255,255,255,.04),
-      rgba(255,255,255,.04) 2px,
-      transparent 2px,
-      transparent 10px
-    );
-  border:1px solid rgba(255,255,255,.18);
+  gap:24px;
+  background:#000;
+  border:1px solid rgba(255,255,255,.15);
 }
 .author-left img{
-  width:100px;height:100px;border-radius:50%;
-  border:4px solid var(--neon);
+  width:90px;height:90px;border-radius:50%;
+  border:3px solid var(--neon);
 }
-.author-right h4{margin:0;font-size:24px;font-weight:900}
-.author-title{color:var(--neon);font-weight:800}
-.author-bio{font-size:14px;line-height:1.7;color:#cbd5f5}
+.author-right h4{
+  margin:0;font-size:22px;font-weight:900;
+}
+.author-title{
+  color:var(--neon);
+  font-weight:800;
+}
+.author-bio{
+  font-size:14px;
+  line-height:1.7;
+  color:#cbd5f5;
+}
 .author-btn{
-  display:inline-block;margin-top:12px;
-  padding:12px 22px;border-radius:14px;
-  background:linear-gradient(90deg,#ff003c,#ff7a7a);
-  color:#fff;font-weight:900;text-decoration:none;
-  box-shadow:0 0 35px rgba(255,0,60,.7);
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 20px;
+  border-radius:12px;
+  background:#ff003c;
+  color:#fff;
+  font-weight:900;
+  text-decoration:none;
 }
-.author-note{margin-top:10px;font-size:12px;color:#9ca3af}
+.author-note{
+  margin-top:10px;
+  font-size:12px;
+  color:#9ca3af;
+}
 
 /* MOBILE */
 @media(max-width:650px){
@@ -231,54 +199,43 @@ body{
 <body>
 
 <div class="header">
-  <h1>BLACK OPS WAR CORE</h1>
-  <p>⚠️ MARKET DOMINATION INTERFACE ⚠️</p>
-</div>
-
-<div class="core-strip">
-  <span>● LIQUIDITY ENGINE : MAX</span>
-  <span>● SMART MONEY : OVERRIDE</span>
-  <span>● RETAIL EMOTION : NEUTRALIZED</span>
-  <span>● CONTROL LEVEL : OMEGA</span>
+  <h1>BLACK OPS ARTICLES</h1>
+  <p>⚠️ Classified Market Intelligence</p>
 </div>
 
 <div class="articles-wrapper">
 
-  <!-- ARTICLE 1 -->
   <div class="article-card">
     <a href="liquidity-hunting-kya-hai.html">☠️ Liquidity Hunting क्या है?</a>
-    <div class="badges">
-      <div class="badge smart">Smart Money</div>
-      <div class="badge trap">Retail Trap</div>
-      <div class="badge inst">Institutional</div>
-      <div class="badge omega">Omega Level</div>
+    <div class="tags">
+      <div class="tag smart">Smart Money</div>
+      <div class="tag trap">Retail Trap</div>
+      <div class="tag inst">Institutional</div>
     </div>
     <div class="article-desc">
-      The blueprint institutions use to wipe obvious stops.
+      Institutions stop-loss कहाँ और क्यों hunt करते हैं — पूरा logic.
     </div>
-    <div class="threat">⚠️ PSYCHOLOGICAL DOMINATION ZONE</div>
+    <div class="risk">⚠️ HIGH MANIPULATION AREA</div>
   </div>
 
-  <!-- ARTICLE 2 -->
   <div class="article-card">
     <a href="put-call-ratio-kya-hai.html">☠️ PCR (Put–Call Ratio) क्या है?</a>
-    <div class="badges">
-      <div class="badge smart">Positioning</div>
-      <div class="badge trap">Sentiment Trap</div>
-      <div class="badge omega">Omega Read</div>
+    <div class="tags">
+      <div class="tag smart">Positioning</div>
+      <div class="tag trap">Sentiment Trap</div>
     </div>
     <div class="article-desc">
-      Crowd vs Smart Money — who is trapped, who is loaded.
+      Crowd data नहीं — trap data. PCR का real institutional use.
     </div>
-    <div class="threat">⚠️ HIGH MANIPULATION ZONE</div>
+    <div class="risk">⚠️ CROWD MISREAD ZONE</div>
   </div>
 
 </div>
 
 <div class="disclaimer">
 ⚠️ <strong>DISCLAIMER:</strong><br>
-यह जानकारी केवल Educational Purpose के लिए है।  
-Trading में High Risk शामिल होता है। Capital Loss संभव है।
+यह content केवल Educational purpose के लिए है।  
+Trading में high risk होता है। Capital loss संभव है।
 </div>
 
 <div class="author-box">
@@ -289,10 +246,10 @@ Trading में High Risk शामिल होता है। Capital Loss 
     <h4>✍️ Shravansh</h4>
     <p class="author-title">Stock Market • Options • Trading Educator</p>
     <p class="author-bio">
-      Institutional-grade trading education in Hindi — raw & real.
+      Hindi traders ke liye institutional logic — bina hype, bina indicator.
     </p>
     <a href="https://youtube.com/@shravansh03" target="_blank" class="author-btn">
-      📺 Enter the War Room
+      📺 Learn on YouTube
     </a>
     <p class="author-note">⚠️ Educational purpose only. No investment advice.</p>
   </div>
