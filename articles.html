@@ -1,215 +1,200 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Black Ops Articles</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BLACK OPS ARTICLES — OMEGA WAR CORE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-:root{
-  --bg:#020617;
-  --panel:#050b1a;
-  --card:#050b1a;
-  --neon:#00ff9c;
-  --cyan:#22d3ee;
-  --red:#ff003c;
-  --purple:#7c3aed;
-  --text:#e5e7eb;
-  --muted:#9ca3af;
-}
-
-*{box-sizing:border-box}
-
+/* ===== GLOBAL ===== */
 body{
   margin:0;
-  font-family:Inter,system-ui,monospace;
-  background:
-    radial-gradient(circle at top,#020617,#000 70%);
-  color:var(--text);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background:radial-gradient(circle at top, #05080f, #000);
+  color:#e5fff3;
 }
 
-/* ===== OMEGA HEADER ===== */
-.omega-header{
+/* ===== BLINK HEADINGS ===== */
+.omega-blink,
+.ops-blink{
   text-align:center;
-  padding:70px 20px 40px;
-}
-.omega-header h1{
-  font-size:56px;
-  font-weight:1000;
-  letter-spacing:6px;
-  color:var(--neon);
-  text-shadow:
-    0 0 40px rgba(0,255,156,.8),
-    3px 0 var(--red),
-    -3px 0 var(--cyan);
-}
-.omega-header p{
-  margin-top:12px;
-  font-size:14px;
   letter-spacing:3px;
-  color:#f87171;
+  animation:neonBlink 2.8s infinite;
+  text-shadow:
+    0 0 12px #00ff9c,
+    0 0 35px #00ff9c,
+    0 0 70px rgba(0,255,156,.9);
 }
 
-/* ===== INTEL STRIP ===== */
-.intel-strip{
-  max-width:1200px;
-  margin:0 auto 60px;
+@keyframes neonBlink{
+  0%,100%{opacity:1}
+  45%{opacity:.75}
+  50%{opacity:.35}
+  55%{opacity:1}
+}
+
+/* glitch layer */
+.omega-blink::after{
+  content:attr(data-text);
+  position:absolute;
+  left:2px;
+  top:0;
+  color:#ff003c;
+  opacity:.5;
+  animation:glitch 3s infinite;
+}
+@keyframes glitch{
+  0%,90%,100%{opacity:0}
+  92%{opacity:.6}
+  94%{opacity:0}
+}
+
+/* ===== HEADER ===== */
+header{
+  padding:60px 15px 40px;
+}
+header h1{
+  font-size:48px;
+  margin:0;
+}
+header p{
+  text-align:center;
+  margin-top:12px;
+  color:#ff3b3b;
+  letter-spacing:2px;
+}
+
+/* ===== STATUS BAR ===== */
+.status-box{
+  max-width:900px;
+  margin:30px auto;
   padding:18px 22px;
   border-radius:14px;
-  background:linear-gradient(180deg,#020617,#000);
-  border:1px solid rgba(0,255,156,.25);
-  box-shadow:0 0 40px rgba(0,255,156,.25);
+  border:1px solid rgba(0,255,156,.35);
+  box-shadow:0 0 35px rgba(0,255,156,.15);
 }
-.intel-strip ul{
-  margin:0;
-  padding-left:18px;
-}
-.intel-strip li{
-  margin:6px 0;
-  color:var(--neon);
-  font-size:14px;
-}
-
-/* ===== BLACK OPS TITLE ===== */
-.ops-title{
-  text-align:center;
-  font-size:40px;
-  font-weight:1000;
-  letter-spacing:4px;
-  color:#22ffb0;
-  margin-bottom:30px;
-  text-shadow:0 0 30px rgba(34,255,176,.7);
+.status-box li{
+  margin:8px 0;
+  color:#7cffc8;
 }
 
 /* ===== ARTICLES ===== */
-.articles{
-  max-width:1200px;
-  margin:auto;
-  padding:0 20px 80px;
+.section{
+  padding:40px 15px 80px;
+}
+.section h2{
+  font-size:36px;
+  margin-bottom:30px;
 }
 
-/* ===== CARD ===== */
 .article-card{
-  background:linear-gradient(180deg,#050b1a,#020617);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:18px;
-  padding:26px 30px;
-  margin-bottom:22px;
-  cursor:pointer;
-  transition:.35s ease;
-  box-shadow:inset 0 0 20px rgba(0,0,0,.6);
+  max-width:900px;
+  margin:0 auto 18px;
+  padding:20px 24px;
+  background:linear-gradient(135deg,#04070c,#070b14);
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 0 25px rgba(0,0,0,.7);
+  transition:.3s;
 }
 .article-card:hover{
-  transform:translateY(-6px);
-  box-shadow:
-    0 0 60px rgba(0,255,156,.35),
-    inset 0 0 25px rgba(0,0,0,.7);
+  transform:translateY(-4px);
+  box-shadow:0 0 40px rgba(0,255,156,.25);
 }
 
-/* ===== TITLE ===== */
-.article-card h2{
-  margin:0;
-  font-size:22px;
-  font-weight:900;
-  display:flex;
-  align-items:center;
-  gap:10px;
+.article-card a{
+  font-size:20px;
+  font-weight:600;
+  text-decoration:none;
+  color:#ffffff;
 }
 
-/* ===== BADGES ===== */
 .badges{
-  display:flex;
-  gap:10px;
-  margin:12px 0 8px;
+  margin:10px 0;
 }
 .badge{
-  padding:4px 12px;
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:20px;
   font-size:11px;
-  font-weight:900;
-  border-radius:999px;
+  margin-right:6px;
 }
-.smart{background:#022c22;color:#5eead4}
-.trap{background:#3f0a0a;color:#fca5a5}
-.ultra{background:#2e1065;color:#c4b5fd}
+.smart{background:#00ff9c;color:#000}
+.trap{background:#ff003c}
+.ultra{background:#6f2cff}
 
-/* ===== DESC ===== */
-.article-card p{
-  margin:8px 0 0;
+.article-desc{
   font-size:14px;
-  color:var(--muted);
+  opacity:.85;
 }
 
-/* ===== MOBILE ===== */
-@media(max-width:700px){
-  .omega-header h1{font-size:36px}
-  .ops-title{font-size:28px}
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:30px 15px;
+  font-size:13px;
+  opacity:.6;
 }
 </style>
 </head>
 
 <body>
 
-<!-- OMEGA HEADER -->
-<div class="omega-header">
-  <h1>OMEGA WAR CORE</h1>
+<header>
+  <h1 class="omega-blink" data-text="OMEGA WAR CORE">OMEGA WAR CORE</h1>
   <p>⚠️ MARKET DOMINATION INTERFACE ⚠️</p>
-</div>
 
-<!-- INTELLIGENCE STRIP -->
-<div class="intel-strip">
-  <ul>
-    <li>Smart Money Nodes : ACTIVE</li>
-    <li>Liquidity Zones : MAPPED</li>
-    <li>Retail Trap Probability : EXTREME</li>
+  <ul class="status-box">
+    <li>• Smart Money Nodes : ACTIVE</li>
+    <li>• Liquidity Zones : MAPPED</li>
+    <li>• Retail Trap Probability : EXTREME</li>
   </ul>
-</div>
+</header>
 
-<!-- BLACK OPS -->
-<div class="ops-title">BLACK OPS ARTICLES</div>
+<section class="section">
+  <h2 class="ops-blink">BLACK OPS ARTICLES</h2>
 
-<div class="articles">
-
-  <div class="article-card" onclick="location.href='stock-market-kya-hai.html'">
-    <h2>😈 Stock Market</h2>
+  <div class="article-card">
+    <a href="stock-market-kya-hai.html">😈 Stock Market</a>
     <div class="badges">
-      <div class="badge smart">SMART MONEY</div>
-      <div class="badge trap">RETAIL TRAP</div>
-      <div class="badge ultra">ULTRA ADVANCE</div>
+      <span class="badge smart">SMART MONEY</span>
+      <span class="badge trap">RETAIL TRAP</span>
+      <span class="badge ultra">ULTRA ADVANCE</span>
     </div>
-    <p>जब आप किसी कंपनी के शेयर खरीदते हैं, तो आप उस कंपनी के हिस्सेदार बन जाते हैं।</p>
+    <div class="article-desc">
+      Retail ke liye market ka asli structure aur game.
+    </div>
   </div>
 
-  <div class="article-card" onclick="location.href='put-call-ratio-kya-hai.html'">
-    <h2>☠️ PCR (Put-Call Ratio) – Trap Psychology</h2>
+  <div class="article-card">
+    <a href="put-call-ratio-kya-hai.html">☠️ PCR (Put–Call Ratio) – Trap Psychology</a>
     <div class="badges">
-      <div class="badge smart">SMART MONEY</div>
-      <div class="badge trap">RETAIL TRAP</div>
-      <div class="badge ultra">ULTRA ADVANCE</div>
+      <span class="badge smart">SMART MONEY</span>
+      <span class="badge trap">RETAIL TRAP</span>
+      <span class="badge ultra">ULTRA ADVANCE</span>
     </div>
-    <p>PCR ko sentiment nahi, crowd positioning weapon ki tarah use kiya jata hai.</p>
+    <div class="article-desc">
+      PCR ko sentiment nahi, weapon ki tarah kaise use kiya jata hai.
+    </div>
   </div>
 
-  <div class="article-card" onclick="location.href='intraday-trading-kya-hai.html'">
-    <h2>☠️ Intraday Trading</h2>
+  <div class="article-card">
+    <a href="intraday-trading-kya-hai.html">💀 Intraday Trading</a>
     <div class="badges">
-      <div class="badge smart">SMART MONEY</div>
-      <div class="badge trap">RETAIL TRAP</div>
-      <div class="badge ultra">ULTRA ADVANCE</div>
+      <span class="badge smart">SMART MONEY</span>
+      <span class="badge trap">RETAIL TRAP</span>
+      <span class="badge ultra">ULTRA ADVANCE</span>
     </div>
-    <p>Intraday Trading ka real institutional flow kaise kaam karta hai.</p>
+    <div class="article-desc">
+      Intraday me paisa kaise banta aur kaise loot jata hai.
+    </div>
   </div>
 
-  <div class="article-card" onclick="location.href='stock-market-me-paisa-kaise-lagaye.html'">
-    <h2>☠️ Stock Market में पैसा कैसे लगाएं?</h2>
-    <div class="badges">
-      <div class="badge smart">SMART MONEY</div>
-      <div class="badge trap">RETAIL TRAP</div>
-      <div class="badge ultra">ULTRA ADVANCE</div>
-    </div>
-    <p>Retail logic vs smart money execution ka real difference.</p>
-  </div>
+</section>
 
-</div>
+<footer>
+  © 2025 BLACK OPS TRADING — Educational Purpose Only
+</footer>
 
 </body>
 </html>
