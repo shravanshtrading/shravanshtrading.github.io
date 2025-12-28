@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<title>BLACK OPS OMEGA — TRADING WAR CORE</title>
+<title>BLACK OPS OMEGA — TRADING WAR INTELLIGENCE</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -72,10 +73,31 @@ header{
   font-size:14px;
 }
 
-/* ===== SECTION ===== */
-.section{
-  padding:50px 15px;
+/* ===== WAR METER ===== */
+.war-meter{
+  max-width:950px;
+  margin:60px auto;
+  padding:26px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#0a0e1f,#040815);
+  border:1px solid rgba(255,0,60,.5);
+  box-shadow:0 0 60px rgba(255,0,60,.25);
 }
+.war-meter h3{
+  color:#ff003c;
+  letter-spacing:2px;
+}
+.meter-line{margin:18px 0}
+.meter-line span{display:block;font-size:13px;margin-bottom:6px}
+.bar{height:12px;border-radius:10px;background:#111;overflow:hidden}
+.bar i{display:block;height:100%;animation:pulse 2.5s infinite}
+.bar.red i{width:85%;background:linear-gradient(90deg,#ff003c,#ff6b6b)}
+.bar.green i{width:70%;background:linear-gradient(90deg,#00ff9c,#7cffc8)}
+@keyframes pulse{0%{opacity:.6}50%{opacity:1}100%{opacity:.6}}
+.meter-note{margin-top:18px;font-size:14px}
+
+/* ===== ARTICLE ===== */
+.section{padding:50px 15px}
 .section h2{
   text-align:center;
   font-size:38px;
@@ -83,7 +105,6 @@ header{
   margin-bottom:40px;
 }
 
-/* ===== ARTICLE ===== */
 .article{
   max-width:950px;
   margin:0 auto 24px;
@@ -93,14 +114,12 @@ header{
   border:1px solid rgba(255,255,255,.1);
   box-shadow:0 0 30px rgba(0,0,0,.9);
 }
-
 .article a{
   font-size:22px;
   font-weight:700;
   text-decoration:none;
   color:#fff;
 }
-
 .tags{margin:12px 0}
 .tag{
   display:inline-block;
@@ -112,11 +131,57 @@ header{
 .smart{background:var(--neon);color:#000}
 .trap{background:var(--danger)}
 .omega-tag{background:#6f2cff}
+.desc{font-size:15px;line-height:1.7}
 
-.desc{
+/* ===== PCR CASE STUDY ===== */
+.case-study{
+  max-width:950px;
+  margin:60px auto;
+  padding:30px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#070b18,#030611);
+  border:1px solid rgba(0,255,156,.45);
+  box-shadow:0 0 50px rgba(0,255,156,.25);
+}
+.case-study h3{color:#00ff9c;letter-spacing:2px}
+.case-study p{font-size:15px;line-height:1.8}
+.danger-line{color:#ff003c;font-weight:bold}
+
+/* ===== YOUTUBE STRIKE ZONE ===== */
+.youtube-box{
+  max-width:950px;
+  margin:70px auto;
+  padding:32px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#120202,#220000);
+  border:2px solid #ff003c;
+  box-shadow:0 0 70px rgba(255,0,60,.45);
+  text-align:center;
+}
+.youtube-box h3{
+  color:#ff003c;
+  letter-spacing:2px;
+}
+.youtube-box p{
   font-size:15px;
   line-height:1.7;
-  opacity:.95;
+  margin:18px 0;
+}
+.youtube-btn{
+  display:inline-block;
+  padding:14px 26px;
+  background:#ff003c;
+  color:#fff;
+  font-size:16px;
+  font-weight:bold;
+  border-radius:30px;
+  text-decoration:none;
+  box-shadow:0 0 30px rgba(255,0,60,.6);
+  transition:.3s;
+}
+.youtube-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 50px rgba(255,0,60,.9);
 }
 
 /* ===== DISCLAIMER ===== */
@@ -129,16 +194,8 @@ header{
   border:1px solid rgba(255,0,60,.6);
   box-shadow:0 0 55px rgba(255,0,60,.3);
 }
-
-.disclaimer h3{
-  color:var(--danger);
-  letter-spacing:2px;
-}
-
-.disclaimer p{
-  font-size:14px;
-  line-height:1.9;
-}
+.disclaimer h3{color:var(--danger)}
+.disclaimer p{font-size:14px;line-height:1.9}
 
 /* ===== FOOTER ===== */
 footer{
@@ -154,64 +211,87 @@ footer{
 
 <header>
   <h1 class="omega">OMEGA WAR CORE</h1>
-  <div class="header-alert">
-    ☠️ PSYCHOLOGICAL MARKET WAR • SMART MONEY VS RETAIL ☠️
-  </div>
+  <div class="header-alert">☠️ SMART MONEY VS RETAIL — LIVE PSYCHO WAR ☠️</div>
 
   <ul class="threat-bar">
-    <li>• Retail traders emotional decisions pe operate karte hain — Smart Money isi weakness ka use karti hai.</li>
-    <li>• Liquidity hunt, fake breakout aur option chain traps har din activate hote hain.</li>
-    <li>• Jo trader risk management ignore karta hai, market use systemically eliminate kar deti hai.</li>
-    <li>• Yeh interface market ka DARK SIDE dikhata hai — jo normally koi nahi batata.</li>
+    <li>• Retail emotion se trade karta hai, Smart Money structure se.</li>
+    <li>• Liquidity hunt aur fake breakouts roz hote hain.</li>
+    <li>• Risk ignore karne wale traders market se eliminate ho jaate hain.</li>
+    <li>• Yeh platform market ka wo sach dikhata hai jo normally koi nahi batata.</li>
   </ul>
 </header>
 
+<div class="war-meter">
+  <h3>⚔️ LIVE MARKET WAR STATUS</h3>
+  <div class="meter-line">
+    <span>RETAIL EMOTION</span>
+    <div class="bar red"><i></i></div>
+    <strong>OVERLOADED</strong>
+  </div>
+  <div class="meter-line">
+    <span>SMART MONEY CONTROL</span>
+    <div class="bar green"><i></i></div>
+    <strong>DOMINANT</strong>
+  </div>
+  <p class="meter-note">
+    ⚠️ Jab Retail extreme confidence me hota hai, tab Smart Money reverse move karti hai.
+  </p>
+</div>
+
 <section class="section">
   <h2>BLACK OPS ARTICLES</h2>
-
   <div class="article">
-    <a href="put-call-ratio-kya-hai.html">
-      ☠️ PCR (Put–Call Ratio) — Crowd Trap Psychology
-    </a>
+    <a href="put-call-ratio-kya-hai.html">☠️ PCR — Crowd Trap Psychology</a>
     <div class="tags">
       <span class="tag smart">SMART MONEY</span>
       <span class="tag trap">RETAIL TRAP</span>
-      <span class="tag omega-tag">OMEGA LEVEL</span>
+      <span class="tag omega-tag">OMEGA</span>
     </div>
     <div class="desc">
-      Put–Call Ratio ko sirf sentiment indicator samajhna sabse badi galti hai.
-      PCR asal me **crowd positioning, emotional imbalance aur option writers ke trap**
-      ko reveal karta hai.  
-      <br><br>
-      Jab retail ek side pe zyada confident hota hai,
-      tabhi Smart Money opposite direction me setup complete karti hai.
-      Isi wajah se PCR high hone par bhi market gir sakta hai,
-      aur PCR low hone par bhi market upar ja sakta hai.
+      PCR sentiment nahi — crowd positioning aur option writer trap ka mirror hai.
     </div>
   </div>
 </section>
 
+<div class="case-study">
+  <h3>☠️ PCR TRAP — REALITY CHECK</h3>
+  <p>
+    PCR high hote hi retail bearish ho jaata hai,
+    jabki Smart Money pehle hi puts sell kar chuki hoti hai.
+  </p>
+  <p>
+    Thoda sa short covering market ko upar le jaata hai,
+    aur retail panic me loss book karta hai.
+  </p>
+  <p class="danger-line">
+    ⚠️ PCR number nahi — crowd ka jhootha confidence dikhata hai.
+  </p>
+</div>
+
+<!-- ===== YOUTUBE CTA ===== -->
+<div class="youtube-box">
+  <h3>📺 BLACK OPS TRADING — YOUTUBE HQ</h3>
+  <p>
+    Agar aap sirf padhna nahi,  
+    balki **market ke traps ko live dekhna aur samajhna** chahte ho,
+    to niche click karo.
+  </p>
+  <a href="https://youtube.com/@shravansh03" target="_blank" class="youtube-btn">
+    🔴 Watch on YouTube — Trade with Shravansh
+  </a>
+</div>
+
 <div class="disclaimer">
-  <h3>⚠️ EXTREME RISK & LEGAL DISCLAIMER</h3>
+  <h3>⚠️ EXTREME RISK DISCLAIMER</h3>
   <p>
-    Yeh website aur yahan diya gaya sabhi content **sirf educational aur informational purpose**
-    ke liye hai. Stock Market, Options, Forex aur Trading me
-    **high level ka financial risk** hota hai.
-  </p>
-  <p>
-    Yahan par diya gaya koi bhi content **buy/sell signal, tips,
-    ya investment advice nahi** hai.
-    Agar aap bina proper knowledge, risk management aur discipline ke trade karte hain,
-    to **aapka capital poori tarah se loss ho sakta hai**.
-  </p>
-  <p>
-    Aap apne har trading decision ke liye **khud poori tarah zimmedar** honge.
-    Yeh platform sirf awareness aur market psychology samjhane ke liye banaya gaya hai.
+    Yeh content sirf educational purpose ke liye hai.
+    Trading me capital loss ka risk bahut zyada hota hai.
+    Koi bhi buy/sell advice provide nahi ki ja rahi.
   </p>
 </div>
 
 <footer>
-  © 2025 BLACK OPS OMEGA — EDUCATION • AWARENESS • NO TIPS
+  © 2025 BLACK OPS OMEGA | EDUCATION • AWARENESS • NO TIPS
 </footer>
 
 <script>
