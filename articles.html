@@ -2,7 +2,7 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<title>OMEGA WAR CORE – Articles</title>
+<title>BLACK OPS WAR CORE – Articles</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -35,24 +35,50 @@ body{
 }
 
 /* ===== HEADER ===== */
-h1{
+.header{
   text-align:center;
-  font-size:42px;
+  padding:50px 20px 30px;
+}
+.header h1{
+  margin:0;
+  font-size:46px;
   font-weight:900;
-  letter-spacing:3px;
-  margin:40px 0 30px;
+  letter-spacing:4px;
   color:var(--neon);
   text-shadow:
-    0 0 30px rgba(0,255,156,0.8),
-    2px 0 var(--red),
-    -2px 0 var(--blue);
+    0 0 40px rgba(0,255,156,.8),
+    3px 0 var(--red),
+    -3px 0 var(--blue);
+}
+.header p{
+  margin-top:10px;
+  color:#f87171;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+/* ===== CORE STRIP ===== */
+.core-strip{
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  flex-wrap:wrap;
+  padding:16px;
+  background:#000;
+  border-top:1px solid rgba(255,255,255,.1);
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.core-strip span{
+  font-size:12px;
+  color:#9ca3af;
+  letter-spacing:1px;
 }
 
 /* ===== WRAPPER ===== */
 .articles-wrapper{
   max-width:1200px;
   margin:auto;
-  padding:0 20px;
+  padding:30px 20px;
 }
 
 /* ===== ARTICLE CARD ===== */
@@ -70,41 +96,38 @@ h1{
   border:1px solid rgba(255,255,255,0.14);
   border-radius:22px;
   padding:26px 28px;
-  margin-bottom:24px;
+  margin-bottom:26px;
   cursor:pointer;
   overflow:hidden;
-  transition:0.35s ease;
+  transition:.35s ease;
 }
 
-/* SCAN EFFECT */
+/* SCAN */
 .article-card::before{
   content:"";
   position:absolute;
-  top:-120%;
-  left:0;
-  width:100%;
+  inset:-120% 0 auto 0;
   height:240%;
   background:linear-gradient(
     to bottom,
     transparent,
-    rgba(255,0,60,0.45),
+    rgba(255,0,60,.45),
     transparent
   );
   animation:scan 4s linear infinite;
 }
 @keyframes scan{
-  0%{top:-120%}
-  100%{top:120%}
+  to{transform:translateY(120%)}
 }
 
 .article-card:hover{
   transform:translateY(-8px) scale(1.015);
   box-shadow:
-    0 0 70px rgba(255,0,60,0.55),
-    inset 0 0 30px rgba(0,255,156,0.25);
+    0 0 70px rgba(255,0,60,.55),
+    inset 0 0 30px rgba(0,255,156,.25);
 }
 
-/* ===== LINK ===== */
+/* LINK */
 .article-card a{
   text-decoration:none;
   font-size:22px;
@@ -112,7 +135,26 @@ h1{
   color:#fff;
 }
 
-/* ===== DESC ===== */
+/* BADGES */
+.badges{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:10px 0 6px;
+}
+.badge{
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.5px;
+}
+.smart{background:#052e2b;color:#5eead4}
+.trap{background:#3f0a0a;color:#fca5a5}
+.inst{background:#0a2540;color:#93c5fd}
+.omega{background:#2e1065;color:#c4b5fd}
+
+/* DESC */
 .article-desc{
   margin-top:8px;
   font-size:14px;
@@ -120,20 +162,28 @@ h1{
   line-height:1.6;
 }
 
-/* ===== DISCLAIMER ===== */
+/* THREAT */
+.threat{
+  margin-top:12px;
+  font-size:12px;
+  color:#f87171;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+/* DISCLAIMER */
 .disclaimer{
   max-width:1200px;
   margin:60px auto 40px;
   padding:22px;
   border-radius:16px;
   background:#000;
-  border:1px dashed rgba(255,255,255,0.35);
+  border:1px dashed rgba(255,255,255,.35);
   font-size:13px;
   line-height:1.7;
-  color:#e5e7eb;
 }
 
-/* ===== AUTHOR ===== */
+/* AUTHOR */
 .author-box{
   max-width:1200px;
   margin:80px auto;
@@ -145,138 +195,90 @@ h1{
     linear-gradient(135deg,#020617,#000),
     repeating-linear-gradient(
       45deg,
-      rgba(255,255,255,0.04),
-      rgba(255,255,255,0.04) 2px,
+      rgba(255,255,255,.04),
+      rgba(255,255,255,.04) 2px,
       transparent 2px,
       transparent 10px
     );
-  border:1px solid rgba(255,255,255,0.18);
+  border:1px solid rgba(255,255,255,.18);
 }
 .author-left img{
-  width:100px;
-  height:100px;
-  border-radius:50%;
+  width:100px;height:100px;border-radius:50%;
   border:4px solid var(--neon);
 }
-.author-right h4{
-  margin:0;
-  font-size:24px;
-  font-weight:900;
-}
-.author-title{
-  color:var(--neon);
-  font-weight:800;
-}
-.author-bio{
-  font-size:14px;
-  line-height:1.7;
-  color:#cbd5f5;
-}
+.author-right h4{margin:0;font-size:24px;font-weight:900}
+.author-title{color:var(--neon);font-weight:800}
+.author-bio{font-size:14px;line-height:1.7;color:#cbd5f5}
 .author-btn{
-  display:inline-block;
-  margin-top:12px;
-  padding:12px 22px;
-  border-radius:14px;
+  display:inline-block;margin-top:12px;
+  padding:12px 22px;border-radius:14px;
   background:linear-gradient(90deg,#ff003c,#ff7a7a);
-  color:#fff;
-  font-weight:900;
-  text-decoration:none;
-  box-shadow:0 0 35px rgba(255,0,60,0.7);
+  color:#fff;font-weight:900;text-decoration:none;
+  box-shadow:0 0 35px rgba(255,0,60,.7);
 }
-.author-note{
-  margin-top:10px;
-  font-size:12px;
-  color:#9ca3af;
-}
+.author-note{margin-top:10px;font-size:12px;color:#9ca3af}
 
-/* ===== MOBILE ===== */
+/* MOBILE */
 @media(max-width:650px){
-  h1{font-size:28px;}
-  .article-card a{font-size:18px;}
-  .author-box{flex-direction:column;text-align:center;}
-  .author-left img{margin:auto;}
+  .header h1{font-size:30px}
+  .article-card a{font-size:18px}
+  .author-box{flex-direction:column;text-align:center}
+  .author-left img{margin:auto}
 }
 </style>
 </head>
 
 <body>
 
-
- <div class="header">
-  <h1>OMEGA WAR CORE</h1>
+<div class="header">
+  <h1>BLACK OPS WAR CORE</h1>
   <p>⚠️ MARKET DOMINATION INTERFACE ⚠️</p>
 </div>
 
 <div class="core-strip">
-  <span>● LIQUIDITY ENGINE : MAX OUTPUT</span>
-  <span>● SMART MONEY SIGNAL : OVERRIDE</span>
-  <span>● RETAIL EMOTION : COMPROMISED</span>
-  <span>● MARKET CONTROL : OMEGA LEVEL</span>
-</div> 
-
-<h1>☠️ OMEGA WAR CORE – ARTICLES</h1>
+  <span>● LIQUIDITY ENGINE : MAX</span>
+  <span>● SMART MONEY : OVERRIDE</span>
+  <span>● RETAIL EMOTION : NEUTRALIZED</span>
+  <span>● CONTROL LEVEL : OMEGA</span>
+</div>
 
 <div class="articles-wrapper">
 
-  <!-- ALL YOUR ORIGINAL ARTICLES (UNCHANGED LINKS) -->
-
+  <!-- ARTICLE 1 -->
   <div class="article-card">
-    <a href="liquidity-hunting-kya-hai.html">
-    ☠️ Liquidity Hunting क्या है?
-    </a>
-     <div class="badges">
+    <a href="liquidity-hunting-kya-hai.html">☠️ Liquidity Hunting क्या है?</a>
+    <div class="badges">
       <div class="badge smart">Smart Money</div>
       <div class="badge trap">Retail Trap</div>
       <div class="badge inst">Institutional</div>
       <div class="badge omega">Omega Level</div>
-    </div
-    <div class="article-desc">
-The Blueprint for the New Financial Era.
- </div>
-    <div class="threat">
-      ⚠️ TOTAL PSYCHOLOGICAL DOMINATION ZONE
     </div>
+    <div class="article-desc">
+      The blueprint institutions use to wipe obvious stops.
+    </div>
+    <div class="threat">⚠️ PSYCHOLOGICAL DOMINATION ZONE</div>
   </div>
 
-      
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <!-- ARTICLE 2 -->
+  <div class="article-card">
+    <a href="put-call-ratio-kya-hai.html">☠️ PCR (Put–Call Ratio) क्या है?</a>
+    <div class="badges">
+      <div class="badge smart">Positioning</div>
+      <div class="badge trap">Sentiment Trap</div>
+      <div class="badge omega">Omega Read</div>
+    </div>
+    <div class="article-desc">
+      Crowd vs Smart Money — who is trapped, who is loaded.
+    </div>
+    <div class="threat">⚠️ HIGH MANIPULATION ZONE</div>
+  </div>
 
 </div>
 
 <div class="disclaimer">
 ⚠️ <strong>DISCLAIMER:</strong><br>
 यह जानकारी केवल Educational Purpose के लिए है।  
-Trading और Investing में High Risk शामिल होता है।  
-Capital Loss संभव है।  
-किसी भी Trade से पहले Financial Advisor से सलाह लें।
+Trading में High Risk शामिल होता है। Capital Loss संभव है।
 </div>
 
 <div class="author-box">
@@ -287,11 +289,10 @@ Capital Loss संभव है।
     <h4>✍️ Shravansh</h4>
     <p class="author-title">Stock Market • Options • Trading Educator</p>
     <p class="author-bio">
-      Practical Stock Market, Options, Forex & Crypto education in Hindi —
-      raw, real, institutional logic.
+      Institutional-grade trading education in Hindi — raw & real.
     </p>
     <a href="https://youtube.com/@shravansh03" target="_blank" class="author-btn">
-      📺 Enter the War Room – YouTube
+      📺 Enter the War Room
     </a>
     <p class="author-note">⚠️ Educational purpose only. No investment advice.</p>
   </div>
@@ -300,8 +301,8 @@ Capital Loss संभव है।
 <script>
 document.querySelectorAll('.article-card').forEach(card=>{
   card.addEventListener('click',()=>{
-    const link = card.querySelector('a');
-    if(link) window.location.href = link.href;
+    const a=card.querySelector('a');
+    if(a) location.href=a.href;
   });
 });
 </script>
