@@ -2,228 +2,163 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<title>BLACK OPS ARTICLES</title>
+<title>Black Ops Articles</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 :root{
-  --bg:#000;
-  --card:#050608;
-  --border:rgba(255,255,255,.08);
-  --neon:#00ff9c;
-  --red:#ff003c;
-  --text:#e5e7eb;
+  --bg:#0b0b0c;
+  --card:#111214;
+  --border:#1f2937;
+  --accent:#d1d5db;
+  --text:#f9fafb;
   --muted:#9ca3af;
+  --danger:#ef4444;
 }
 
 *{box-sizing:border-box}
 
 body{
   margin:0;
-  font-family:Inter,system-ui,-apple-system,monospace;
-  background:
-    radial-gradient(circle at top,#020617,#000 65%);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont;
+  background:var(--bg);
   color:var(--text);
 }
 
 /* ===== HEADER ===== */
 .header{
-  padding:80px 20px 50px;
-  text-align:center;
+  max-width:1100px;
+  margin:90px auto 60px;
+  padding:0 20px;
 }
 .header h1{
   margin:0;
-  font-size:48px;
-  font-weight:1000;
-  letter-spacing:6px;
-  color:#fff;
-}
-.header h1 span{
-  color:var(--neon);
+  font-size:52px;
+  font-weight:900;
+  letter-spacing:2px;
 }
 .header p{
-  margin-top:14px;
-  font-size:12px;
-  letter-spacing:3px;
-  color:#f87171;
-  opacity:.9;
+  margin-top:12px;
+  font-size:13px;
+  letter-spacing:2px;
+  color:var(--muted);
 }
 
 /* ===== WRAPPER ===== */
-.articles-wrapper{
-  max-width:1150px;
+.articles{
+  max-width:1100px;
   margin:auto;
-  padding:10px 20px 40px;
+  padding:0 20px 60px;
 }
 
-/* ===== ARTICLE CARD ===== */
-.article-card{
-  position:relative;
-  background:
-    linear-gradient(180deg,#06070a,#000);
+/* ===== ARTICLE ROW ===== */
+.article{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:20px;
+  align-items:center;
+  padding:28px 30px;
+  margin-bottom:18px;
+  background:var(--card);
   border:1px solid var(--border);
-  border-radius:22px;
-  padding:30px 32px;
-  margin-bottom:26px;
-  cursor:pointer;
-  transition:.45s cubic-bezier(.2,.8,.2,1);
-  overflow:hidden;
-}
-
-/* ULTRA EDGE GLOW */
-.article-card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:22px;
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.05),
-    0 0 0 rgba(255,0,60,0);
-  transition:.45s;
-}
-.article-card:hover::after{
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.12),
-    0 0 80px rgba(255,0,60,.55);
-}
-
-/* SILENT SWEEP */
-.article-card::before{
-  content:"";
-  position:absolute;
-  top:-120%;
-  left:0;
-  width:100%;
-  height:240%;
-  background:linear-gradient(
-    to bottom,
-    transparent,
-    rgba(255,255,255,.06),
-    transparent
-  );
-  transition:.6s;
-}
-.article-card:hover::before{
-  transform:translateY(120%);
-}
-
-.article-card:hover{
-  transform:translateY(-10px) scale(1.02);
-}
-
-/* TITLE */
-.article-card a{
-  text-decoration:none;
-  font-size:24px;
-  font-weight:900;
-  letter-spacing:.5px;
-  color:#fff;
-}
-
-/* META */
-.meta{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin:14px 0 8px;
-}
-.meta span{
-  font-size:11px;
-  padding:4px 12px;
-  border-radius:999px;
-  font-weight:900;
-  letter-spacing:.8px;
-  border:1px solid rgba(255,255,255,.15);
-}
-.smart{color:#5eead4}
-.trap{color:#fca5a5}
-.inst{color:#93c5fd}
-
-/* DESC */
-.article-desc{
-  margin-top:10px;
-  font-size:15px;
-  line-height:1.7;
-  color:#cbd5f5;
-}
-
-/* RISK BAR */
-.risk{
-  margin-top:16px;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:2px;
-  color:#f87171;
-}
-
-/* ===== DISCLAIMER ===== */
-.disclaimer{
-  max-width:1150px;
-  margin:70px auto 50px;
-  padding:24px;
   border-radius:16px;
-  background:#000;
-  border:1px dashed rgba(255,255,255,.25);
+  cursor:pointer;
+  transition:.35s ease;
+}
+
+.article:hover{
+  background:#15171a;
+  transform:translateY(-4px);
+}
+
+/* LEFT */
+.article h2{
+  margin:0;
+  font-size:22px;
+  font-weight:800;
+}
+.article p{
+  margin:10px 0 0;
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* RIGHT */
+.level{
+  text-align:right;
+}
+.level span{
+  display:block;
+  font-size:11px;
+  letter-spacing:1.5px;
+  color:var(--danger);
+  font-weight:900;
+}
+.level small{
+  font-size:11px;
+  color:var(--muted);
+}
+
+/* DISCLAIMER */
+.disclaimer{
+  max-width:1100px;
+  margin:80px auto 60px;
+  padding:22px;
+  border:1px solid var(--border);
+  border-radius:14px;
   font-size:13px;
   line-height:1.8;
+  color:var(--muted);
 }
 
-/* ===== AUTHOR ===== */
-.author-box{
-  max-width:1150px;
+/* AUTHOR */
+.author{
+  max-width:1100px;
   margin:90px auto;
-  padding:34px;
-  border-radius:28px;
+  padding:30px;
   display:flex;
-  gap:28px;
-  background:
-    linear-gradient(180deg,#050608,#000);
-  border:1px solid rgba(255,255,255,.12);
+  gap:26px;
+  border-top:1px solid var(--border);
 }
-.author-left img{
-  width:110px;height:110px;
-  border-radius:50%;
-  border:4px solid var(--neon);
+.author img{
+  width:96px;height:96px;border-radius:50%;
 }
-.author-right h4{
+.author h4{
   margin:0;
-  font-size:26px;
-  font-weight:1000;
-}
-.author-title{
-  margin-top:4px;
-  color:var(--neon);
+  font-size:22px;
   font-weight:900;
 }
-.author-bio{
-  margin-top:10px;
-  font-size:15px;
-  line-height:1.7;
-  color:#cbd5f5;
+.author .title{
+  margin-top:6px;
+  font-size:13px;
+  letter-spacing:1px;
+  color:var(--muted);
 }
-.author-btn{
+.author .bio{
+  margin-top:10px;
+  font-size:14px;
+  line-height:1.7;
+  color:#d1d5db;
+}
+.author a{
   display:inline-block;
   margin-top:14px;
-  padding:12px 26px;
-  border-radius:14px;
-  background:#ff003c;
-  color:#fff;
-  font-weight:1000;
+  font-size:13px;
+  font-weight:800;
   text-decoration:none;
-  box-shadow:0 0 40px rgba(255,0,60,.7);
-}
-.author-note{
-  margin-top:10px;
-  font-size:12px;
-  color:#9ca3af;
+  color:#fff;
+  border-bottom:1px solid #fff;
 }
 
 /* MOBILE */
 @media(max-width:700px){
-  .header h1{font-size:32px}
-  .article-card a{font-size:20px}
-  .author-box{flex-direction:column;text-align:center}
-  .author-left img{margin:auto}
+  .header h1{font-size:34px}
+  .article{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .level{text-align:left}
 }
 </style>
 </head>
@@ -231,73 +166,60 @@ body{
 <body>
 
 <div class="header">
-  <h1>BLACK OPS <span>ARTICLES</span></h1>
-  <p>CLASSIFIED MARKET INTELLIGENCE</p>
+  <h1>Black Ops Articles</h1>
+  <p>Institutional Market Intelligence • Confidential</p>
 </div>
 
-<div class="articles-wrapper">
+<div class="articles">
 
-  <div class="article-card">
-    <a href="liquidity-hunting-kya-hai.html">Liquidity Hunting क्या है?</a>
-    <div class="meta">
-      <span class="smart">SMART MONEY</span>
-      <span class="trap">RETAIL TRAP</span>
-      <span class="inst">INSTITUTIONAL</span>
+  <div class="article" onclick="location.href='liquidity-hunting-kya-hai.html'">
+    <div>
+      <h2>Liquidity Hunting क्या है?</h2>
+      <p>
+        Institutions stop-loss कहाँ और क्यों साफ करते हैं — complete structural logic.
+      </p>
     </div>
-    <div class="article-desc">
-      Institutions stop-loss कहाँ hunt करते हैं — complete logic without indicators.
+    <div class="level">
+      <span>HIGH RISK</span>
+      <small>Manipulation Zone</small>
     </div>
-    <div class="risk">⚠️ EXTREME MANIPULATION ZONE</div>
   </div>
 
-  <div class="article-card">
-    <a href="put-call-ratio-kya-hai.html">PCR (Put–Call Ratio) क्या है?</a>
-    <div class="meta">
-      <span class="smart">POSITIONING</span>
-      <span class="trap">SENTIMENT TRAP</span>
+  <div class="article" onclick="location.href='put-call-ratio-kya-hai.html'">
+    <div>
+      <h2>PCR (Put–Call Ratio) क्या है?</h2>
+      <p>
+        Sentiment indicator नहीं — crowd positioning का trap map.
+      </p>
     </div>
-    <div class="article-desc">
-      PCR sentiment नहीं — crowd trap map है. Smart money perspective explained.
+    <div class="level">
+      <span>EXTREME</span>
+      <small>Crowd Misread</small>
     </div>
-    <div class="risk">⚠️ CROWD MISINTERPRETATION AREA</div>
   </div>
 
 </div>
 
 <div class="disclaimer">
 ⚠️ <strong>DISCLAIMER:</strong><br>
-यह content केवल Educational purpose के लिए है।  
-Trading में High Risk होता है। Capital loss संभव है।
+यह सामग्री केवल Educational purpose के लिए है।  
+Trading एवं Investing में उच्च जोखिम होता है। Capital loss संभव है।
 </div>
 
-<div class="author-box">
-  <div class="author-left">
-    <img src="author.jpg" alt="Shravansh Trading Author">
-  </div>
-  <div class="author-right">
-    <h4>✍️ Shravansh</h4>
-    <div class="author-title">Stock Market • Options • Trading Educator</div>
-    <div class="author-bio">
-      Hindi traders ke liye institutional-grade trading logic —
+<div class="author">
+  <img src="author.jpg" alt="Shravansh">
+  <div>
+    <h4>Shravansh</h4>
+    <div class="title">Stock Market • Options • Trading Educator</div>
+    <div class="bio">
+      Hindi traders ke liye institutional-grade market logic —  
       bina hype, bina indicator, sirf reality.
     </div>
-    <a href="https://youtube.com/@shravansh03" target="_blank" class="author-btn">
-      📺 Learn on YouTube
+    <a href="https://youtube.com/@shravansh03" target="_blank">
+      Visit YouTube →
     </a>
-    <div class="author-note">
-      ⚠️ Educational purpose only. No investment advice.
-    </div>
   </div>
 </div>
-
-<script>
-document.querySelectorAll('.article-card').forEach(card=>{
-  card.addEventListener('click',()=>{
-    const a=card.querySelector('a');
-    if(a) window.location.href=a.href;
-  });
-});
-</script>
 
 </body>
 </html>
