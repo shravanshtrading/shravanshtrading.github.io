@@ -7,218 +7,208 @@
 
 <style>
 :root{
-  --bg:#0b0b0c;
-  --card:#111214;
-  --border:#1f2937;
-  --accent:#d1d5db;
-  --text:#f9fafb;
+  --bg:#020617;
+  --panel:#050b1a;
+  --card:#050b1a;
+  --neon:#00ff9c;
+  --cyan:#22d3ee;
+  --red:#ff003c;
+  --purple:#7c3aed;
+  --text:#e5e7eb;
   --muted:#9ca3af;
-  --danger:#ef4444;
 }
 
 *{box-sizing:border-box}
 
 body{
   margin:0;
-  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont;
-  background:var(--bg);
+  font-family:Inter,system-ui,monospace;
+  background:
+    radial-gradient(circle at top,#020617,#000 70%);
   color:var(--text);
 }
 
-/* ===== HEADER ===== */
-.header{
-  max-width:1100px;
-  margin:90px auto 60px;
-  padding:0 20px;
+/* ===== OMEGA HEADER ===== */
+.omega-header{
+  text-align:center;
+  padding:70px 20px 40px;
 }
-.header h1{
-  margin:0;
-  font-size:52px;
-  font-weight:900;
-  letter-spacing:2px;
+.omega-header h1{
+  font-size:56px;
+  font-weight:1000;
+  letter-spacing:6px;
+  color:var(--neon);
+  text-shadow:
+    0 0 40px rgba(0,255,156,.8),
+    3px 0 var(--red),
+    -3px 0 var(--cyan);
 }
-.header p{
+.omega-header p{
   margin-top:12px;
-  font-size:13px;
-  letter-spacing:2px;
-  color:var(--muted);
+  font-size:14px;
+  letter-spacing:3px;
+  color:#f87171;
 }
 
-/* ===== WRAPPER ===== */
+/* ===== INTEL STRIP ===== */
+.intel-strip{
+  max-width:1200px;
+  margin:0 auto 60px;
+  padding:18px 22px;
+  border-radius:14px;
+  background:linear-gradient(180deg,#020617,#000);
+  border:1px solid rgba(0,255,156,.25);
+  box-shadow:0 0 40px rgba(0,255,156,.25);
+}
+.intel-strip ul{
+  margin:0;
+  padding-left:18px;
+}
+.intel-strip li{
+  margin:6px 0;
+  color:var(--neon);
+  font-size:14px;
+}
+
+/* ===== BLACK OPS TITLE ===== */
+.ops-title{
+  text-align:center;
+  font-size:40px;
+  font-weight:1000;
+  letter-spacing:4px;
+  color:#22ffb0;
+  margin-bottom:30px;
+  text-shadow:0 0 30px rgba(34,255,176,.7);
+}
+
+/* ===== ARTICLES ===== */
 .articles{
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
-  padding:0 20px 60px;
+  padding:0 20px 80px;
 }
 
-/* ===== ARTICLE ROW ===== */
-.article{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:20px;
-  align-items:center;
-  padding:28px 30px;
-  margin-bottom:18px;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:16px;
+/* ===== CARD ===== */
+.article-card{
+  background:linear-gradient(180deg,#050b1a,#020617);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;
+  padding:26px 30px;
+  margin-bottom:22px;
   cursor:pointer;
   transition:.35s ease;
+  box-shadow:inset 0 0 20px rgba(0,0,0,.6);
+}
+.article-card:hover{
+  transform:translateY(-6px);
+  box-shadow:
+    0 0 60px rgba(0,255,156,.35),
+    inset 0 0 25px rgba(0,0,0,.7);
 }
 
-.article:hover{
-  background:#15171a;
-  transform:translateY(-4px);
-}
-
-/* LEFT */
-.article h2{
+/* ===== TITLE ===== */
+.article-card h2{
   margin:0;
   font-size:22px;
-  font-weight:800;
-}
-.article p{
-  margin:10px 0 0;
-  font-size:14px;
-  color:var(--muted);
-  line-height:1.6;
-}
-
-/* RIGHT */
-.level{
-  text-align:right;
-}
-.level span{
-  display:block;
-  font-size:11px;
-  letter-spacing:1.5px;
-  color:var(--danger);
   font-weight:900;
-}
-.level small{
-  font-size:11px;
-  color:var(--muted);
-}
-
-/* DISCLAIMER */
-.disclaimer{
-  max-width:1100px;
-  margin:80px auto 60px;
-  padding:22px;
-  border:1px solid var(--border);
-  border-radius:14px;
-  font-size:13px;
-  line-height:1.8;
-  color:var(--muted);
-}
-
-/* AUTHOR */
-.author{
-  max-width:1100px;
-  margin:90px auto;
-  padding:30px;
   display:flex;
-  gap:26px;
-  border-top:1px solid var(--border);
-}
-.author img{
-  width:96px;height:96px;border-radius:50%;
-}
-.author h4{
-  margin:0;
-  font-size:22px;
-  font-weight:900;
-}
-.author .title{
-  margin-top:6px;
-  font-size:13px;
-  letter-spacing:1px;
-  color:var(--muted);
-}
-.author .bio{
-  margin-top:10px;
-  font-size:14px;
-  line-height:1.7;
-  color:#d1d5db;
-}
-.author a{
-  display:inline-block;
-  margin-top:14px;
-  font-size:13px;
-  font-weight:800;
-  text-decoration:none;
-  color:#fff;
-  border-bottom:1px solid #fff;
+  align-items:center;
+  gap:10px;
 }
 
-/* MOBILE */
+/* ===== BADGES ===== */
+.badges{
+  display:flex;
+  gap:10px;
+  margin:12px 0 8px;
+}
+.badge{
+  padding:4px 12px;
+  font-size:11px;
+  font-weight:900;
+  border-radius:999px;
+}
+.smart{background:#022c22;color:#5eead4}
+.trap{background:#3f0a0a;color:#fca5a5}
+.ultra{background:#2e1065;color:#c4b5fd}
+
+/* ===== DESC ===== */
+.article-card p{
+  margin:8px 0 0;
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* ===== MOBILE ===== */
 @media(max-width:700px){
-  .header h1{font-size:34px}
-  .article{
-    grid-template-columns:1fr;
-    gap:14px;
-  }
-  .level{text-align:left}
+  .omega-header h1{font-size:36px}
+  .ops-title{font-size:28px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-  <h1>Black Ops Articles</h1>
-  <p>Institutional Market Intelligence • Confidential</p>
+<!-- OMEGA HEADER -->
+<div class="omega-header">
+  <h1>OMEGA WAR CORE</h1>
+  <p>⚠️ MARKET DOMINATION INTERFACE ⚠️</p>
 </div>
+
+<!-- INTELLIGENCE STRIP -->
+<div class="intel-strip">
+  <ul>
+    <li>Smart Money Nodes : ACTIVE</li>
+    <li>Liquidity Zones : MAPPED</li>
+    <li>Retail Trap Probability : EXTREME</li>
+  </ul>
+</div>
+
+<!-- BLACK OPS -->
+<div class="ops-title">BLACK OPS ARTICLES</div>
 
 <div class="articles">
 
-  <div class="article" onclick="location.href='liquidity-hunting-kya-hai.html'">
-    <div>
-      <h2>Liquidity Hunting क्या है?</h2>
-      <p>
-        Institutions stop-loss कहाँ और क्यों साफ करते हैं — complete structural logic.
-      </p>
+  <div class="article-card" onclick="location.href='stock-market-kya-hai.html'">
+    <h2>😈 Stock Market</h2>
+    <div class="badges">
+      <div class="badge smart">SMART MONEY</div>
+      <div class="badge trap">RETAIL TRAP</div>
+      <div class="badge ultra">ULTRA ADVANCE</div>
     </div>
-    <div class="level">
-      <span>HIGH RISK</span>
-      <small>Manipulation Zone</small>
-    </div>
+    <p>जब आप किसी कंपनी के शेयर खरीदते हैं, तो आप उस कंपनी के हिस्सेदार बन जाते हैं।</p>
   </div>
 
-  <div class="article" onclick="location.href='put-call-ratio-kya-hai.html'">
-    <div>
-      <h2>PCR (Put–Call Ratio) क्या है?</h2>
-      <p>
-        Sentiment indicator नहीं — crowd positioning का trap map.
-      </p>
+  <div class="article-card" onclick="location.href='put-call-ratio-kya-hai.html'">
+    <h2>☠️ PCR (Put-Call Ratio) – Trap Psychology</h2>
+    <div class="badges">
+      <div class="badge smart">SMART MONEY</div>
+      <div class="badge trap">RETAIL TRAP</div>
+      <div class="badge ultra">ULTRA ADVANCE</div>
     </div>
-    <div class="level">
-      <span>EXTREME</span>
-      <small>Crowd Misread</small>
-    </div>
+    <p>PCR ko sentiment nahi, crowd positioning weapon ki tarah use kiya jata hai.</p>
   </div>
 
-</div>
-
-<div class="disclaimer">
-⚠️ <strong>DISCLAIMER:</strong><br>
-यह सामग्री केवल Educational purpose के लिए है।  
-Trading एवं Investing में उच्च जोखिम होता है। Capital loss संभव है।
-</div>
-
-<div class="author">
-  <img src="author.jpg" alt="Shravansh">
-  <div>
-    <h4>Shravansh</h4>
-    <div class="title">Stock Market • Options • Trading Educator</div>
-    <div class="bio">
-      Hindi traders ke liye institutional-grade market logic —  
-      bina hype, bina indicator, sirf reality.
+  <div class="article-card" onclick="location.href='intraday-trading-kya-hai.html'">
+    <h2>☠️ Intraday Trading</h2>
+    <div class="badges">
+      <div class="badge smart">SMART MONEY</div>
+      <div class="badge trap">RETAIL TRAP</div>
+      <div class="badge ultra">ULTRA ADVANCE</div>
     </div>
-    <a href="https://youtube.com/@shravansh03" target="_blank">
-      Visit YouTube →
-    </a>
+    <p>Intraday Trading ka real institutional flow kaise kaam karta hai.</p>
   </div>
+
+  <div class="article-card" onclick="location.href='stock-market-me-paisa-kaise-lagaye.html'">
+    <h2>☠️ Stock Market में पैसा कैसे लगाएं?</h2>
+    <div class="badges">
+      <div class="badge smart">SMART MONEY</div>
+      <div class="badge trap">RETAIL TRAP</div>
+      <div class="badge ultra">ULTRA ADVANCE</div>
+    </div>
+    <p>Retail logic vs smart money execution ka real difference.</p>
+  </div>
+
 </div>
 
 </body>
