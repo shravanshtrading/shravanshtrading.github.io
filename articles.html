@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ===== GLOBAL ===== */
 body{
   margin:0;
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -14,49 +13,27 @@ body{
   color:#e5fff3;
 }
 
-/* ===== BLINK HEADINGS ===== */
+/* ===== BLINK + GLITCH ===== */
 .omega-blink,
 .ops-blink{
+  position:relative;
   text-align:center;
   letter-spacing:3px;
-  animation:neonBlink 2.8s infinite;
-  text-shadow:
-    0 0 12px #00ff9c,
-    0 0 35px #00ff9c,
-    0 0 70px rgba(0,255,156,.9);
+  animation:neonBlink var(--blinkSpeed,2.6s) infinite;
+  text-shadow:0 0 12px #00ff9c,0 0 35px #00ff9c,0 0 70px rgba(0,255,156,.9);
 }
-
 @keyframes neonBlink{
   0%,100%{opacity:1}
-  45%{opacity:.75}
+  45%{opacity:.7}
   50%{opacity:.35}
   55%{opacity:1}
 }
 
-/* glitch layer */
-.omega-blink::after{
-  content:attr(data-text);
-  position:absolute;
-  left:2px;
-  top:0;
-  color:#ff003c;
-  opacity:.5;
-  animation:glitch 3s infinite;
-}
-@keyframes glitch{
-  0%,90%,100%{opacity:0}
-  92%{opacity:.6}
-  94%{opacity:0}
-}
-
 /* ===== HEADER ===== */
 header{
-  padding:60px 15px 40px;
+  padding:60px 15px 30px;
 }
-header h1{
-  font-size:48px;
-  margin:0;
-}
+header h1{font-size:48px;margin:0}
 header p{
   text-align:center;
   margin-top:12px;
@@ -64,29 +41,22 @@ header p{
   letter-spacing:2px;
 }
 
-/* ===== STATUS BAR ===== */
+/* ===== STATUS ===== */
 .status-box{
   max-width:900px;
-  margin:30px auto;
+  margin:25px auto;
   padding:18px 22px;
   border-radius:14px;
   border:1px solid rgba(0,255,156,.35);
   box-shadow:0 0 35px rgba(0,255,156,.15);
 }
-.status-box li{
-  margin:8px 0;
-  color:#7cffc8;
-}
+.status-box li{margin:8px 0;color:#7cffc8}
 
-/* ===== ARTICLES ===== */
-.section{
-  padding:40px 15px 80px;
-}
-.section h2{
-  font-size:36px;
-  margin-bottom:30px;
-}
+/* ===== SECTION ===== */
+.section{padding:40px 15px 50px}
+.section h2{font-size:36px;margin-bottom:30px}
 
+/* ===== ARTICLE CARD ===== */
 .article-card{
   max-width:900px;
   margin:0 auto 18px;
@@ -101,17 +71,13 @@ header p{
   transform:translateY(-4px);
   box-shadow:0 0 40px rgba(0,255,156,.25);
 }
-
 .article-card a{
   font-size:20px;
   font-weight:600;
   text-decoration:none;
-  color:#ffffff;
+  color:#fff;
 }
-
-.badges{
-  margin:10px 0;
-}
+.badges{margin:10px 0}
 .badge{
   display:inline-block;
   padding:4px 10px;
@@ -122,10 +88,68 @@ header p{
 .smart{background:#00ff9c;color:#000}
 .trap{background:#ff003c}
 .ultra{background:#6f2cff}
+.article-desc{font-size:14px;opacity:.85}
 
-.article-desc{
+/* ===== DANGER DISCLAIMER ===== */
+.disclaimer{
+  max-width:900px;
+  margin:50px auto;
+  padding:25px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#0b0f18,#070b14);
+  border:1px solid rgba(255,0,60,.35);
+  box-shadow:0 0 40px rgba(255,0,60,.15);
+}
+.disclaimer h3{
+  color:#ff3b3b;
+  letter-spacing:1px;
+}
+.disclaimer p{
+  font-size:13px;
+  line-height:1.7;
+  opacity:.9;
+}
+
+/* ===== RELATED ===== */
+.related{
+  max-width:900px;
+  margin:40px auto;
+}
+.related a{
+  display:block;
+  margin:8px 0;
+  color:#00ff9c;
+  text-decoration:none;
   font-size:14px;
-  opacity:.85;
+}
+
+/* ===== AUTHOR ===== */
+.author-box{
+  max-width:900px;
+  margin:50px auto;
+  display:flex;
+  gap:20px;
+  padding:25px;
+  border-radius:16px;
+  background:#060b14;
+  border-left:5px solid #00ff9c;
+}
+.author-left img{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+}
+.author-title{color:#00ff9c;font-weight:bold}
+.author-bio{font-size:14px;line-height:1.6}
+.author-btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:8px 14px;
+  background:#ff003c;
+  color:#fff;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:14px;
 }
 
 /* ===== FOOTER ===== */
@@ -141,13 +165,13 @@ footer{
 <body>
 
 <header>
-  <h1 class="omega-blink" data-text="OMEGA WAR CORE">OMEGA WAR CORE</h1>
-  <p>⚠️ MARKET DOMINATION INTERFACE ⚠️</p>
+  <h1 class="omega-blink">OMEGA WAR CORE</h1>
+  <p>⚠️ RETAIL TRAP / SMART MONEY INTEL ⚠️</p>
 
   <ul class="status-box">
-    <li>• Smart Money Nodes : ACTIVE</li>
-    <li>• Liquidity Zones : MAPPED</li>
-    <li>• Retail Trap Probability : EXTREME</li>
+    <li>• Market Manipulation Zones : TRACKED</li>
+    <li>• Retail Crowd Behavior : ANALYZED</li>
+    <li>• Risk Exposure Level : EXTREME</li>
   </ul>
 </header>
 
@@ -155,46 +179,77 @@ footer{
   <h2 class="ops-blink">BLACK OPS ARTICLES</h2>
 
   <div class="article-card">
-    <a href="stock-market-kya-hai.html">😈 Stock Market</a>
+    <a href="put-call-ratio-kya-hai.html">☠️ PCR (Put–Call Ratio)</a>
     <div class="badges">
       <span class="badge smart">SMART MONEY</span>
       <span class="badge trap">RETAIL TRAP</span>
       <span class="badge ultra">ULTRA ADVANCE</span>
     </div>
     <div class="article-desc">
-      Retail ke liye market ka asli structure aur game.
-    </div>
-  </div>
-
-  <div class="article-card">
-    <a href="put-call-ratio-kya-hai.html">☠️ PCR (Put–Call Ratio) – Trap Psychology</a>
-    <div class="badges">
-      <span class="badge smart">SMART MONEY</span>
-      <span class="badge trap">RETAIL TRAP</span>
-      <span class="badge ultra">ULTRA ADVANCE</span>
-    </div>
-    <div class="article-desc">
-      PCR ko sentiment nahi, weapon ki tarah kaise use kiya jata hai.
-    </div>
-  </div>
-
-  <div class="article-card">
-    <a href="intraday-trading-kya-hai.html">💀 Intraday Trading</a>
-    <div class="badges">
-      <span class="badge smart">SMART MONEY</span>
-      <span class="badge trap">RETAIL TRAP</span>
-      <span class="badge ultra">ULTRA ADVANCE</span>
-    </div>
-    <div class="article-desc">
-      Intraday me paisa kaise banta aur kaise loot jata hai.
+      PCR ko sentiment nahi, **weapon** ki tarah samjho.
     </div>
   </div>
 
 </section>
 
+<!-- ===== DISCLAIMER ===== -->
+<div class="disclaimer">
+  <h3>⚠️ EXTREME RISK DISCLAIMER</h3>
+  <p>
+    Yeh website aur yahan diya gaya content **sirf educational purpose** ke liye hai.
+    Stock Market, Options, Forex aur Trading me **high risk** hota hai.
+    Yahan diye gaye concepts psychological & structural understanding ke liye hain,
+    **kisi bhi tarah ki buy/sell recommendation nahi**.
+  </p>
+  <p>
+    Agar aap bina proper knowledge, risk management aur discipline ke trade karte hain,
+    to **capital loss 100% tak ho sakta hai**.
+    Aap apne decision ke liye **khud zimmedar** honge.
+  </p>
+</div>
+
+<!-- ===== RELATED ===== -->
+<div class="related">
+  <strong>🔗 Related Black Ops Reads</strong>
+  <a href="risk-management-kya-hai.html">👉 Risk Management kya hai?</a>
+  <a href="forex-trading-kya-hai.html">👉 Forex Trading kya hai?</a>
+  <a href="stock-market-me-greeks-kya-hote-hai.html">👉 Options Greeks Explained</a>
+</div>
+
+<!-- ===== AUTHOR ===== -->
+<div class="author-box">
+  <div class="author-left">
+    <img src="author.jpg" alt="Author">
+  </div>
+  <div>
+    <h4>✍️ Shravansh</h4>
+    <p class="author-title">Stock Market & Options Educator</p>
+    <p class="author-bio">
+      Hindi language me **realistic, psychology-based trading education**.
+      No tips. No hype. Only structure & risk awareness.
+    </p>
+    <a class="author-btn" href="https://youtube.com/@shravansh03" target="_blank">
+      📺 Learn on YouTube
+    </a>
+  </div>
+</div>
+
 <footer>
-  © 2025 BLACK OPS TRADING — Educational Purpose Only
+  © 2025 BLACK OPS TRADING | Educational Purpose Only
 </footer>
+
+<script>
+const targets=document.querySelectorAll('.omega-blink,.ops-blink');
+setInterval(()=>{
+  targets.forEach(el=>{
+    el.style.setProperty('--blinkSpeed',(Math.random()*2.8+1.4)+'s');
+    if(Math.random()>.6){
+      el.style.opacity='0.35';
+      setTimeout(()=>el.style.opacity='1',120);
+    }
+  });
+},Math.random()*3000+1500);
+</script>
 
 </body>
 </html>
