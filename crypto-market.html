@@ -299,10 +299,33 @@ footer{
   .author-box{flex-direction:column;text-align:center;}
   .author-left img{margin:auto;}
 }
+.article-nav {
+  margin: 15px 0;
+}
+
+.home-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #0d6efd;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.home-btn:hover {
+  background: #084298;
+}
+
+  
 </style>
 </head>
 
 <body>
+<div class="article-nav">
+  <a href="/index.html" class="home-btn">🏠 Home</a>
+</div>
+  
  <div class="header">
   <h1>OMEGA WAR CORE</h1>
   <p>⚠️ MARKET DOMINATION INTERFACE ⚠️</p>
@@ -417,6 +440,9 @@ document.querySelectorAll('.article-card').forEach(card=>{
   });
 });
 </script>
+<div class="article-footer-nav">
+  <a href="/index.html">⬅ Back to Home</a>
+</div>
 
 </body>
 </html>
