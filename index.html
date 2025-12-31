@@ -3,44 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google Verification (UNCHANGED) -->
   <meta name="google-site-verification" content="GnLo8WhIZbrAXSzXW-QFxZ4CBowQSrO5prXK7zJOJiM" />
+  <title>Shravansh Trading | Stock Market Education in Hindi</title>
 
-  <!-- 🔥 ULTRA BRAND SEO (ADDED) -->
-  <title>Shravansh Trading – Ultra Level Stock, Forex & Crypto Trading Education</title>
-  <meta name="description" content="Shravansh Trading एक ultra-level professional trading education website है जहाँ Stock Market, Forex Market और Crypto Market को deep practical तरीके से Hindi में सिखाया जाता है। Beginner से Advanced traders के लिए complete knowledge hub।">
-  <link rel="canonical" href="https://shravanshtrading.github.io/">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Shravansh Trading">
-
-  <!-- 🔥 STRUCTURED DATA (ADDED – GOOGLE KO DIRECT MESSAGE) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Shravansh Trading",
-    "url": "https://shravanshtrading.github.io",
-    "description": "Shravansh Trading is an ultra-level trading education platform focused on Stock Market, Forex Market and Crypto Market education in Hindi.",
-    "inLanguage": "hi-IN",
-    "sameAs": [
-      "https://youtube.com/@shravansh03"
-    ]
-  }
-  </script>
-
-  <!-- ===== ORIGINAL STYLE (UNCHANGED) ===== -->
   <style>
-/* ⬇️ तुम्हारा पूरा original CSS AS-IS ⬇️ */
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f4f6f8;
   overflow-x: hidden;
 }
+
+/* HEADER */
 .top-header {
   background: #0a1a2a;
   color: white;
@@ -50,17 +28,21 @@ body {
   justify-content: center;
   position: relative;
 }
+
 .logo {
   font-size: 22px;
   font-weight: bold;
   text-align: center;
 }
+
 .menu-btn {
   position: absolute;
   left: 15px;
   font-size: 26px;
   cursor: pointer;
 }
+
+/* SIDE MENU */
 .side-menu {
   position: fixed;
   top: 0;
@@ -73,6 +55,7 @@ body {
   overflow-y: auto;
   z-index: 999;
 }
+
 .side-menu a {
   display: block;
   color: white;
@@ -80,15 +63,19 @@ body {
   text-decoration: none;
   border-bottom: 1px solid #333;
 }
+
 .side-menu h4 {
   color: #00c3ff;
   margin-top: 15px;
 }
+
+/* SEARCH */
 .search-box {
   padding: 15px;
   text-align: center;
   background: white;
 }
+
 .search-box input {
   width: 95%;
   max-width: 420px;
@@ -97,29 +84,38 @@ body {
   border-radius: 6px;
   border: 1px solid #ccc;
 }
+
+/* MAIN */
 .main-content {
   padding: 15px;
 }
+
+/* CARDS */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 15px;
 }
+
 .card {
   background: white;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
+
 .card h3 {
   margin-top: 0;
 }
+
 .card a {
   display: inline-block;
   margin-top: 10px;
   color: #0d6efd;
   font-weight: bold;
 }
+
+/* FOOTER */
 footer {
   background: #222;
   color: white;
@@ -127,7 +123,8 @@ footer {
   padding: 15px;
   margin-top: 20px;
 }
-.youtube-section {
+
+    .youtube-section {
   background: #ffffff;
   padding: 25px 15px;
   margin: 25px 15px;
@@ -135,6 +132,17 @@ footer {
   text-align: center;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+
+.youtube-section h2 {
+  margin-top: 0;
+  color: #111;
+}
+
+.youtube-section p {
+  font-size: 15px;
+  color: #555;
+}
+
 .youtube-btn {
   display: inline-block;
   margin-top: 15px;
@@ -146,6 +154,38 @@ footer {
   font-weight: bold;
   text-decoration: none;
 }
+
+.youtube-btn:hover {
+  background: #cc0000;
+}
+    .site-search{
+  max-width:600px;
+  margin:15px auto;
+  padding:10px;
+}
+
+.site-search input{
+  width:100%;
+  padding:12px;
+  font-size:16px;
+  border:2px solid #ccc;
+  border-radius:8px;
+}
+
+#searchResults{
+  max-width:600px;
+  margin:10px auto;
+}
+
+#searchResults a{
+  display:block;
+  padding:10px;
+  margin-bottom:8px;
+  background:#f5f5f5;
+  text-decoration:none;
+  color:#000;
+  border-radius:6px;
+}
   </style>
 </head>
 
@@ -156,32 +196,125 @@ footer {
   <div class="logo">Shravansh Trading</div>
 </header>
 
-<!-- 🔥 BRAND HERO (ADDED – ORIGINAL TEXT NOT TOUCHED) -->
-<section style="background:#ffffff;padding:20px;margin:15px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.08);">
-  <h1>Shravansh Trading – Ultra Level Stock, Forex & Crypto Trading Education</h1>
-  <p>
-    Shravansh Trading एक professional और ultra-advanced trading education platform है
-    जहाँ Stock Market, Forex Market और Crypto Market को real-world logic,
-    practical strategies और deep market understanding के साथ सिखाया जाता है।
-  </p>
-</section>
+<nav id="sideMenu" class="side-menu">
+  <a href="index.html">🏠 Home</a>
 
-<!-- ====== BELOW THIS: 100% YOUR ORIGINAL CONTENT (UNCHANGED) ====== -->
+  <h4>📊 Stock Market</h4>
+ <a href="stock-market-ultra-level.html">📊Stock Market😈 Ultra Level 📑Article</a>
+  
+
+  <h4>💱 Forex</h4>
+ <a href="forex-market-article.html">😈Forex Market Ultra 📖Articles</a>
+
+  <h4>🪙 Crypto</h4>
+ <a href="crypto-market.html">☠️Crypto Market Ultra🧾Articles</a>
+
+    <h4>🌎All Market Ultra Articles</h4>
+ <a href="articles.html">😈Ultra Powerfull 📚Articles</a>
+
+
+   <h4>🌎Indicators Ultra Setup</h4>
+    <a href="indicators.html">
+💀Ultra Indicators
+
+
+  
+  <hr>
+  <a href="about.html">About</a>
+  <a href="privacy.html">Privacy</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
 <div class="search-box">
+
 <input type="text" id="searchInput" placeholder="Search articles...">
+
 </div>
 
 <section class="main-content">
 
-  <!-- ORIGINAL H1 KEPT -->
   <h1>Stock Market, Forex & Crypto – हिंदी में सीखें</h1>
   <p>Shravansh Trading एक educational website है जहाँ beginners को trading और investment सिखाया जाता है।</p>
   <p>और भी 📈Articles मेन्यू में है आप देख सकते हैं Full Advance Level पर</p>
 
-  <!-- ORIGINAL CARDS, ARTICLES, YOUTUBE, FOOTER, JS – ALL SAME -->
-  <!-- (नीचे का पूरा content untouched है) -->
+  <div class="cards">
 
+    <div class="card">
+      <h3>📘 Intraday Trading क्या है?</h3>
+      <p>Beginners के लिए complete intraday trading guide.</p>
+      <a href="intraday-trading-kya-hai.html">Read More</a>
+    </div>
+
+    <div class="card">
+      <h3>💰 Stock Market में पैसा कैसे लगाएं?</h3>
+      <p>Safe investment tips for beginners.</p>
+      <a href="stock-market-me-paisa-kaise-lagaye.html">Read More</a>
+    </div>
+
+     <div class="card">
+     <h3>📈Option Chain क्या है?</h3>
+        <p>Ultra Powerful Option Chain Analysis</p>
+    <a href="option-chain-kya-hai.html">Read More</a>
+      </div>
+
+    <div class="card">
+      <h3>🌍 Forex Trading क्या है?</h3>
+      <p>Forex market की पूरी जानकारी हिंदी में.</p>
+      <a href="forex-trading-kya-hai.html">Read More</a>
+    </div>
+
+    <div class="card">
+      <h3>🪙 Crypto Currency क्या है?</h3>
+      <p>Crypto investment & risk explained.</p>
+      <a href="crypto-currency-kya-hoti-hai.html">Read More</a>
+    </div>
+
+ <div class="card">
+ <h3>🔥Option Chain Analysis कैसे करें?</h3>
+ <p>🔥 Option Chain से Trend कैसे पहचानें?</p>
+  <a href="option-chain-analysis.html">Read More</a>
+ </div>
+
+ <div class="card">
+    <h3>😈🔥 EMA – Ultra Advanced Institutional Trading Framework</h3>
+ <p>🔥EMA क्यों काम करता है? (Institutional Psychology)</p>
+  <a href="ema.html">Read More</a>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+   
+    <section class="youtube-section">
+  <h2>📺 हमारा YouTube Channel</h2>
+
+  <p>
+    Stock Market, Forex और Crypto से जुड़ी
+    आसान और practical जानकारी के लिए
+    हमारा YouTube channel जरूर देखें।
+  </p>
+
+  <a 
+    href="https://youtube.com/@shravansh03?si=2QOPgtHTZdUr4qxz" 
+    target="_blank" 
+    class="youtube-btn"
+  >
+    🔴 Visit trade with Shravansh on YouTube
+  </a>
+</section>
+
+  </div>
 </section>
 
 <footer>
@@ -195,52 +328,69 @@ YouTube
 </p>
 </footer>
 
-<!-- ORIGINAL JS KEPT -->
 <script>
-/* unchanged JS */
+function toggleMenu() {
+  let menu = document.getElementById("sideMenu");
+  menu.style.left = (menu.style.left === "0px") ? "-260px" : "0px";
+}
+
+/* SEARCH FUNCTION */
+document.getElementById("searchInput").addEventListener("keyup", function () {
+  let filter = this.value.toLowerCase();
+  let cards = document.querySelectorAll(".card");
+  cards.forEach(card => {
+    card.style.display = card.innerText.toLowerCase().includes(filter) ? "block" : "none";
+  });
+});
+
+
+
+const articles = [
+  {
+    title: "Stock Market क्या है?",
+    url: "stock-market-kya-hai.html"
+  },
+  {
+    title: "Forex Market क्या है?",
+    url: "forex-market-kya-hai.html"
+  },
+  {
+    title: "Crypto Market क्या है?",
+    url: "crypto-market-kya-hai.html"
+  },
+  {
+    title: "Trading vs Investing क्या है?",
+    url: "trading-vs-investing-kya-hai.html"
+  },
+  {
+    title: "Stock Market में Greeks क्या होते हैं?",
+    url: "stock-market-greeks-kya-hote-hain.html"
+  }
+];
+
+function searchArticles(){
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let resultBox = document.getElementById("searchResults");
+  resultBox.innerHTML = "";
+
+  if(input.length < 2) return;
+
+  articles.forEach(article => {
+    if(article.title.toLowerCase().includes(input)){
+      let link = document.createElement("a");
+      link.href = article.url;
+      link.innerText = article.title;
+      resultBox.appendChild(link);
+    }
+  });
+}
+  
+
 </script>
 
+
+  
+
+    
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
