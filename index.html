@@ -230,7 +230,7 @@ footer {
   <div class="logo">Shravansh Trading</div>
 </section>
 </header>
-    <p><strong>Founder:</strong> Shravansh</p>
+<p><strong>Founder:</strong> Shravansh</p>
 <nav id="sideMenu" class="side-menu">
   <a href="index.html">🏠 Home</a>
 
@@ -431,8 +431,7 @@ const articles = [
 function searchArticles(){
   let input = document.getElementById("searchInput").value.toLowerCase();
   let resultBox = document.getElementById("searchResults");
-  resultBox.inner
-<div id="searchResults"></div> HTML = "";
+  resultBox.innerHTML = "";
 
   if(input.length < 2) return;
 
@@ -451,6 +450,7 @@ function searchArticles(){
     
 </body>
 </html>
+
 
 
 
