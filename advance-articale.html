@@ -163,6 +163,62 @@ footer{
   font-size:13px;
   opacity:.6;
 }
+/* =====================================================
+   ☠️ ULTRA BLINK DISCLAIMER (ALWAYS ON)
+   ===================================================== */
+.disclaimer-ultra{
+  max-width:920px;
+  margin:70px auto 40px;
+  padding:30px;
+  border-radius:22px;
+
+  background:linear-gradient(135deg,#120000,#040000);
+  border:3px solid #ff003c;
+
+  color:#fff;
+  text-align:center;
+
+  animation:disclaimerBlink 2.6s infinite;
+
+  box-shadow:
+    0 0 40px rgba(255,0,60,.6),
+    inset 0 0 20px rgba(255,0,60,.35);
+}
+
+.disclaimer-ultra h3{
+  color:#ff003c;
+  letter-spacing:2px;
+  margin-bottom:15px;
+}
+
+.disclaimer-ultra p{
+  font-size:14px;
+  line-height:1.9;
+}
+
+/* ===== BLINK KEYFRAMES ===== */
+@keyframes disclaimerBlink{
+  0%{
+    box-shadow:
+      0 0 25px rgba(255,0,60,.35),
+      inset 0 0 10px rgba(255,0,60,.2);
+    border-color:#ff003c;
+  }
+  50%{
+    box-shadow:
+      0 0 80px rgba(255,0,60,1),
+      inset 0 0 30px rgba(255,0,60,.6);
+    border-color:#ff5a7a;
+  }
+  100%{
+    box-shadow:
+      0 0 25px rgba(255,0,60,.35),
+      inset 0 0 10px rgba(255,0,60,.2);
+    border-color:#ff003c;
+  }
+}
+
+  
 </style>
 </head>
 
@@ -244,6 +300,32 @@ footer{
   </div>
 </div>
 
+<!-- ===== ULTRA DISCLAIMER ===== -->
+<div class="disclaimer-ultra">
+  <h3>⚠️ EXTREME RISK DISCLAIMER</h3>
+  <p>
+    Yeh website aur ispar diya gaya content
+    <strong>sirf educational purpose</strong> ke liye hai.
+    <br><br>
+    Stock Market, Options, Forex aur Crypto trading
+    <strong>high risk activity</strong> hai jisme
+    aapka poora capital loss ho sakta hai.
+    <br><br>
+    Yahan kisi bhi tarah ki
+    <strong>buy / sell / investment advice</strong>
+    nahi di ja rahi.
+    <br><br>
+    Aap jo bhi decision lete ho,
+    <strong>wo poori tarah aapki responsibility</strong> hai.
+    <br><br>
+    ⚠️ Agar aap risk samajhne ke liye tayyar nahi ho,
+    to market aapke liye nahi hai.
+  </p>
+</div>
+
+
+
+  
 <footer>
   © 2025 BLACK OPS TRADING | EDUCATION ONLY
 </footer>
