@@ -196,29 +196,93 @@ footer{
   line-height:1.9;
 }
 
-/* ===== BLINK KEYFRAMES ===== */
-@keyframes disclaimerBlink{
+/* =====================================================
+   ☠️ MULTI-COLOR BLINK SYSTEM (AUTO)
+   ===================================================== */
+
+.article{
+  position:relative;
+  border:2px solid transparent;
+  animation:blinkBase 3.2s infinite;
+}
+
+/* Base blink animation */
+@keyframes blinkBase{
   0%{
-    box-shadow:
-      0 0 25px rgba(255,0,60,.35),
-      inset 0 0 10px rgba(255,0,60,.2);
-    border-color:#ff003c;
+    box-shadow:0 0 18px currentColor;
+    border-color:currentColor;
   }
   50%{
     box-shadow:
-      0 0 80px rgba(255,0,60,1),
-      inset 0 0 30px rgba(255,0,60,.6);
-    border-color:#ff5a7a;
+      0 0 70px currentColor,
+      inset 0 0 25px currentColor;
+    border-color:currentColor;
   }
   100%{
-    box-shadow:
-      0 0 25px rgba(255,0,60,.35),
-      inset 0 0 10px rgba(255,0,60,.2);
-    border-color:#ff003c;
+    box-shadow:0 0 18px currentColor;
+    border-color:currentColor;
   }
 }
 
-  
+/* Colour presets */
+.article.c1{ color:#ff003c; }   /* Red */
+.article.c2{ color:#00ff9c; }   /* Neon Green */
+.article.c3{ color:#00c8ff; }   /* Cyan */
+.article.c4{ color:#ffb300; }   /* Amber */
+.article.c5{ color:#b56cff; }   /* Purple */
+.article.c6{ color:#ff5ad6; }   /* Pink */
+.article.c7{ color:#00ffd5; }   /* Aqua */
+.article.c8{ color:#ff6b6b; }   /* Soft Red */
+
+/* Hover = faster blink */
+.article:hover{
+  animation-duration:1.8s;
+}
+
+/* ===== SIREN GLOW OVERLAY ===== */
+.disclaimer-ultra::after{
+  content:"";
+  position:absolute;
+  inset:-8px;
+  border-radius:28px;
+  pointer-events:none;
+  filter:blur(10px);
+  animation:sirenGlow 3.2s infinite linear;
+}
+
+@keyframes sirenGlow{
+  0%{
+    box-shadow:
+      0 0 25px rgba(255,0,60,.6),
+      0 0 55px rgba(255,0,60,.9);
+  }
+  50%{
+    box-shadow:
+      0 0 25px rgba(255,255,255,.25),
+      0 0 55px rgba(255,0,60,.8);
+  }
+  100%{
+    box-shadow:
+      0 0 25px rgba(255,0,60,.6),
+      0 0 55px rgba(255,0,60,.9);
+  }
+}
+/* ===== MOBILE AGGRESSIVE MODE ===== */
+@media (max-width:600px){
+  .disclaimer-ultra{
+    animation-duration:2s;           /* faster */
+    box-shadow:
+      0 0 60px rgba(255,0,60,.9),
+      inset 0 0 25px rgba(255,0,60,.5);
+  }
+}
+
+  .no-blink{
+  animation:none !important;
+  box-shadow:none !important;
+  border-color:rgba(255,255,255,.15) !important;
+}
+
 </style>
 </head>
 
@@ -354,6 +418,31 @@ document.addEventListener("DOMContentLoaded",function(){
   });
 
 });
+
+document.addEventListener("DOMContentLoaded",function(){
+  const d = document.querySelector(".disclaimer-ultra");
+  if(!d) return;
+
+  const key="blackops_disclaimer_seen";
+
+  // First visit: aggressive
+  if(!localStorage.getItem(key)){
+    d.style.animationDuration="1.4s";
+    setTimeout(()=>{
+      d.style.animationDuration="2.6s";
+      localStorage.setItem(key,"1");
+    },12000); // 12 sec baad normal
+  }
+});
+document.addEventListener("DOMContentLoaded",function(){
+  const articles = document.querySelectorAll(".article");
+  const colors = ["c1","c2","c3","c4","c5","c6","c7","c8"];
+
+  articles.forEach((art, index)=>{
+    const colorClass = colors[index % colors.length];
+    art.classList.add(colorClass);
+  });
+});  
 </script>
 
 </body>
