@@ -2,189 +2,66 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<title>BLACK OPS ARTICLES — ULTRA BLINK</title>
+<title>BLACK OPS ARTICLES — OMEGA HUB</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
-  margin:0;
-  padding:20px;
+  margin:0;padding:20px;
   font-family:Arial, sans-serif;
-  background:#02040a;
-  color:#eafff6;
+  background:#02040a;color:#eafff6;
 }
-
-/* ===== HEADING ===== */
 h1{
-  text-align:center;
-  font-size:36px;
-  letter-spacing:3px;
-  margin-bottom:35px;
-  color:#00ff9c;
-  text-shadow:0 0 25px #00ff9c;
+  text-align:center;font-size:36px;letter-spacing:3px;
+  color:#00ff9c;text-shadow:0 0 25px #00ff9c;margin-bottom:40px;
 }
+.articles-wrapper{max-width:900px;margin:auto}
 
-/* ===== WRAPPER ===== */
-.articles-wrapper{
-  max-width:900px;
-  margin:auto;
-}
-
-/* ===== ARTICLE CARD ===== */
+/* ARTICLE */
 .article{
   background:linear-gradient(135deg,#050914,#0a1022);
-  padding:22px 25px;
-  margin-bottom:22px;
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,.08);
+  padding:22px 25px;margin-bottom:22px;
+  border-radius:18px;border:1px solid rgba(255,255,255,.08);
   box-shadow:0 0 25px rgba(0,0,0,.8);
   transition:.3s;
 }
-.article:hover{
-  transform:translateY(-4px);
-}
+.article:hover{transform:translateY(-4px)}
+.article a{color:#fff;text-decoration:none;font-size:22px;font-weight:700;display:block}
+.desc{font-size:14px;margin-top:10px;opacity:.9}
 
-/* ===== LINK ===== */
-.article a{
-  text-decoration:none;
-  color:#ffffff;
-  font-size:22px;
-  font-weight:700;
-  display:block;
-}
-
-/* ===== TAGS ===== */
-.tags{margin:12px 0}
-.tag{
-  display:inline-block;
-  padding:5px 12px;
-  border-radius:20px;
-  font-size:12px;
-  margin-right:6px;
-}
-.smart{background:#00ff9c;color:#000}
-.trap{background:#ff003c}
-.omega-tag{background:#6f2cff}
-
-/* ===== DESC ===== */
-.desc{
-  font-size:14px;
-  line-height:1.7;
-  opacity:.9;
-}
-
-/* ===== BLINK SYSTEM ===== */
+/* BLINK */
 .blink-ultra{
   border:1px solid rgba(255,0,60,.45);
-  animation:blinkGlow 3.8s infinite;
+  animation:blinkGlow 3.5s infinite;
 }
 @keyframes blinkGlow{
-  0%,100%{
-    box-shadow:0 0 25px rgba(255,0,60,.25);
-  }
-  50%{
-    box-shadow:0 0 65px rgba(255,0,60,.85);
-  }
-}
-.blink-ultra a{
-  animation:textPulse 2.4s infinite;
-}
-@keyframes textPulse{
-  0%,100%{opacity:1}
-  50%{opacity:.65}
+  0%,100%{box-shadow:0 0 25px rgba(255,0,60,.25)}
+  50%{box-shadow:0 0 60px rgba(255,0,60,.9)}
 }
 
-/* ===== DISCLAIMER ===== */
-.disclaimer{
-  max-width:900px;
-  margin:60px auto 30px;
-  padding:25px;
-  border-radius:18px;
-  background:linear-gradient(135deg,#090d1f,#040815);
-  border:1px solid rgba(255,0,60,.5);
-  box-shadow:0 0 45px rgba(255,0,60,.3);
+/* POPUPS (COMMON) */
+.popup{
+  position:fixed;inset:0;background:rgba(0,0,0,.9);
+  display:flex;align-items:center;justify-content:center;
+  z-index:9999;opacity:0;pointer-events:none;transition:.4s;
 }
-.disclaimer h3{color:#ff003c}
-.disclaimer p{font-size:14px;line-height:1.8}
-
-/* ===== FOOTER ===== */
-footer{
-  text-align:center;
-  margin-top:35px;
-  font-size:13px;
-  opacity:.6;
-}
-/* ===== PSYCHO POPUP ===== */
-.psycho-popup{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.88);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-  opacity:0;
-  pointer-events:none;
-  transition:.4s;
-}
-
-.psycho-popup.active{
-  opacity:1;
-  pointer-events:auto;
-}
-
-.psycho-box{
-  max-width:420px;
-  padding:28px;
-  border-radius:20px;
+.popup.show{opacity:1;pointer-events:auto}
+.popup-box{
+  max-width:420px;padding:28px;border-radius:20px;
   background:linear-gradient(135deg,#1a0000,#050000);
-  border:2px solid #ff003c;
-  box-shadow:0 0 70px rgba(255,0,60,.6);
+  border:2px solid #ff003c;box-shadow:0 0 70px rgba(255,0,60,.7);
   text-align:center;
-  animation:popPulse 2.5s infinite;
 }
-
-@keyframes popPulse{
-  0%,100%{box-shadow:0 0 40px rgba(255,0,60,.4)}
-  50%{box-shadow:0 0 70px rgba(255,0,60,.9)}
+.popup-box h3{color:#ff003c;letter-spacing:2px}
+.popup-box p{font-size:14px;line-height:1.7;margin:15px 0}
+.popup-btn{
+  display:inline-block;padding:13px 26px;background:#ff003c;color:#fff;
+  border-radius:30px;font-weight:bold;text-decoration:none;
 }
+.popup-skip{display:block;margin-top:14px;font-size:12px;opacity:.6;cursor:pointer}
 
-.psycho-box h3{
-  color:#ff003c;
-  letter-spacing:2px;
-}
-
-.psycho-box p{
-  font-size:14px;
-  line-height:1.7;
-  margin:15px 0;
-}
-
-.psycho-btn{
-  display:inline-block;
-  padding:13px 26px;
-  background:#ff003c;
-  color:#fff;
-  border-radius:30px;
-  font-weight:bold;
-  text-decoration:none;
-  box-shadow:0 0 30px rgba(255,0,60,.7);
-  transition:.3s;
-}
-
-.psycho-btn:hover{
-  transform:scale(1.07);
-}
-
-.psycho-skip{
-  display:block;
-  margin-top:14px;
-  font-size:12px;
-  opacity:.6;
-  cursor:pointer;
-}
-
-  
+/* FOOTER */
+footer{text-align:center;font-size:13px;opacity:.6;margin-top:30px}
 </style>
 </head>
 
@@ -194,116 +71,84 @@ footer{
 
 <div class="articles-wrapper">
 
-  <!-- PCR -->
   <div class="article blink-ultra">
-    <a href="put-call-ratio-kya-hai.html">
-      ☠️ PCR (Put–Call Ratio) — SMART MONEY TRAP
-    </a>
-    <div class="tags">
-      <span class="tag smart">SMART MONEY</span>
-      <span class="tag trap">RETAIL TRAP</span>
-      <span class="tag omega-tag">OMEGA</span>
-    </div>
-    <div class="desc">
-      PCR sirf number nahi — crowd psychology ka mirror hai.
-    </div>
+    <a href="put-call-ratio-kya-hai.html">☠️ PCR (Put–Call Ratio)</a>
+    <div class="desc">Crowd psychology ka sabse bada trap.</div>
   </div>
 
-  <!-- RISK MANAGEMENT -->
   <div class="article blink-ultra">
-    <a href="risk-management-kya-hai.html">
-      🔥 Risk Management — SURVIVAL RULE
-    </a>
-    <div class="desc">
-      Jo capital bachata hai wahi market jeet-ta hai.
-    </div>
+    <a href="risk-management-kya-hai.html">🔥 Risk Management</a>
+    <div class="desc">Capital bachaya to hi survival.</div>
   </div>
 
-  <!-- GREEKS -->
   <div class="article blink-ultra">
-    <a href="stock-market-me-greeks-kya-hote-hai.html">
-      🧠 Options Greeks — HIDDEN POWER
-    </a>
-    <div class="desc">
-      Greeks bina samjhe options trade karna andha khel hai.
-    </div>
+    <a href="stock-market-me-greeks-kya-hote-hai.html">🧠 Options Greeks</a>
+    <div class="desc">Hidden forces jo price ko hilaati hain.</div>
   </div>
 
-  <!-- FOREX -->
-  <div class="article blink-ultra">
-    <a href="forex-trading-kya-hai.html">
-      💀 Forex Trading — HIGH RISK ZONE
-    </a>
-    <div class="desc">
-      Forex leverage ek saath weapon aur danger hai.
-    </div>
-  </div>
-
-  <!-- NORMAL (NO BLINK) -->
   <div class="article">
-    <a href="liquidity-hunting-kya-hai.html">
-      ⚔️ Liquidity Hunting — INSTITUTIONAL GAME
-    </a>
-    <div class="desc">
-      Jahan stops hote hain, wahi paisa banta hai.
-    </div>
+    <a href="liquidity-hunting-kya-hai.html">⚔️ Liquidity Hunting</a>
+    <div class="desc">Stops ke peeche paisa hota hai.</div>
   </div>
 
 </div>
 
-<div class="disclaimer">
-  <h3>⚠️ RISK DISCLAIMER</h3>
-  <p>
-    Yeh content sirf educational purpose ke liye hai.
-    Trading me capital loss ka high risk hota hai.
-    Koi buy/sell recommendation nahi.
-  </p>
+<!-- POPUP 1: 4s DELAY -->
+<div class="popup" id="popupTime">
+  <div class="popup-box">
+    <h3>☠️ MARKET WARNING</h3>
+    <p>Sirf article padhna kaafi nahi. Real traps live samajhne padte hain.</p>
+    <a href="https://youtube.com/@shravansh03" target="_blank" class="popup-btn">
+      🔴 Join YouTube — Trade with Shravansh
+    </a>
+    <span class="popup-skip" id="skipTime">Skip (Risk Accepted)</span>
+  </div>
 </div>
 
-<footer>
-  © 2025 BLACK OPS TRADING | EDUCATION ONLY
-</footer>
+<!-- POPUP 2: SCROLL TRIGGER -->
+<div class="popup" id="popupScroll">
+  <div class="popup-box">
+    <h3>🚨 SECOND ALERT</h3>
+    <p>
+      Agar yahan tak padh liya hai,  
+      to matlab **aap serious ho**.  
+      Ab next level live samjho.
+    </p>
+    <a href="https://youtube.com/@shravansh03" target="_blank" class="popup-btn">
+      ▶️ Watch Live Traps on YouTube
+    </a>
+    <span class="popup-skip" id="skipScroll">Skip (Continue Reading)</span>
+  </div>
+</div>
+
+<footer>© 2025 BLACK OPS TRADING | EDUCATION ONLY</footer>
 
 <script>
-const psychoPopup = document.getElementById("psychoPopup");
+document.addEventListener("DOMContentLoaded", function(){
 
-setTimeout(()=>{
-  psychoPopup.classList.add("active");
-},4000); // 4 seconds
+  const popTime   = document.getElementById("popupTime");
+  const popScroll = document.getElementById("popupScroll");
+  const skipTime  = document.getElementById("skipTime");
+  const skipScroll= document.getElementById("skipScroll");
 
-function closePsycho(){
-  psychoPopup.classList.remove("active");
-}
+  // 1) TIME BASED (4s)
+  setTimeout(()=>{ popTime.classList.add("show"); },4000);
+  skipTime.onclick = ()=> popTime.classList.remove("show");
+
+  // 2) SCROLL BASED (45%)
+  let fired=false;
+  window.addEventListener("scroll", function(){
+    if(fired) return;
+    const scrolled = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
+    if(scrolled > 0.45){
+      fired=true;
+      popScroll.classList.add("show");
+    }
+  });
+  skipScroll.onclick = ()=> popScroll.classList.remove("show");
+
+});
 </script>
-
-
-  
-<!-- ===== 4s PSYCHO POPUP ===== -->
-<div class="psycho-popup" id="psychoPopup">
-  <div class="psycho-box">
-    <h3>☠️ MARKET WARNING</h3>
-
-    <p>
-      Agar aap sirf article padh kar
-      market jeetne ka soch rahe ho,
-      to aap already **late ho**.
-      <br><br>
-      Real traps, live psychology aur
-      Smart Money ke moves
-      **sirf live explain hote hain.**
-    </p>
-
-    <a href="https://youtube.com/@shravansh03"
-       target="_blank"
-       class="psycho-btn">
-       🔴 JOIN YOUTUBE — TRADE WITH SHRAVANSH
-    </a>
-
-    <span class="psycho-skip" onclick="closePsycho()">
-      Skip (I accept the risk)
-    </span>
-  </div>
-</div>
 
 </body>
 </html>
