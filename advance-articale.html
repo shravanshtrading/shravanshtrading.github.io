@@ -2,7 +2,7 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<title>BLACK OPS ARTICLES — ULTRA</title>
+<title>BLACK OPS ARTICLES — ULTRA BLINK</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -24,7 +24,7 @@ h1{
   text-shadow:0 0 25px #00ff9c;
 }
 
-/* ===== ARTICLES WRAPPER ===== */
+/* ===== WRAPPER ===== */
 .articles-wrapper{
   max-width:900px;
   margin:auto;
@@ -40,13 +40,11 @@ h1{
   box-shadow:0 0 25px rgba(0,0,0,.8);
   transition:.3s;
 }
-
 .article:hover{
   transform:translateY(-4px);
-  box-shadow:0 0 45px rgba(255,0,60,.45);
 }
 
-/* ===== ARTICLE LINK ===== */
+/* ===== LINK ===== */
 .article a{
   text-decoration:none;
   color:#ffffff;
@@ -56,9 +54,7 @@ h1{
 }
 
 /* ===== TAGS ===== */
-.tags{
-  margin:12px 0;
-}
+.tags{margin:12px 0}
 .tag{
   display:inline-block;
   padding:5px 12px;
@@ -70,36 +66,32 @@ h1{
 .trap{background:#ff003c}
 .omega-tag{background:#6f2cff}
 
-/* ===== DESCRIPTION ===== */
+/* ===== DESC ===== */
 .desc{
   font-size:14px;
   line-height:1.7;
   opacity:.9;
 }
 
-/* ===== PCR ULTRA BLINK ===== */
-.pcr-ultra{
-  position:relative;
+/* ===== BLINK SYSTEM ===== */
+.blink-ultra{
   border:1px solid rgba(255,0,60,.45);
-  animation:pcrBlink 3.5s infinite;
+  animation:blinkGlow 3.8s infinite;
 }
-
-@keyframes pcrBlink{
+@keyframes blinkGlow{
   0%,100%{
-    box-shadow:0 0 25px rgba(255,0,60,.3);
+    box-shadow:0 0 25px rgba(255,0,60,.25);
   }
   50%{
-    box-shadow:0 0 60px rgba(255,0,60,.9);
+    box-shadow:0 0 65px rgba(255,0,60,.85);
   }
 }
-
-.pcr-ultra a{
-  animation:textPulse 2.2s infinite;
+.blink-ultra a{
+  animation:textPulse 2.4s infinite;
 }
-
 @keyframes textPulse{
   0%,100%{opacity:1}
-  50%{opacity:.7}
+  50%{opacity:.65}
 }
 
 /* ===== DISCLAIMER ===== */
@@ -112,13 +104,8 @@ h1{
   border:1px solid rgba(255,0,60,.5);
   box-shadow:0 0 45px rgba(255,0,60,.3);
 }
-.disclaimer h3{
-  color:#ff003c;
-}
-.disclaimer p{
-  font-size:14px;
-  line-height:1.8;
-}
+.disclaimer h3{color:#ff003c}
+.disclaimer p{font-size:14px;line-height:1.8}
 
 /* ===== FOOTER ===== */
 footer{
@@ -127,6 +114,77 @@ footer{
   font-size:13px;
   opacity:.6;
 }
+/* ===== PSYCHO POPUP ===== */
+.psycho-popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  opacity:0;
+  pointer-events:none;
+  transition:.4s;
+}
+
+.psycho-popup.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.psycho-box{
+  max-width:420px;
+  padding:28px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#1a0000,#050000);
+  border:2px solid #ff003c;
+  box-shadow:0 0 70px rgba(255,0,60,.6);
+  text-align:center;
+  animation:popPulse 2.5s infinite;
+}
+
+@keyframes popPulse{
+  0%,100%{box-shadow:0 0 40px rgba(255,0,60,.4)}
+  50%{box-shadow:0 0 70px rgba(255,0,60,.9)}
+}
+
+.psycho-box h3{
+  color:#ff003c;
+  letter-spacing:2px;
+}
+
+.psycho-box p{
+  font-size:14px;
+  line-height:1.7;
+  margin:15px 0;
+}
+
+.psycho-btn{
+  display:inline-block;
+  padding:13px 26px;
+  background:#ff003c;
+  color:#fff;
+  border-radius:30px;
+  font-weight:bold;
+  text-decoration:none;
+  box-shadow:0 0 30px rgba(255,0,60,.7);
+  transition:.3s;
+}
+
+.psycho-btn:hover{
+  transform:scale(1.07);
+}
+
+.psycho-skip{
+  display:block;
+  margin-top:14px;
+  font-size:12px;
+  opacity:.6;
+  cursor:pointer;
+}
+
+  
 </style>
 </head>
 
@@ -136,8 +194,8 @@ footer{
 
 <div class="articles-wrapper">
 
-  <!-- PCR CLICK CARD -->
-  <div class="article pcr-ultra">
+  <!-- PCR -->
+  <div class="article blink-ultra">
     <a href="put-call-ratio-kya-hai.html">
       ☠️ PCR (Put–Call Ratio) — SMART MONEY TRAP
     </a>
@@ -147,36 +205,47 @@ footer{
       <span class="tag omega-tag">OMEGA</span>
     </div>
     <div class="desc">
-      ⚠️ PCR sirf ek number nahi.  
-      Click karo aur dekho kaise crowd market me phasaya jaata hai.
+      PCR sirf number nahi — crowd psychology ka mirror hai.
     </div>
   </div>
 
-  <!-- OTHER ARTICLES -->
-  <div class="article">
+  <!-- RISK MANAGEMENT -->
+  <div class="article blink-ultra">
     <a href="risk-management-kya-hai.html">
       🔥 Risk Management — SURVIVAL RULE
     </a>
     <div class="desc">
-      Capital bachaya nahi to market me zinda nahi rahoge.
+      Jo capital bachata hai wahi market jeet-ta hai.
     </div>
   </div>
 
-  <div class="article">
+  <!-- GREEKS -->
+  <div class="article blink-ultra">
     <a href="stock-market-me-greeks-kya-hote-hai.html">
       🧠 Options Greeks — HIDDEN POWER
     </a>
     <div class="desc">
-      Greeks samjhe bina options trade karna andhere me ladna hai.
+      Greeks bina samjhe options trade karna andha khel hai.
     </div>
   </div>
 
-  <div class="article">
+  <!-- FOREX -->
+  <div class="article blink-ultra">
     <a href="forex-trading-kya-hai.html">
       💀 Forex Trading — HIGH RISK ZONE
     </a>
     <div class="desc">
-      Forex me leverage weapon bhi hai aur zeher bhi.
+      Forex leverage ek saath weapon aur danger hai.
+    </div>
+  </div>
+
+  <!-- NORMAL (NO BLINK) -->
+  <div class="article">
+    <a href="liquidity-hunting-kya-hai.html">
+      ⚔️ Liquidity Hunting — INSTITUTIONAL GAME
+    </a>
+    <div class="desc">
+      Jahan stops hote hain, wahi paisa banta hai.
     </div>
   </div>
 
@@ -185,16 +254,56 @@ footer{
 <div class="disclaimer">
   <h3>⚠️ RISK DISCLAIMER</h3>
   <p>
-    Yeh website sirf educational purpose ke liye hai.
+    Yeh content sirf educational purpose ke liye hai.
     Trading me capital loss ka high risk hota hai.
-    Koi bhi buy/sell recommendation nahi di ja rahi.
-    Apne risk par decision lein.
+    Koi buy/sell recommendation nahi.
   </p>
 </div>
 
 <footer>
   © 2025 BLACK OPS TRADING | EDUCATION ONLY
 </footer>
+
+<script>
+const psychoPopup = document.getElementById("psychoPopup");
+
+setTimeout(()=>{
+  psychoPopup.classList.add("active");
+},4000); // 4 seconds
+
+function closePsycho(){
+  psychoPopup.classList.remove("active");
+}
+</script>
+
+
+  
+<!-- ===== 4s PSYCHO POPUP ===== -->
+<div class="psycho-popup" id="psychoPopup">
+  <div class="psycho-box">
+    <h3>☠️ MARKET WARNING</h3>
+
+    <p>
+      Agar aap sirf article padh kar
+      market jeetne ka soch rahe ho,
+      to aap already **late ho**.
+      <br><br>
+      Real traps, live psychology aur
+      Smart Money ke moves
+      **sirf live explain hote hain.**
+    </p>
+
+    <a href="https://youtube.com/@shravansh03"
+       target="_blank"
+       class="psycho-btn">
+       🔴 JOIN YOUTUBE — TRADE WITH SHRAVANSH
+    </a>
+
+    <span class="psycho-skip" onclick="closePsycho()">
+      Skip (I accept the risk)
+    </span>
+  </div>
+</div>
 
 </body>
 </html>
