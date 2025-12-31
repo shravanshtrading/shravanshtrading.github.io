@@ -2,66 +2,167 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<title>BLACK OPS ARTICLES — OMEGA HUB</title>
+<title>BLACK OPS ARTICLES — FINAL</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+/* ===== BASE ===== */
 body{
-  margin:0;padding:20px;
+  margin:0;
+  padding:20px;
   font-family:Arial, sans-serif;
-  background:#02040a;color:#eafff6;
+  background:#02040a;
+  color:#eafff6;
 }
+
+/* ===== TITLE ===== */
 h1{
-  text-align:center;font-size:36px;letter-spacing:3px;
-  color:#00ff9c;text-shadow:0 0 25px #00ff9c;margin-bottom:40px;
+  text-align:center;
+  font-size:38px;
+  letter-spacing:3px;
+  margin-bottom:40px;
+  color:#00ff9c;
+  text-shadow:0 0 30px rgba(0,255,156,.9);
 }
-.articles-wrapper{max-width:900px;margin:auto}
 
-/* ARTICLE */
+/* ===== WRAPPER ===== */
+.articles-wrapper{
+  max-width:920px;
+  margin:auto;
+}
+
+/* ===== ARTICLE CARD ===== */
 .article{
-  background:linear-gradient(135deg,#050914,#0a1022);
-  padding:22px 25px;margin-bottom:22px;
-  border-radius:18px;border:1px solid rgba(255,255,255,.08);
-  box-shadow:0 0 25px rgba(0,0,0,.8);
-  transition:.3s;
-}
-.article:hover{transform:translateY(-4px)}
-.article a{color:#fff;text-decoration:none;font-size:22px;font-weight:700;display:block}
-.desc{font-size:14px;margin-top:10px;opacity:.9}
+  background:linear-gradient(135deg,#070b18,#0c1228);
+  padding:24px 26px;
+  margin-bottom:26px;
+  border-radius:20px;
 
-/* BLINK */
+  /* BORDER FIX */
+  border:2px solid rgba(255,255,255,.15);
+
+  /* SHADOW */
+  box-shadow:
+    0 0 25px rgba(0,0,0,.9),
+    inset 0 0 0 rgba(255,0,60,0);
+
+  transition:transform .3s, box-shadow .3s;
+}
+
+.article:hover{
+  transform:translateY(-5px);
+}
+
+/* ===== LINK ===== */
+.article a{
+  text-decoration:none;
+  color:#ffffff;
+  font-size:22px;
+  font-weight:700;
+  display:block;
+}
+
+/* ===== DESC ===== */
+.desc{
+  font-size:14px;
+  margin-top:10px;
+  line-height:1.7;
+  opacity:.9;
+}
+
+/* ======================================================
+   🔥 REAL BLINK SYSTEM (FIXED & STRONG)
+   ====================================================== */
 .blink-ultra{
-  border:1px solid rgba(255,0,60,.45);
-  animation:blinkGlow 3.5s infinite;
-}
-@keyframes blinkGlow{
-  0%,100%{box-shadow:0 0 25px rgba(255,0,60,.25)}
-  50%{box-shadow:0 0 60px rgba(255,0,60,.9)}
+  animation:ultraBlink 3s infinite;
 }
 
-/* POPUPS (COMMON) */
-.popup{
-  position:fixed;inset:0;background:rgba(0,0,0,.9);
-  display:flex;align-items:center;justify-content:center;
-  z-index:9999;opacity:0;pointer-events:none;transition:.4s;
+@keyframes ultraBlink{
+  0%{
+    box-shadow:
+      0 0 18px rgba(255,0,60,.25),
+      inset 0 0 0 rgba(255,0,60,0);
+    border-color:rgba(255,0,60,.35);
+  }
+  50%{
+    box-shadow:
+      0 0 60px rgba(255,0,60,.95),
+      inset 0 0 25px rgba(255,0,60,.35);
+    border-color:#ff003c;
+  }
+  100%{
+    box-shadow:
+      0 0 18px rgba(255,0,60,.25),
+      inset 0 0 0 rgba(255,0,60,0);
+    border-color:rgba(255,0,60,.35);
+  }
 }
-.popup.show{opacity:1;pointer-events:auto}
+
+/* ===== POPUP COMMON ===== */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  opacity:0;
+  pointer-events:none;
+  transition:.4s;
+}
+.popup.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
 .popup-box{
-  max-width:420px;padding:28px;border-radius:20px;
-  background:linear-gradient(135deg,#1a0000,#050000);
-  border:2px solid #ff003c;box-shadow:0 0 70px rgba(255,0,60,.7);
+  max-width:430px;
+  padding:30px;
+  border-radius:22px;
+  background:linear-gradient(135deg,#1a0000,#060000);
+  border:2px solid #ff003c;
+  box-shadow:0 0 80px rgba(255,0,60,.8);
   text-align:center;
 }
-.popup-box h3{color:#ff003c;letter-spacing:2px}
-.popup-box p{font-size:14px;line-height:1.7;margin:15px 0}
-.popup-btn{
-  display:inline-block;padding:13px 26px;background:#ff003c;color:#fff;
-  border-radius:30px;font-weight:bold;text-decoration:none;
-}
-.popup-skip{display:block;margin-top:14px;font-size:12px;opacity:.6;cursor:pointer}
 
-/* FOOTER */
-footer{text-align:center;font-size:13px;opacity:.6;margin-top:30px}
+.popup-box h3{
+  color:#ff003c;
+  letter-spacing:2px;
+}
+
+.popup-box p{
+  font-size:14px;
+  line-height:1.8;
+  margin:18px 0;
+}
+
+.popup-btn{
+  display:inline-block;
+  padding:14px 28px;
+  background:#ff003c;
+  color:#fff;
+  border-radius:30px;
+  font-weight:bold;
+  text-decoration:none;
+  box-shadow:0 0 35px rgba(255,0,60,.7);
+}
+
+.popup-skip{
+  display:block;
+  margin-top:16px;
+  font-size:12px;
+  opacity:.6;
+  cursor:pointer;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  margin-top:40px;
+  font-size:13px;
+  opacity:.6;
+}
 </style>
 </head>
 
@@ -71,81 +172,104 @@ footer{text-align:center;font-size:13px;opacity:.6;margin-top:30px}
 
 <div class="articles-wrapper">
 
+  <!-- PCR -->
   <div class="article blink-ultra">
-    <a href="put-call-ratio-kya-hai.html">☠️ PCR (Put–Call Ratio)</a>
-    <div class="desc">Crowd psychology ka sabse bada trap.</div>
+    <a href="put-call-ratio-kya-hai.html">
+      ☠️ PCR (Put–Call Ratio)
+    </a>
+    <div class="desc">
+      Crowd psychology ka sabse dangerous indicator.
+    </div>
   </div>
 
+  <!-- RISK -->
   <div class="article blink-ultra">
-    <a href="risk-management-kya-hai.html">🔥 Risk Management</a>
-    <div class="desc">Capital bachaya to hi survival.</div>
+    <a href="risk-management-kya-hai.html">
+      🔥 Risk Management
+    </a>
+    <div class="desc">
+      Capital bacha to trader zinda.
+    </div>
   </div>
 
+  <!-- GREEKS -->
   <div class="article blink-ultra">
-    <a href="stock-market-me-greeks-kya-hote-hai.html">🧠 Options Greeks</a>
-    <div class="desc">Hidden forces jo price ko hilaati hain.</div>
+    <a href="stock-market-me-greeks-kya-hote-hai.html">
+      🧠 Options Greeks
+    </a>
+    <div class="desc">
+      Price ko move karne wali invisible forces.
+    </div>
   </div>
 
+  <!-- NORMAL -->
   <div class="article">
-    <a href="liquidity-hunting-kya-hai.html">⚔️ Liquidity Hunting</a>
-    <div class="desc">Stops ke peeche paisa hota hai.</div>
+    <a href="liquidity-hunting-kya-hai.html">
+      ⚔️ Liquidity Hunting
+    </a>
+    <div class="desc">
+      Jahan stop-loss, wahi paisa.
+    </div>
   </div>
 
 </div>
 
-<!-- POPUP 1: 4s DELAY -->
+<!-- ===== POPUP 1 (4s) ===== -->
 <div class="popup" id="popupTime">
   <div class="popup-box">
     <h3>☠️ MARKET WARNING</h3>
-    <p>Sirf article padhna kaafi nahi. Real traps live samajhne padte hain.</p>
+    <p>
+      Sirf padhna kaafi nahi.  
+      Real traps **live samajhne padte hain**.
+    </p>
     <a href="https://youtube.com/@shravansh03" target="_blank" class="popup-btn">
       🔴 Join YouTube — Trade with Shravansh
     </a>
-    <span class="popup-skip" id="skipTime">Skip (Risk Accepted)</span>
+    <span class="popup-skip" id="skipTime">Skip</span>
   </div>
 </div>
 
-<!-- POPUP 2: SCROLL TRIGGER -->
+<!-- ===== POPUP 2 (SCROLL) ===== -->
 <div class="popup" id="popupScroll">
   <div class="popup-box">
     <h3>🚨 SECOND ALERT</h3>
     <p>
-      Agar yahan tak padh liya hai,  
-      to matlab **aap serious ho**.  
-      Ab next level live samjho.
+      Yahan tak aaye ho — matlab serious ho.  
+      Ab next level live dekho.
     </p>
     <a href="https://youtube.com/@shravansh03" target="_blank" class="popup-btn">
-      ▶️ Watch Live Traps on YouTube
+      ▶️ Watch Live
     </a>
-    <span class="popup-skip" id="skipScroll">Skip (Continue Reading)</span>
+    <span class="popup-skip" id="skipScroll">Continue</span>
   </div>
 </div>
 
-<footer>© 2025 BLACK OPS TRADING | EDUCATION ONLY</footer>
+<footer>
+  © 2025 BLACK OPS TRADING | EDUCATION ONLY
+</footer>
 
 <script>
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded",function(){
 
-  const popTime   = document.getElementById("popupTime");
-  const popScroll = document.getElementById("popupScroll");
-  const skipTime  = document.getElementById("skipTime");
-  const skipScroll= document.getElementById("skipScroll");
+  const pTime=document.getElementById("popupTime");
+  const pScroll=document.getElementById("popupScroll");
 
-  // 1) TIME BASED (4s)
-  setTimeout(()=>{ popTime.classList.add("show"); },4000);
-  skipTime.onclick = ()=> popTime.classList.remove("show");
+  document.getElementById("skipTime").onclick=()=>pTime.classList.remove("show");
+  document.getElementById("skipScroll").onclick=()=>pScroll.classList.remove("show");
 
-  // 2) SCROLL BASED (45%)
+  // 4 sec popup
+  setTimeout(()=>pTime.classList.add("show"),4000);
+
+  // Scroll popup
   let fired=false;
-  window.addEventListener("scroll", function(){
+  window.addEventListener("scroll",()=>{
     if(fired) return;
-    const scrolled = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
-    if(scrolled > 0.45){
+    const sc=(window.scrollY+window.innerHeight)/document.body.scrollHeight;
+    if(sc>0.45){
       fired=true;
-      popScroll.classList.add("show");
+      pScroll.classList.add("show");
     }
   });
-  skipScroll.onclick = ()=> popScroll.classList.remove("show");
 
 });
 </script>
