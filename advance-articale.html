@@ -2,160 +2,199 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<title>BLACK OPS OMEGA — TRADING WAR INTELLIGENCE</title>
+<title>BLACK OPS ARTICLES — ULTRA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-:root{
-  --neon:#00ff9c;
-  --danger:#ff003c;
-  --bg:#02040a;
-}
 body{
   margin:0;
-  font-family: Arial, sans-serif;
-  background:radial-gradient(circle at top,#070c18,var(--bg));
+  padding:20px;
+  font-family:Arial, sans-serif;
+  background:#02040a;
   color:#eafff6;
 }
 
-/* ===== MAIN STYLES (shortened) ===== */
-header{text-align:center;padding:70px 15px}
-.omega{
-  font-size:48px;letter-spacing:4px;
-  animation:blink 2.8s infinite;
-  text-shadow:0 0 15px var(--neon),0 0 40px var(--neon);
-}
-@keyframes blink{
-  0%,100%{opacity:1}
-  50%{opacity:.4}
+/* ===== HEADING ===== */
+h1{
+  text-align:center;
+  font-size:36px;
+  letter-spacing:3px;
+  margin-bottom:35px;
+  color:#00ff9c;
+  text-shadow:0 0 25px #00ff9c;
 }
 
-/* ===== POPUP ===== */
-.popup{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.85);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-  opacity:0;
-  pointer-events:none;
-  transition:.4s;
+/* ===== ARTICLES WRAPPER ===== */
+.articles-wrapper{
+  max-width:900px;
+  margin:auto;
 }
-.popup.active{
-  opacity:1;
-  pointer-events:auto;
+
+/* ===== ARTICLE CARD ===== */
+.article{
+  background:linear-gradient(135deg,#050914,#0a1022);
+  padding:22px 25px;
+  margin-bottom:22px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 0 25px rgba(0,0,0,.8);
+  transition:.3s;
 }
-.popup-box{
-  max-width:420px;
-  padding:28px;
+
+.article:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 45px rgba(255,0,60,.45);
+}
+
+/* ===== ARTICLE LINK ===== */
+.article a{
+  text-decoration:none;
+  color:#ffffff;
+  font-size:22px;
+  font-weight:700;
+  display:block;
+}
+
+/* ===== TAGS ===== */
+.tags{
+  margin:12px 0;
+}
+.tag{
+  display:inline-block;
+  padding:5px 12px;
   border-radius:20px;
-  background:linear-gradient(135deg,#1a0000,#050000);
-  border:2px solid var(--danger);
-  box-shadow:0 0 60px rgba(255,0,60,.6);
-  text-align:center;
+  font-size:12px;
+  margin-right:6px;
 }
-.popup-box h3{
-  color:var(--danger);
-  letter-spacing:2px;
-}
-.popup-box p{
+.smart{background:#00ff9c;color:#000}
+.trap{background:#ff003c}
+.omega-tag{background:#6f2cff}
+
+/* ===== DESCRIPTION ===== */
+.desc{
   font-size:14px;
   line-height:1.7;
-  margin:15px 0;
+  opacity:.9;
 }
-.popup-btn{
-  display:inline-block;
-  padding:12px 24px;
-  background:var(--danger);
-  color:#fff;
-  border-radius:30px;
-  font-weight:bold;
-  text-decoration:none;
-  box-shadow:0 0 30px rgba(255,0,60,.7);
+
+/* ===== PCR ULTRA BLINK ===== */
+.pcr-ultra{
+  position:relative;
+  border:1px solid rgba(255,0,60,.45);
+  animation:pcrBlink 3.5s infinite;
 }
-.close-btn{
-  display:block;
-  margin-top:14px;
-  font-size:12px;
+
+@keyframes pcrBlink{
+  0%,100%{
+    box-shadow:0 0 25px rgba(255,0,60,.3);
+  }
+  50%{
+    box-shadow:0 0 60px rgba(255,0,60,.9);
+  }
+}
+
+.pcr-ultra a{
+  animation:textPulse 2.2s infinite;
+}
+
+@keyframes textPulse{
+  0%,100%{opacity:1}
+  50%{opacity:.7}
+}
+
+/* ===== DISCLAIMER ===== */
+.disclaimer{
+  max-width:900px;
+  margin:60px auto 30px;
+  padding:25px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#090d1f,#040815);
+  border:1px solid rgba(255,0,60,.5);
+  box-shadow:0 0 45px rgba(255,0,60,.3);
+}
+.disclaimer h3{
+  color:#ff003c;
+}
+.disclaimer p{
+  font-size:14px;
+  line-height:1.8;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  margin-top:35px;
+  font-size:13px;
   opacity:.6;
-  cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1 class="omega">OMEGA WAR CORE</h1>
-  <p>☠️ Smart Money vs Retail — Survival Interface ☠️</p>
-</header>
+<h1>☠️ BLACK OPS ARTICLES</h1>
 
-<!-- ===== PCR CLICK ENTRY (NO ARTICLE CONTENT) ===== -->
-<div class="article">
-  <a href="insider-demand-kya-hota-hai.html">
-    🔥 Insider Demand क्या होता है?
-  </a>
+<div class="articles-wrapper">
 
-  <div class="tags">
-    <span class="tag smart">SMART MONEY</span>
-    <span class="tag trap">RETAIL TRAP</span>
-    <span class="tag omega-tag">OMEGA</span>
-  </div>
-
-  <div class="desc">
-    ⚠️Insider Demand की पहचान कैसे करें? (Advance Rules)
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-<!-- ===== POPUP ===== -->
-<div class="popup" id="ytPopup">
-  <div class="popup-box">
-    <h3>☠️ MARKET WARNING</h3>
-    <p>
-      Agar aap market me sirf guess se trade kar rahe ho,  
-      to **aap target ho**.  
-      <br><br>
-      Real traps, live psychology aur protection ke liye  
-      **BLACK OPS YouTube HQ join karo.**
-    </p>
-
-    <a href="https://youtube.com/@shravansh03"
-       target="_blank"
-       class="popup-btn">
-       🔴 JOIN YOUTUBE — TRADE WITH SHRAVANSH
+  <!-- PCR CLICK CARD -->
+  <div class="article pcr-ultra">
+    <a href="put-call-ratio-kya-hai.html">
+      ☠️ PCR (Put–Call Ratio) — SMART MONEY TRAP
     </a>
-
-    <span class="close-btn" onclick="closePopup()">
-      Ignore (Risk Accepted)
-    </span>
+    <div class="tags">
+      <span class="tag smart">SMART MONEY</span>
+      <span class="tag trap">RETAIL TRAP</span>
+      <span class="tag omega-tag">OMEGA</span>
+    </div>
+    <div class="desc">
+      ⚠️ PCR sirf ek number nahi.  
+      Click karo aur dekho kaise crowd market me phasaya jaata hai.
+    </div>
   </div>
+
+  <!-- OTHER ARTICLES -->
+  <div class="article">
+    <a href="risk-management-kya-hai.html">
+      🔥 Risk Management — SURVIVAL RULE
+    </a>
+    <div class="desc">
+      Capital bachaya nahi to market me zinda nahi rahoge.
+    </div>
+  </div>
+
+  <div class="article">
+    <a href="stock-market-me-greeks-kya-hote-hai.html">
+      🧠 Options Greeks — HIDDEN POWER
+    </a>
+    <div class="desc">
+      Greeks samjhe bina options trade karna andhere me ladna hai.
+    </div>
+  </div>
+
+  <div class="article">
+    <a href="forex-trading-kya-hai.html">
+      💀 Forex Trading — HIGH RISK ZONE
+    </a>
+    <div class="desc">
+      Forex me leverage weapon bhi hai aur zeher bhi.
+    </div>
+  </div>
+
 </div>
 
-<script>
-const popup=document.getElementById("ytPopup");
-setTimeout(()=>popup.classList.add("active"),8000);
-function closePopup(){
-  popup.classList.remove("active");
-}
-</script>
+<div class="disclaimer">
+  <h3>⚠️ RISK DISCLAIMER</h3>
+  <p>
+    Yeh website sirf educational purpose ke liye hai.
+    Trading me capital loss ka high risk hota hai.
+    Koi bhi buy/sell recommendation nahi di ja rahi.
+    Apne risk par decision lein.
+  </p>
+</div>
+
+<footer>
+  © 2025 BLACK OPS TRADING | EDUCATION ONLY
+</footer>
 
 </body>
 </html>
