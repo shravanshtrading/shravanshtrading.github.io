@@ -338,60 +338,55 @@ footer{
 
 
 
- /* ===============================
-   ULTRA TRAVEL BLINK SYSTEM
+/* ===============================
+   TRAVEL BLINK / SCAN EFFECT
 ================================ */
 
+.travel-blink,
+.travel-blink-red{
+  position: relative;
+  overflow: hidden;
+}
+
 /* GREEN SCAN */
-.travel-scan{
-  position:relative;
-  overflow:hidden;
-}
-
-.travel-scan::after{
+.travel-blink::after{
   content:"";
   position:absolute;
   top:0;
-  left:-120%;
-  width:120%;
+  left:-150%;
+  width:150%;
   height:100%;
-  background:linear-gradient(
+  background: linear-gradient(
     120deg,
-    transparent 35%,
-    rgba(0,255,156,.95),
+    transparent 30%,
+    rgba(0,255,180,0.9),
     transparent 70%
   );
-  animation:scanMove 2.6s linear infinite;
+  animation: travelScan 2.4s linear infinite;
   pointer-events:none;
 }
 
-@keyframes scanMove{
-  0%{ left:-120%; }
-  100%{ left:120%; }
-}
-
-/* RED ALERT SCAN */
-.travel-scan-red{
-  position:relative;
-  overflow:hidden;
-  color:#ff3b3b;
-}
-
-.travel-scan-red::after{
+/* RED SCAN */
+.travel-blink-red::after{
   content:"";
   position:absolute;
   top:0;
-  left:-120%;
-  width:120%;
+  left:-150%;
+  width:150%;
   height:100%;
-  background:linear-gradient(
+  background: linear-gradient(
     120deg,
-    transparent 35%,
-    rgba(255,0,0,.95),
+    transparent 30%,
+    rgba(255,0,0,0.9),
     transparent 70%
   );
-  animation:scanMove 2.2s linear infinite;
+  animation: travelScan 2s linear infinite;
   pointer-events:none;
+}
+
+@keyframes travelScan{
+  0%{ left:-150%; }
+  100%{ left:150%; }
 }
  
   
