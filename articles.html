@@ -68,9 +68,9 @@ header p{
   transition:.3s;
 }
 .article-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 0 40px rgba(0,255,156,.25);
+  animation-duration:1.8s;
 }
+  
 .article-card a{
   font-size:20px;
   font-weight:600;
@@ -165,11 +165,13 @@ footer{
    ☠️ MULTI-COLOR BLINK SYSTEM (AUTO)
    ===================================================== */
 
-.article{
+/* ===== ARTICLE CARD BLINK FIX ===== */
+.article-card{
   position:relative;
   border:2px solid transparent;
   animation:blinkBase 3.2s infinite;
 }
+
 
 /* Base blink animation */
 @keyframes blinkBase{
@@ -667,12 +669,17 @@ setInterval(()=>{
   });
 },Math.random()*3000+1500);
   
+
 document.addEventListener("DOMContentLoaded",function(){
-  const articles = document.querySelectorAll(".article");
+  const articles = document.querySelectorAll(".article-card");
   const colors = ["c1","c2","c3","c4","c5","c6","c7","c8"];
 
+  articles.forEach((card,index)=>{
+    card.classList.add(colors[index % colors.length]);
   });
-});  
+});
+
+
   
 </script>
 
