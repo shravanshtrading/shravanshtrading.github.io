@@ -40,6 +40,36 @@ header p{
   color:#ff3b3b;
   letter-spacing:2px;
 }
+  .header,
+.hero,
+.top-section,
+body{
+  text-align:center;
+}
+.text-travel{
+  display:inline-block;
+  font-size:48px;
+  font-weight:800;
+  letter-spacing:4px;
+
+  background: linear-gradient(
+    90deg,
+    #00ffd5 0%,
+    #ffffff 50%,
+    #00ffd5 100%
+  );
+  background-size:300% 100%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation: ultraTravel 3s linear infinite;
+
+  text-shadow:
+    0 0 10px rgba(0,255,213,.7),
+    0 0 25px rgba(0,255,213,.9);
+}
+
 
 /* ===== STATUS ===== */
 .status-box{
@@ -360,7 +390,33 @@ footer{
     background-position:300% center;
   }
 }
+@keyframes ultraTravel{
+  from{ background-position:0% center; }
+  to{ background-position:300% center; }
+}
 
+.alert-text{
+  display:inline-block;
+  font-size:14px;
+  letter-spacing:3px;
+
+  background: linear-gradient(
+    90deg,
+    #ff2b2b,
+    #ffffff,
+    #ff2b2b
+  );
+  background-size:300% 100%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation: ultraTravel 2s linear infinite;
+
+  text-shadow:
+    0 0 8px rgba(255,0,0,.8),
+    0 0 16px rgba(255,0,0,.9);
+}
   
   
 </style>
