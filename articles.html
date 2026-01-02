@@ -536,6 +536,61 @@ header{
     box-shadow:0 0 15px rgba(0,255,156,.25);
   }
 }
+
+/* ===============================
+   📱 MOBILE ULTRA FIX
+   =============================== */
+@media (max-width:600px){
+
+  /* Main title */
+  .text-travel{
+    font-size:34px;
+    letter-spacing:2px;
+    text-shadow:
+      0 0 10px rgba(0,255,213,.7),
+      0 0 22px rgba(0,255,213,.9);
+  }
+
+  /* Alert line */
+  .alert-blink{
+    font-size:12px;
+    letter-spacing:2px;
+  }
+
+  /* Intel box center feel */
+  .intel-box{
+    text-align:center;
+    padding:18px;
+    margin-top:20px;
+  }
+
+  /* Article cards spacing */
+  .article-card{
+    margin:0 auto 16px;
+    padding:18px 18px;
+  }
+
+  .article-card a{
+    font-size:18px;
+  }
+
+  /* Reduce glow so it doesn't overflow */
+  @keyframes blinkBase{
+    0%{
+      box-shadow:0 0 12px currentColor;
+    }
+    50%{
+      box-shadow:
+        0 0 35px currentColor,
+        inset 0 0 18px currentColor;
+    }
+    100%{
+      box-shadow:0 0 12px currentColor;
+    }
+  }
+}
+
+
   
 </style>
 </head>
