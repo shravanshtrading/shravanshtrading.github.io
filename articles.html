@@ -339,82 +339,65 @@ footer{
 
 
 
-/* ===============================
-   ULTRA ENERGY TEXT TRAVEL v2
-================================ */
+/* ===== CLEAN TEXT TRAVEL (STABLE) ===== */
 
-.ultra-energy-travel{
+.text-travel{
   display:block;
   text-align:center;
   font-size:48px;
-  font-weight:900;
+  font-weight:800;
   letter-spacing:4px;
   margin:20px 0;
 
-  background:
-    linear-gradient(
-      100deg,
-      #00ffd5 0%,
-      #00ffd5 30%,
-      #ffffff 45%,
-      #aaffff 50%,
-      #ffffff 55%,
-      #00ffd5 70%,
-      #00ffd5 100%
-    );
+  color:#00ffd5;
+  background: linear-gradient(
+    90deg,
+    #00ffd5 20%,
+    #ffffff 40%,
+    #00ffd5 60%
+  );
 
-  background-size:300% 100%;
+  background-size:200% auto;
   background-position:0% center;
 
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 
-  animation: energyTravel 3.2s cubic-bezier(.65,.05,.36,1) infinite;
+  animation: cleanTravel 3s ease-in-out infinite;
 
-  filter:
-    drop-shadow(0 0 8px rgba(0,255,213,.4))
-    drop-shadow(0 0 22px rgba(0,255,213,.9));
+  text-shadow:
+    0 0 8px rgba(0,255,213,.6),
+    0 0 18px rgba(0,255,213,.9);
 }
 
-/* RED VARIANT */
-.ultra-energy-travel.red{
+.text-travel.red{
   font-size:15px;
   letter-spacing:3px;
 
-  background:
-    linear-gradient(
-      100deg,
-      #ff2b2b 0%,
-      #ff2b2b 30%,
-      #ffffff 45%,
-      #ffaaaa 50%,
-      #ffffff 55%,
-      #ff2b2b 70%,
-      #ff2b2b 100%
-    );
+  background: linear-gradient(
+    90deg,
+    #ff3b3b 20%,
+    #ffffff 40%,
+    #ff3b3b 60%
+  );
 
-  background-size:300% 100%;
+  background-size:200% auto;
 
-  animation-duration:2.4s;
+  animation-duration:2.5s;
 
-  filter:
-    drop-shadow(0 0 6px rgba(255,0,0,.5))
-    drop-shadow(0 0 16px rgba(255,0,0,.9));
+  text-shadow:
+    0 0 6px rgba(255,0,0,.6),
+    0 0 14px rgba(255,0,0,.9);
 }
 
-/* MOTION FEEL */
-@keyframes energyTravel{
+@keyframes cleanTravel{
   0%{
     background-position:0% center;
   }
-  40%{
-    background-position:55% center;
-  }
   100%{
-    background-position:300% center;
+    background-position:200% center;
   }
 }
-
 
   
   
@@ -424,14 +407,14 @@ footer{
 <body>
 
 <header>
-<h1 class="ultra-energy-travel">
+
+<h1 class="text-travel">
   SHRAVANSH WAR CORE
 </h1>
 
-<p class="ultra-energy-travel red">
+<p class="text-travel red">
   ⚠️ RETAIL TRAP / SMART MONEY INTEL ⚠️
 </p>
-
 
 
 <div class="intel-box travel-blink">
