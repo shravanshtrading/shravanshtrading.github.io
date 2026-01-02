@@ -338,57 +338,79 @@ footer{
 
 
 
-/* ===============================
-   TRAVEL BLINK / SCAN EFFECT
+
+ /* ===============================
+   ULTRA CENTERED TEXT TRAVEL LIGHT
 ================================ */
 
-.travel-blink,
-.travel-blink-red{
-  position: relative;
-  overflow: hidden;
-}
+.ultra-text-travel{
+  display: block;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin: 20px 0;
 
-/* GREEN SCAN */
-.travel-blink::after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-150%;
-  width:150%;
-  height:100%;
+  /* TEXT TRAVEL LIGHT */
   background: linear-gradient(
-    120deg,
-    transparent 30%,
-    rgba(0,255,180,0.9),
-    transparent 70%
+    90deg,
+    #00ffd5 0%,
+    #00ffd5 38%,
+    #ffffff 50%,
+    #00ffd5 62%,
+    #00ffd5 100%
   );
-  animation: travelScan 2.4s linear infinite;
-  pointer-events:none;
+
+  background-size: 220% auto;
+  background-position: 0% center;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: ultraTextTravel 2.4s linear infinite;
+
+  /* GLOW */
+  filter: drop-shadow(0 0 22px rgba(0,255,213,0.9));
 }
 
-/* RED SCAN */
-.travel-blink-red::after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-150%;
-  width:150%;
-  height:100%;
+/* RED VARIANT */
+.ultra-text-travel-red{
+  display: block;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+
   background: linear-gradient(
-    120deg,
-    transparent 30%,
-    rgba(255,0,0,0.9),
-    transparent 70%
+    90deg,
+    #ff2b2b 0%,
+    #ff2b2b 38%,
+    #ffffff 50%,
+    #ff2b2b 62%,
+    #ff2b2b 100%
   );
-  animation: travelScan 2s linear infinite;
-  pointer-events:none;
+
+  background-size: 220% auto;
+  background-position: 0% center;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: ultraTextTravel 1.8s linear infinite;
+
+  filter: drop-shadow(0 0 14px rgba(255,0,0,0.9));
 }
 
-@keyframes travelScan{
-  0%{ left:-150%; }
-  100%{ left:150%; }
+/* KEYFRAMES */
+@keyframes ultraTextTravel{
+  0%{
+    background-position: 0% center;
+  }
+  100%{
+    background-position: 220% center;
+  }
 }
- 
+
   
   
 </style>
@@ -397,13 +419,14 @@ footer{
 <body>
 
 <header>
- <h1 class="war-title travel-blink">
+ <h1 class="ultra-text-travel">
   SHRAVANSH WAR CORE
 </h1>
 
-<p class="war-sub travel-blink-red">
+<p class="ultra-text-travel-red">
   ⚠️ RETAIL TRAP / SMART MONEY INTEL ⚠️
 </p>
+
 
 <div class="intel-box travel-blink">
   • Market Manipulation Zones : TRACKED<br>
