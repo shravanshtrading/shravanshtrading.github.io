@@ -666,6 +666,17 @@ setInterval(()=>{
     }
   });
 },Math.random()*3000+1500);
+  
+document.addEventListener("DOMContentLoaded",function(){
+  const articles = document.querySelectorAll(".article");
+  const colors = ["c1","c2","c3","c4","c5","c6","c7","c8"];
+
+  articles.forEach((art, index)=>{
+    const colorClass = colors[index % colors.length];
+    art.classList.add(colorClass);
+  });
+});  
+  
 </script>
 
 </body>
