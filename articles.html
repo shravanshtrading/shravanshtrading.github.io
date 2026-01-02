@@ -339,77 +339,82 @@ footer{
 
 
 
- /* ===============================
-   ULTRA CENTERED TEXT TRAVEL LIGHT
+/* ===============================
+   ULTRA ENERGY TEXT TRAVEL v2
 ================================ */
 
-.ultra-text-travel{
-  display: block;
-  text-align: center;
-  font-size: 48px;
-  font-weight: 900;
-  letter-spacing: 4px;
-  margin: 20px 0;
+.ultra-energy-travel{
+  display:block;
+  text-align:center;
+  font-size:48px;
+  font-weight:900;
+  letter-spacing:4px;
+  margin:20px 0;
 
-  /* TEXT TRAVEL LIGHT */
-  background: linear-gradient(
-    90deg,
-    #00ffd5 0%,
-    #00ffd5 38%,
-    #ffffff 50%,
-    #00ffd5 62%,
-    #00ffd5 100%
-  );
+  background:
+    linear-gradient(
+      100deg,
+      #00ffd5 0%,
+      #00ffd5 30%,
+      #ffffff 45%,
+      #aaffff 50%,
+      #ffffff 55%,
+      #00ffd5 70%,
+      #00ffd5 100%
+    );
 
-  background-size: 220% auto;
-  background-position: 0% center;
+  background-size:300% 100%;
+  background-position:0% center;
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 
-  animation: ultraTextTravel 2.4s linear infinite;
+  animation: energyTravel 3.2s cubic-bezier(.65,.05,.36,1) infinite;
 
-  /* GLOW */
-  filter: drop-shadow(0 0 22px rgba(0,255,213,0.9));
+  filter:
+    drop-shadow(0 0 8px rgba(0,255,213,.4))
+    drop-shadow(0 0 22px rgba(0,255,213,.9));
 }
 
 /* RED VARIANT */
-.ultra-text-travel-red{
-  display: block;
-  text-align: center;
-  font-size: 15px;
-  letter-spacing: 3px;
-  margin-bottom: 25px;
+.ultra-energy-travel.red{
+  font-size:15px;
+  letter-spacing:3px;
 
-  background: linear-gradient(
-    90deg,
-    #ff2b2b 0%,
-    #ff2b2b 38%,
-    #ffffff 50%,
-    #ff2b2b 62%,
-    #ff2b2b 100%
-  );
+  background:
+    linear-gradient(
+      100deg,
+      #ff2b2b 0%,
+      #ff2b2b 30%,
+      #ffffff 45%,
+      #ffaaaa 50%,
+      #ffffff 55%,
+      #ff2b2b 70%,
+      #ff2b2b 100%
+    );
 
-  background-size: 220% auto;
-  background-position: 0% center;
+  background-size:300% 100%;
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  animation-duration:2.4s;
 
-  animation: ultraTextTravel 1.8s linear infinite;
-
-  filter: drop-shadow(0 0 14px rgba(255,0,0,0.9));
+  filter:
+    drop-shadow(0 0 6px rgba(255,0,0,.5))
+    drop-shadow(0 0 16px rgba(255,0,0,.9));
 }
 
-/* KEYFRAMES */
-@keyframes ultraTextTravel{
+/* MOTION FEEL */
+@keyframes energyTravel{
   0%{
-    background-position: 0% center;
+    background-position:0% center;
+  }
+  40%{
+    background-position:55% center;
   }
   100%{
-    background-position: 220% center;
+    background-position:300% center;
   }
 }
+
 
   
   
