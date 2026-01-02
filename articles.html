@@ -191,6 +191,50 @@ footer{
   opacity:.6;
 }
 
+/* ===============================
+   FINAL ULTRA TEXT TRAVEL (HEADER SAFE)
+   =============================== */
+header{
+  text-align:center;
+}
+
+.text-travel{
+  display:inline-block;
+  white-space:nowrap;
+
+  font-size:48px;
+  font-weight:800;
+  letter-spacing:4px;
+
+  background:linear-gradient(
+    90deg,
+    #00ffd5 0%,
+    #ffffff 50%,
+    #00ffd5 100%
+  );
+  background-size:250% 100%;
+  background-position:0% center;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation: ultraTextTravel 3s linear infinite;
+
+  text-shadow:
+    0 0 12px rgba(0,255,213,.8),
+    0 0 28px rgba(0,255,213,.9);
+}
+
+@keyframes ultraTextTravel{
+  from{
+    background-position:0% center;
+  }
+  to{
+    background-position:250% center;
+  }
+}
+
+   
 </style>
 
 </head>
@@ -203,7 +247,7 @@ footer{
   SHRAVANSH WAR CORE
 </h1>
 
-<p class="alert-text">
+<p> class="text-travel">
   ⚠️ RETAIL TRAP / SMART MONEY INTEL ⚠️
 </p>
 
