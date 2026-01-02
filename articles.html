@@ -251,6 +251,96 @@ footer{
   border-color:rgba(255,255,255,.15) !important;
 }
 
+
+.travel-blink{
+  position:relative;
+  color:#00ffcc;
+  text-shadow:
+    0 0 10px #00ffcc,
+    0 0 25px #00ffcc;
+  overflow:hidden;
+}
+
+.travel-blink::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:120%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(0,255,200,0.8),
+    transparent 70%
+  );
+  animation:travelScan 2.8s infinite;
+}
+
+@keyframes travelScan{
+  0%{ left:-120%; }
+  100%{ left:120%; }
+}
+
+
+
+.travel-blink-red{
+  position:relative;
+  color:#ff2a2a;
+  text-shadow:
+    0 0 8px #ff2a2a,
+    0 0 20px #ff0000;
+  overflow:hidden;
+}
+
+.travel-blink-red::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:120%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent 35%,
+    rgba(255,0,0,0.9),
+    transparent 70%
+  );
+  animation:travelScan 2.2s infinite;
+}
+
+
+
+
+  .travel-border{
+  position:relative;
+  border:2px solid rgba(0,255,200,0.4);
+  overflow:hidden;
+}
+
+.travel-border::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  border-top:2px solid #00ffcc;
+  border-bottom:2px solid #00ffcc;
+  animation:borderTravel 3s infinite;
+}
+
+@keyframes borderTravel{
+  0%{ left:-100%; opacity:0; }
+  50%{ opacity:1; }
+  100%{ left:100%; opacity:0; }
+}
+
+
+
+  
+  
+  
 </style>
 </head>
 
