@@ -318,6 +318,48 @@ footer{
     background-position:200% center;
   }
 }
+/* ===== ULTRA CENTERED TEXT TRAVEL ===== */
+.text-travel{
+  display:inline-block;          /* 🔥 MOST IMPORTANT */
+  position:relative;
+  text-align:center;
+
+  font-size:48px;
+  font-weight:800;
+  letter-spacing:4px;
+
+  padding:10px 20px;
+  margin:20px auto;
+
+  color:#00ffd5;
+
+  background: linear-gradient(
+    90deg,
+    #00ffd5 0%,
+    #ffffff 50%,
+    #00ffd5 100%
+  );
+  background-size:300% 100%;
+  background-position:0% center;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation: ultraTravel 3.5s linear infinite;
+
+  text-shadow:
+    0 0 10px rgba(0,255,213,.7),
+    0 0 25px rgba(0,255,213,.9);
+}
+
+@keyframes ultraTravel{
+  0%{
+    background-position:0% center;
+  }
+  100%{
+    background-position:300% center;
+  }
+}
 
   
   
