@@ -463,6 +463,79 @@ header{
 }
 
    
+/* ===============================
+   OMEGA TITLE (STABLE NEON)
+   =============================== */
+.omega-title{
+  text-shadow:
+    0 0 15px #00ff9c,
+    0 0 35px #00ff9c,
+    0 0 70px rgba(0,255,156,.9);
+}
+
+/* ===============================
+   ALERT BLINK (IMAGE STYLE)
+   =============================== */
+.alert-blink{
+  margin-top:12px;
+  font-size:15px;
+  letter-spacing:3px;
+  text-align:center;
+
+  color:#ff3b3b;
+
+  animation:dangerBlink 1.8s infinite;
+
+  text-shadow:
+    0 0 8px rgba(255,0,0,.8),
+    0 0 18px rgba(255,0,0,.9);
+}
+
+@keyframes dangerBlink{
+  0%{
+    opacity:1;
+    transform:scale(1);
+  }
+  50%{
+    opacity:.55;
+    transform:scale(1.03);
+  }
+  100%{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+/* ===============================
+   INTEL BOX (SOFT GREEN PULSE)
+   =============================== */
+.intel-box{
+  max-width:900px;
+  margin:30px auto 0;
+  padding:20px 24px;
+  border-radius:14px;
+
+  border:1px solid rgba(0,255,156,.45);
+
+  color:#7cffc8;
+  text-align:left;
+
+  animation:intelPulse 3.5s infinite;
+}
+
+@keyframes intelPulse{
+  0%{
+    box-shadow:0 0 15px rgba(0,255,156,.25);
+  }
+  50%{
+    box-shadow:
+      0 0 35px rgba(0,255,156,.55),
+      inset 0 0 18px rgba(0,255,156,.25);
+  }
+  100%{
+    box-shadow:0 0 15px rgba(0,255,156,.25);
+  }
+}
   
 </style>
 </head>
@@ -472,21 +545,22 @@ header{
 
 <header>
 
-  <h1 class="text-travel">
+  <h1 class="text-travel omega-title">
     SHRAVANSH WAR CORE
   </h1>
 
-  <div class="alert-text">
+  <div class="alert-blink">
     ⚠ RETAIL TRAP / SMART MONEY INTEL ⚠
   </div>
 
-  <div class="intel-box travel-blink">
+  <div class="intel-box">
     • Market Manipulation Zones : TRACKED<br>
     • Retail Crowd Behavior : ANALYZED<br>
     • Risk Exposure Level : EXTREME
   </div>
-  
+
 </header>
+
 
 
 
