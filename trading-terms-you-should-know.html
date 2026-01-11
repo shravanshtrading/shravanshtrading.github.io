@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLACK OPS ARTICLES</title>
+
+<style>
+
+/* ===============================
+   GLOBAL
+   =============================== */
+body{
+  margin:0;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:radial-gradient(circle at top,#05080f,#000);
+  color:#e5fff3;
+  text-align:center;
+}
+*,*:before,*:after{box-sizing:border-box}
+
+/* ===============================
+   HEADER
+   =============================== */
+header{
+  padding:60px 15px 40px;
+}
+
+/* ===============================
+   MAIN TITLE (TRAVEL + SAFE)
+   =============================== */
+.text-travel{
+  display:inline-block;
+  max-width:100%;
+  font-size:48px;
+  font-weight:800;
+  letter-spacing:4px;
+  line-height:1.2;
+  margin:0 auto 18px;
+
+  background:linear-gradient(
+    90deg,
+    #00ffd5 0%,
+    #ffffff 50%,
+    #00ffd5 100%
+  );
+  background-size:300% 100%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:textTravel 3.5s linear infinite;
+
+  text-shadow:
+    0 0 12px rgba(0,255,213,.7),
+    0 0 30px rgba(0,255,213,.9);
+}
+
+@keyframes textTravel{
+  from{background-position:0% center;}
+  to{background-position:300% center;}
+}
+
+/* ===============================
+   ALERT LINE (BLINK)
+   =============================== */
+.alert-blink{
+  font-size:14px;
+  letter-spacing:3px;
+  color:#ff3b3b;
+  margin-bottom:25px;
+
+  animation:dangerBlink 1.8s infinite;
+
+  text-shadow:
+    0 0 8px rgba(255,0,0,.8),
+    0 0 18px rgba(255,0,0,.9);
+}
+
+@keyframes dangerBlink{
+  0%,100%{opacity:1}
+  50%{opacity:.5}
+}
+
+/* ===============================
+   INTEL BOX
+   =============================== */
+.intel-box{
+  max-width:900px;
+  margin:0 auto 40px;
+  padding:20px 24px;
+  border-radius:14px;
+  border:1px solid rgba(0,255,156,.45);
+  color:#7cffc8;
+  text-align:left;
+
+  animation:intelPulse 3.5s infinite;
+}
+
+@keyframes intelPulse{
+  0%{box-shadow:0 0 15px rgba(0,255,156,.25)}
+  50%{
+    box-shadow:
+      0 0 35px rgba(0,255,156,.55),
+      inset 0 0 18px rgba(0,255,156,.25)
+  }
+  100%{box-shadow:0 0 15px rgba(0,255,156,.25)}
+}
+
+/* ===============================
+   ARTICLE CARD (BLINK SYSTEM)
+   =============================== */
+.article-card{
+  max-width:900px;
+  margin:0 auto 18px;
+  padding:20px 24px;
+  background:linear-gradient(135deg,#04070c,#070b14);
+  border-radius:16px;
+  border:2px solid transparent;
+  box-shadow:0 0 25px rgba(0,0,0,.7);
+  position:relative;
+
+  animation:blinkBase 3.2s infinite;
+}
+
+.article-card a{
+  font-size:20px;
+  font-weight:600;
+  text-decoration:none;
+  color:#fff;
+}
+
+.article-desc{
+  font-size:14px;
+  opacity:.85;
+  margin-top:6px;
+}
+
+@keyframes blinkBase{
+  0%{
+    box-shadow:0 0 18px currentColor;
+    border-color:currentColor;
+  }
+  50%{
+    box-shadow:
+      0 0 70px currentColor,
+      inset 0 0 25px currentColor;
+    border-color:currentColor;
+  }
+  100%{
+    box-shadow:0 0 18px currentColor;
+    border-color:currentColor;
+  }
+}
+
+/* BLINK COLORS */
+.article-card.c1{color:#ff003c}
+.article-card.c2{color:#00ff9c}
+.article-card.c3{color:#00c8ff}
+.article-card.c4{color:#ffb300}
+.article-card.c5{color:#b56cff}
+
+/* ===============================
+   MOBILE FIX (CRITICAL)
+   =============================== */
+@media (max-width:600px){
+
+  .text-travel{
+    display:block;
+    font-size:32px;
+    letter-spacing:2px;
+    padding:0 10px;
+  }
+
+  .alert-blink{
+    font-size:12px;
+  }
+
+  .intel-box{
+    text-align:center;
+    padding:18px;
+  }
+
+  @keyframes blinkBase{
+    0%{box-shadow:0 0 12px currentColor}
+    50%{
+      box-shadow:
+        0 0 35px currentColor,
+        inset 0 0 18px currentColor
+    }
+    100%{box-shadow:0 0 12px currentColor}
+  }
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+footer{
+  padding:30px 15px;
+  font-size:13px;
+  opacity:.6;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1 class="text-travel">SHRAVANSH WAR CORE</h1>
+
+  <div class="alert-blink">
+    ⚠ RETAIL TRAP / SMART MONEY INTEL ⚠
+  </div>
+
+  <div class="intel-box">
+    • Market Manipulation Zones : TRACKED<br>
+    • Retail Crowd Behavior : ANALYZED<br>
+    • Risk Exposure Level : EXTREME
+  </div>
+</header>
+
+<div class="article-card c1">
+  <a href="#">☠️ Market Structure Shift क्या होता है?</a>
+  <div class="article-desc">बिना indicator के trading करने का तरीका</div>
+</div>
+
+<div class="article-card c2">
+  <a href="#">☠️ Equal High & Equal Low क्या होता है?</a>
+  <div class="article-desc">Loss control करने की powerful strategy</div>
+</div>
+
+<div class="article-card c3">
+  <a href="#">☠️ Mitigation क्या है?</a>
+  <div class="article-desc">Valid mitigation कैसे पहचानें</div>
+</div>
+
+<div class="article-card c4">
+  <a href="#">☠️ Inducement क्या होता है?</a>
+  <div class="article-desc">Institutions inducement क्यों करते हैं</div>
+</div>
+
+<footer>
+  © 2026 Shravansh Trading | Educational Purpose Only
+</footer>
+
+</body>
+</html>
